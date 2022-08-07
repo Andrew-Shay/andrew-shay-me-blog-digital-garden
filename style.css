@@ -634,4 +634,9 @@ span.hightlight {
 	.blog-listing>.row {
 		padding-bottom: 0rem;
 	}
+
+	.tagline {
+		margin-top: -0.5rem;
+		color: #999999;
+	}
 }

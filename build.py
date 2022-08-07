@@ -195,6 +195,8 @@ class Category:
             line = line_no_strip.strip()
 
             if line == '---##':
+                if collect:
+                    assert False, f"Collect found while already collecting. Missing end marker. {self.file_name} {line}"
                 collect = True
             elif line == '---!##':
                 entry_contents = '\n'.join(collected_lines)

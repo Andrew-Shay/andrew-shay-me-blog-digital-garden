@@ -2,6 +2,88 @@ title: ASUS Rog Strix 2021
 icon:💻
 
 ---##
+title: WMI Provider Host High CPU on ASUS 2021 ROG Strix G15 Advantage Edition SOLVED
+file: asus-rog-strix-wmi-provider.html
+date: 2021-10-19
+body:
+**TLDR (Possible) Solution:**
+1. Disable `ARMOURY CRATE Service` in `services.msc`. But Armoury Crate app will not start anymore. 
+2. OR 
+3. Delete DenoiseAI plugin
+
+## Tracking Down the issue
+### Root Cause WMI Provider Host High CPU
+We see WMI Provider host has high CPU (~30% in my case), but how do we figure out why?
+
+1. Click start
+2. Search `Event Viewer` and start as admin
+3. On the left expand `Applications and Services Logs` -> `Microsoft` -> `Windows` -> `WMI-Activity`
+4. I see `Error`s appearing every few seconds
+5. I notice a few ones that keep appearing
+6. I see it's caused by Asus and more specifically `ArmouryCrate.exe`
+
+```
+Id = {00000000-0000-0000-0000-000000000000}; ClientMachine = DESKTOP-A; User = DESKTOP-A\A; 
+ClientProcessId = 100208; Component = Unknown; Operation = Start IWbemServices::CreateInstanceEnum - root\WMI : ASUSATKWMI_WMNB;
+ResultCode = 0x80041003; PossibleCause = Unknown
+
+Id = {00000000-0000-0000-0000-000000000000}; ClientMachine = DESKTOP-A; User = DESKTOP-A\A; 
+ClientProcessId = 100208; Component = Unknown; Operation = Start IWbemServices::CreateInstanceEnum - root\WMI : ASUSManagement; 
+ResultCode = 0x80041010; PossibleCause = Unknown
+
+Id = {00000000-0000-0000-0000-000000000000}; ClientMachine = DESKTOP-A; User = DESKTOP-A\A; 
+ClientProcessId = 100208; Component = Unknown; Operation = Start IWbemServices::ExecNotificationQuery - ROOT\CIMV2 :
+SELECT * FROM __InstanceCreationEvent WITHIN 1 WHERE TargetInstance ISA 'Win32_Process' and TargetInstance.Name = 'ArmouryCrate.exe'; 
+ResultCode = 0x80041032; PossibleCause = Unknown
+```
+
+### Get More Info with Process Monitor
+1. Download Process Monitor from Microsoft
+2. Set filters that would track process creation. Let's track `ArmouryCrate.exe`
+3. I set `Process Name` and `Path` `contains` for `asus` `ASUS` `crate` `CRATE`
+4. I set `Operation is Process Create`
+5. I see the following processes constantly being created
+6. `ArmouryCrate.UserSessionHelper.exe` `AsusSplendid.exe` and `ArmouryCrate.DenoiseAI.exe`
+7. So it seems like DenoiseAI is failing to run I guess? It keeps retrying? 
+8. Can I disable it?
+
+## Solutions
+### What Didn't Work
+1. Going into the DenoiseAI.exe path and setting the process to always run as admin - DIDN'T WORK
+2. Renaming the DenoiseAI binary so that maybe Armoury Crate would stop trying to use it - DIDN'T WORK
+3.   ^ The other processes just kept being created
+2. Setting the ArmouryCrate process to always run as admin - DIDN'T WORK
+3. Disabling DenoiseAI in output/input in sound settings - DIDN'T WORK
+
+### SOLUTION: What Did Work
+**Option 1. Disable ARMOURY CRATE service**
+
+1. Start `Services` as admin
+2. Find `ARMOURY CRATE Service`
+3. Right click `Properties`
+4. Change Startup type to `Disabled`
+5. Click `Stop`
+6. Process usage should drop
+7. Process Monitor shouldn't show any more processes being created
+8. Event Viewer should stop showing the errors
+9. ARMOURY CRATE app probably won't start anymore. You won't be able to use it.
+
+**Option 2. Delete Denoise Plugin**
+
+1. Copy Denoise AI directory from Process Monitor
+2.   ^ eg `C:\Program Files\ASUS\ARMOURY CRATE Service`
+3. Move the folder `DenoiseAIPlugin` out of that folder
+4. Start `Services` as admin
+5. Restart `ARMOURY CRATE Service`
+6. Process usage should drop
+7. Process Monitor shouldn't show any more processes being created
+8. Event Viewer should stop showing the errors
+9. Note: When the app updates the Denoise plugin might get reinstalled
+
+Now I'm down to a constant ~0.1% - ~0.3%
+---!##
+
+---##
 title: ASUS Rog Strix 2021 Advantage MediaTek MT7921 Stopped Working SOLVED
 file: asus-rog-strix-mediatek.html
 date: 2022-04-18
