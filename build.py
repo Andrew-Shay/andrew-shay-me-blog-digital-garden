@@ -109,7 +109,7 @@ class BlogPost:
                 new_line = '<pre class="code-pre">'
                 is_code_block = True
             elif is_code_block:
-                pass
+                new_line = html.escape(new_line)
             elif line.startswith("####"):
                 new_line = line[4:].strip()
                 new_line = f"<h4>{new_line}</h4>"

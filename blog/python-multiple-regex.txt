@@ -33,13 +33,13 @@ The process is:
 
 Here is the code from this blog.
 ```
-img_pattern = r&apos;((!\[.+\])(\(.+\)))&apos;
-url_pattern = r&quot;((\[.+\])(\(.+\)))&quot;
-i_pattern = r&apos;(__.*?__)&apos;
-strong_pattern = r&apos;(\*\*.*\*\*)&apos;
-code_pattern = r&apos;(`.+?`)&apos;
+img_pattern = r'((!\[.+\])(\(.+\)))'
+url_pattern = r"((\[.+\])(\(.+\)))"
+i_pattern = r'(__.*?__)'
+strong_pattern = r'(\*\*.*\*\*)'
+code_pattern = r'(`.+?`)'
 # 0=img total group / 1=img text / 2=img link / 3=url group / 4=url text / 5=url link / 6=code text / 7=i text / 8=strong text / 
-combine = img_pattern + r&apos;|&apos; + url_pattern + r&apos;|&apos; + code_pattern + r&apos;|&apos; + i_pattern + r&apos;|&apos; + strong_pattern
+combine = img_pattern + r'|' + url_pattern + r'|' + code_pattern + r'|' + i_pattern + r'|' + strong_pattern
 match = re.findall(combine, new_line)
 
 if match:
@@ -47,27 +47,27 @@ if match:
         if m[0]:
             img_alt = m[1][2:-1]
             img_src = m[2][1:-1]
-            if img_src.startswith(&quot;http&quot;):
-                new_text = f&apos;&lt;img alt=&quot;{img_alt}&quot; src=&quot;{img_src}&quot;&gt;&apos;
+            if img_src.startswith("http"):
+                new_text = f'<img alt="{img_alt}" src="{img_src}">'
             else:
-                new_text = f&apos;&lt;img alt=&quot;{img_alt}&quot; src=&quot;images/{img_src}&quot;&gt;&apos;
+                new_text = f'<img alt="{img_alt}" src="images/{img_src}">'
             new_line = new_line.replace(m[0], new_text)
 
         if m[3]:
             url_text = m[4][1:-1]
             url_href = m[5][1:-1]
-            new_text = f&apos;&lt;a href=&quot;{url_href}&quot;&gt;{url_text}&lt;/a&gt;&apos;
+            new_text = f'<a href="{url_href}">{url_text}</a>'
             new_line = new_line.replace(m[3], new_text)
 
         if m[6]:
             code_text = m[6][1:-1]
-            new_line = new_line.replace(m[6], f&apos;&lt;code&gt;{code_text}&lt;/code&gt;&apos;)
+            new_line = new_line.replace(m[6], f'<code>{code_text}</code>')
 
         if m[7]:
             i_text = m[7][2:-2]
-            new_line = new_line.replace(m[7], f&apos;&lt;i&gt;{i_text}&lt;/i&gt;&apos;)
+            new_line = new_line.replace(m[7], f'<i>{i_text}</i>')
 
         if m[8]:
             strong_text = m[8][2:-2]
-            new_line = new_line.replace(m[8], f&apos;&lt;strong&gt;{strong_text}&lt;/strong&gt;&apos;)
+            new_line = new_line.replace(m[8], f'<strong>{strong_text}</strong>')
 ```
