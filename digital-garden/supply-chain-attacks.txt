@@ -1,0 +1,40 @@
+title: Supply Chain Attacks
+icon: 💣
+
+---##
+title: Supply chain attacks - Microsoft
+url: https://docs.microsoft.com/en-us/microsoft-365/security/intelligence/supply-chain-malware?view=o365-worldwide
+date: 2022-08-07
+star:
+---!##
+
+---##
+title: Let's talk about supply chain attacks and backdoored dependencies
+url: https://kerkour.com/supply-chain-attacks-and-backdoored-dependencies
+date: 2022-08-07
+star:
+---!##
+
+---##
+title: Two malicious Python libraries caught stealing SSH and GPG keys
+url: https://www.zdnet.com/article/two-malicious-python-libraries-removed-from-pypi/, https://news.ycombinator.com/item?id=21701488
+date: 2022-08-07
+---!##
+
+---##
+title: Backdoored Python Library Caught Stealing SSH Credentials
+url: https://www.bleepingcomputer.com/news/security/backdoored-python-library-caught-stealing-ssh-credentials/
+date: 2022-08-07
+---!##
+
+---##
+title: NPM supply-chain attack impacts hundreds of websites and apps
+url: https://www.bleepingcomputer.com/news/security/npm-supply-chain-attack-impacts-hundreds-of-websites-and-apps/
+date: 2022-08-07
+---!##
+
+---##
+title: Dev corrupts NPM libs 'colors' and 'faker' breaking thousands of apps
+url: https://www.bleepingcomputer.com/news/security/dev-corrupts-npm-libs-colors-and-faker-breaking-thousands-of-apps/
+date: 2022-08-07
+---!##
