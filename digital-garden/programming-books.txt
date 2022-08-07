@@ -1,0 +1,57 @@
+title: Programming Books
+icon: 📘
+
+
+---##
+title: Beej's Guide to Network Programming
+url: https://beej.us/guide/bgnet/
+date: 2022-08-05
+---!##
+
+---##
+title: Computer Graphics from Scratch
+url: https://www.gabrielgambetta.com/computer-graphics-from-scratch/index.html
+date: 2022-02-01
+---!##
+
+---##
+title: Crypto 101
+url: https://www.crypto101.io/
+date: 2022-02-01
+---!##
+
+---##
+title: Data Compression Explained
+url: http://mattmahoney.net/dc/dce.html
+date: 2022-02-01
+---!##
+
+---##
+title: Distributed Systems
+url: https://www.distributed-systems.net/index.php/books/ds3/
+date: 2022-02-01
+---!##
+
+---##
+title: Practical Cryptography for Developers - Free Book by Svetlin Nakov
+url: https://wizardforcel.gitbooks.io/practical-cryptography-for-developers-book/content/
+date: 2022-02-01
+---!##
+
+---##
+title: A Gradudate Course in Applied Cryptography
+url: https://toc.cryptobook.us/
+date: 2022-02-01
+---!##
+
+---##
+title: WebRTC For The Curious
+url: https://webrtcforthecurious.com/
+date: 2022-02-01
+---!##
+
+---##
+title: Computer Networks From Scratch
+url: https://www.networksfromscratch.com/
+date: 2022-02-01
+---!##

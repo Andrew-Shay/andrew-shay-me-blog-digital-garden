@@ -1,0 +1,28 @@
+title: Rust Convert u32 to bytes. Convert bytes to u32.
+date: 2020-05-25
+tags: rust
+body:
+Here is how to convert u32 to bytes and then back again in Rust.
+
+```rust
+fn main() {
+    let original_u32: u32 = 1048572;
+    println!("{}", original_u32);
+    
+    let u32_as_bytes: [u8; 4] = original_u32.to_be_bytes();
+    println!("{:?}", u32_as_bytes);
+    
+    let back_to_u32: u32 = u32::from_be_bytes(u32_as_bytes);
+    println!("{}", back_to_u32);
+}
+
+/*
+https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=0bc90209eb1df96ad76d23490d34e8be
+to_be_bytes
+https://doc.rust-lang.org/std/primitive.u32.html#method.to_be_bytes
+from_be_bytes 
+https://doc.rust-lang.org/std/primitive.u32.html#method.from_be_bytes
+*/
+```
+
+On GitHub [https://gist.github.com/Andrew-Shay/040fd84a9c557be8451e28e32784d8f4](https://gist.github.com/Andrew-Shay/040fd84a9c557be8451e28e32784d8f4)

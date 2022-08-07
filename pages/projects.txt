@@ -1,0 +1,14 @@
+title: 🔬 Projects
+description: Projects by Andrew Shay
+body:
+## Transmitic
+Encrypted, peer to peer, file transfer and sharing, built with Rust.
+[transmitic.net](https://transmitic.net/)
+
+## Device Checker
+Windows application to detect when changes are made to the system.
+View on [GitHub](https://github.com/shayConcepts/device-checker)
+
+## Neuron
+Create Python desktop applications with HTML and Javascript GUI.
+View on GitHub: [Andrew-Shay/Neuron](https://github.com/Andrew-Shay/Neuron)

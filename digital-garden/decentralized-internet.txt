@@ -1,0 +1,39 @@
+title:  Decentralized Internet
+icon: 🌐
+
+---##
+title: Transmitic
+url: https://transmitic.net
+description: Encrypted peer-to-peer file transfer and sharing
+date: 2022-08-06
+star:
+---!##
+
+---##
+title: Gemini
+url: https://gemini.circumlunar.space/
+description: Alternative internet to www and http
+date: 2022-08-06
+star:
+---!##
+
+---##
+title: Beaker Browser
+url: https://beakerbrowser.com/
+description: An experimental peer-to-peer Web browser. 
+date: 2022-02-01
+---!##
+
+---##
+title: IPFS
+url: https://ipfs.tech/
+description: A peer-to-peer hypermedia protocol 
+date: 2022-02-01
+---!##
+
+---##
+title: Mastodon
+url: https://joinmastodon.org/
+description: Decentralized Twitter instances
+date: 2022-02-01
+---!##

@@ -1,0 +1,36 @@
+title: Rust
+icon: ⚙️
+
+---##
+title: Transmitic
+url: https://transmitic.net
+description: Encrypted peer-to-peer file transfer and sharing
+date: 2032-08-06
+star:
+---!##
+
+---##
+title: sciter
+url: https://sciter.com/
+description: Create GUIs with HTML, CSS and Javascript. Great choice for Rust.
+date: 2022-08-05
+star:
+---!##
+
+---##
+title: Make a Language with Rust
+url: https://arzg.github.io/lang/
+date: 2022-02-01
+---!##
+
+---##
+title: The Rust Performance Book
+url: https://nnethercote.github.io/perf-book/
+date: 2022-02-01
+---!##
+
+---##
+title: Dependency on rust removes support for a number of platforms for pyca/cryptography
+url: https://lobste.rs/s/f4chm2/dependency_on_rust_removes_support_for, https://github.com/pyca/cryptography/issues/5771
+date: 2022-08-01
+---!##

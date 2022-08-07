@@ -1,0 +1,33 @@
+title: Cryptography
+icon: 🔐
+
+---##
+title: TLS Illustrated
+url: https://tls12.xargs.org/
+date: 2022-08-01
+star:
+---!##
+
+---##
+title: How to Secure Anything
+url: https://github.com/veeral-patel/how-to-secure-anything
+date: 2022-02-01
+---!##
+
+---##
+title: A Gradudate Course in Applied Cryptography
+url: https://toc.cryptobook.us/
+date: 2022-02-01
+---!##
+
+---##
+title: Crypto 101
+url: https://www.crypto101.io/
+date: 2022-02-01
+---!##
+
+---##
+title: Practical Cryptography for Developers - Free Book by Svetlin Nakov
+url: https://wizardforcel.gitbooks.io/practical-cryptography-for-developers-book/content/
+date: 2022-02-01
+---!##

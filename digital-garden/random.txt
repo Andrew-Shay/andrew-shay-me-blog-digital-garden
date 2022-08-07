@@ -1,0 +1,95 @@
+title: Random
+icon: 🔮
+
+---##
+title: Blog Surf
+description: Blog Search Engine
+url: https://blogsurf.io/
+date: 2022-08-06
+---!##
+
+---##
+title: BookStack
+description: Self-hosted, easy-to-use platform for organising and storing information.
+url: https://www.bookstackapp.com/
+date: 2022-08-06
+---!##
+
+---##
+title: LottieFiles
+description: Lightweight, scalable animations
+url: https://lottiefiles.com/
+date: 2022-01-05
+star:
+---!##
+
+---##
+title: Marginalia
+description: Independent DIY search engine that focuses on non-commercial content
+url: https://search.marginalia.nu/
+date: 2022-08-05
+star:
+---!##
+
+---##
+title: Webpage List
+description: Discover new websites
+url: https://webpagelist.com/
+date: 2022-08-05
+star:
+---!##
+
+---##
+title: 20% of requests for Wikimedia Commons are for one image of a flower
+url: https://news.ycombinator.com/item?id=26072025, https://phabricator.wikimedia.org/T273741
+date: 2022-02-01
+---!##
+
+---##
+title: Candy Warehouse - Buy Candy in Bulk
+url: https://www.candywarehouse.com/
+date: 2022-02-01
+---!##
+
+---##
+title: Drive & Listen
+description: Listen to a local radio station with a dashcam feed of that town
+url: https://driveandlisten.herokuapp.com/
+date: 2022-02-01
+---!##
+
+---##
+title: Delayed Gratification
+description: Quarterly publication which revisits the events of the last three month
+url: https://www.slow-journalism.com/
+date: 2022-02-01
+---!##
+
+---##
+title: Unsplash
+description: Free photos for commercial and non commercial use
+url: https://unsplash.com/
+date: 2022-02-01
+---!##
+
+
+---##
+title: I Miss My Bar
+description: Sound generator for a bar
+url: http://imissmybar.com/
+date: 2022-02-01
+---!##
+
+---##
+title: Open Clipart
+description: Public Domain clipart
+url: https://openclipart.org/
+date: 2022-02-01
+---!##
+
+---##
+title: The Noun Project
+description: Icons for everything
+url: https://thenounproject.com/
+date: 2022-02-01
+---!##

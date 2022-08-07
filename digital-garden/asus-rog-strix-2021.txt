@@ -1,0 +1,383 @@
+title: ASUS Rog Strix 2021
+icon:💻
+
+---##
+title: ASUS Rog Strix 2021 Advantage MediaTek MT7921 Stopped Working SOLVED
+file: asus-rog-strix-mediatek.html
+date: 2022-04-18
+updated: 2022-04-19
+body:html
+If your MediaTek MT7921 has randomly stopped working. Code 10 or "had a problem starting" try this....
+<br><br>
+<ol>
+<li>
+    <code>WARNING:</code> If you have bitlocker, get your recovery code because you may need to enter it in order to unlock your drive after this process.</li>
+<li>BACKUP YOUR DATA first. I had no issue unlocking with bitlocker, but just in case, backup.</li>
+<li>Unplug every cord from your laptop including the power cable</li>
+<li>Press AND HOLD the power button for 60 seconds.</li>
+<li>^ This fores a reset of some of the hardware apparently</li>
+<li>Your laptop will reboot and may take a minute for anything to appear on the screen</li>
+<li>Wifi should work now!</li>
+<li>If it doesn't, try to install latest drivers and repeat this process</li>
+</ol>
+Source of this fix: <a href="https://www.reddit.com/r/ZephyrusG14/comments/ohsox6/comment/h55jh23/?utm_source=share&utm_medium=web2x&context=3">https://www.reddit.com/r/ZephyrusG14/comments/ohsox6/comment/h55jh23</a>
+---!##
+
+---##
+title: ASUS ROG Strix Advantage 2021 w/ Kingston 3200 Time Spy Display Comparisons
+file: asus-rog-strix-timespy.html
+date: 2022-02-17
+body:
+Time Spy comparisons of the different display connectors
+
+## TLDR
+**USB-C is the best**🎉, BUT the scores aren't really consistent. They don't vary by much.  
+
+Ranked Best to Worst
+1. USB-C to DisplayPort Run 1 - `Overall 11,613`. Graphics 11,812. CPU 10,563. [https://www.3dmark.com/spy/26377377](https://www.3dmark.com/spy/26377377)
+
+2. USB-C to DisplayPort w/ HDMI also plugged in Run 1 - `Overall 11,564`. Graphics 11,802. CPU 10,379. [https://www.3dmark.com/spy/26399252](https://www.3dmark.com/spy/26399252)
+
+3. USB-C to DisplayPort Run 2 - `Overall 11,540`. Graphics 11,789. CPU 10,309. [https://www.3dmark.com/spy/26399517](https://www.3dmark.com/spy/26399517)
+
+4. Laptop ONLY. No External Monitor plugged in. - `Overall 11,537`. Graphics 11,777. CPU 10,346. [https://www.3dmark.com/spy/26377792](https://www.3dmark.com/spy/26377792)
+
+5. USB-C to DisplayPort w/ HDMI also plugged in Run 2 - `Overall 11,521`. Graphics 11,782. CPU 10,238. [https://www.3dmark.com/spy/26399393](https://www.3dmark.com/spy/26399393)
+
+6. HDMI Run 1 - `Overall 11,414`. Graphics 11,701. CPU 10,024. [https://www.3dmark.com/spy/26373301](https://www.3dmark.com/spy/26373301)
+
+7. HDMI Run 2 - `Overall 11,238`. Graphics 11,473. CPU 10,072. [https://www.3dmark.com/spy/26373540](https://www.3dmark.com/spy/26373540)
+
+Notes:
+1. When running with USB-C, Task Manager reports the integrated GPU running at 0% during Time Spy tests
+2. "Displayport to USB-C w/ HDMI also plugged in" means Time Spy ran on the monitor with USB-C, but I had another monitor plugged in to HDMI with nothing on it.
+3. The key to max performance with this laptop is faster ram for the Ryzen CPUs. The stock ram is not good.
+
+## System Config
+2021 ASUS ROG Strix Advantage Edition G513QY
+AMD Ryzen 9 5900X
+AMD Radeon RX 6800M
+32GB (16GBx2) Kingston KHX3200C20S4/16GX DDR4-3200 (1600 MHz)
+Samsung SSD 970 EVO Plus 2TB
+Turbo Mode via Armoury Crate
+
+Windows 10 21H2 19044.1526
+Graphics Driver 30.0.13025.5005 installed via Radeon Software
+Radeon Software 21.10.2
+Armoury Crate 5.0.11.0
+Armoury Crate Device Kit 1.01.07
+
+Monitor LG 27GL850-B 2560x1440
+[Insignia™ - 6' USB-C to DisplayPort Cable - White NS-PCKCD6](https://www.bestbuy.com/site/insignia-6-usb-c-to-displayport-cable-white/6419149.p?skuId=6419149)
+
+## CPUZ
+### Processors Information
+```
+Processors Information
+-------------------------------------------------------------------------
+
+Socket 1			ID = 0
+	Number of cores		8 (max 8)
+	Number of threads	16 (max 16)
+	Manufacturer		AuthenticAMD
+	Name			AMD Ryzen 9 5900HX
+	Codename		Cezanne
+	Specification		AMD Ryzen 9 5900HX with Radeon Graphics        
+	Package 		Socket FP6
+	CPUID			F.0.0
+	Extended CPUID		19.50
+	Core Stepping		CZN-A0
+	Technology		7 nm
+	TDP Limit		45.0 Watts
+	Core Speed		4581.1 MHz
+	Multiplier x Bus Speed	47.0 x 97.5 MHz
+	Base frequency (cores)	97.5 MHz
+	Base frequency (ext.)	97.5 MHz
+	Instructions sets	MMX (+), SSE, SSE2, SSE3, SSSE3, SSE4.1, SSE4.2, SSE4A, x86-64, AES, AVX, AVX2, FMA3, SHA
+	Microcode Revision	0xA50000C
+	L1 Data cache		8 x 32 KB (8-way, 64-byte line)
+	L1 Instruction cache	8 x 32 KB (8-way, 64-byte line)
+	L2 cache		8 x 512 KB (8-way, 64-byte line)
+	L3 cache		16 MB (16-way, 64-byte line)
+	Max CPUID level		0000000Dh
+	Max CPUID ext. level	8000001Eh
+	FID/VID Control		yes
+	# of P-States		3
+	P-State			FID 0x884 - VID 0x35 (33.00x - 1.219 V)
+	P-State			FID 0xE5B - VID 0x60 (13.00x - 0.950 V)
+	P-State			FID 0x1060 - VID 0x66 (12.00x - 0.912 V)
+
+	PStateReg		0x80000000-0x484D4884
+	PStateReg		0x80000000-0x43580E5B
+	PStateReg		0x80000000-0x43199060
+	PStateReg		0x00000000-0x00000000
+	PStateReg		0x00000000-0x00000000
+	PStateReg		0x00000000-0x00000000
+	PStateReg		0x00000000-0x00000000
+	PStateReg		0x00000000-0x00000000
+
+	Package Type		0x0
+	Model			00
+	String 1		0x0
+	String 2		0x0
+	Page			0x0
+	Power Unit		0.0
+	SMU Version		64.45.00
+	TDP/TJMAX		0x0
+	TCTL Offset		0x0
+
+	Temperature 0		53 degC (128 degF) (Package (Node 0))
+	Voltage 0		1.42 Volts (VID)
+	Power 00		36.52 W (Package)
+	Power 01		0.66 W (Core #0)
+	Power 02		0.20 W (Core #1)
+	Power 03		0.05 W (Core #2)
+	Power 04		0.09 W (Core #3)
+	Power 05		0.06 W (Core #4)
+	Power 06		0.67 W (Core #5)
+	Power 07		0.13 W (Core #6)
+	Power 08		0.14 W (Core #7)
+	Power 09		2.01 W (Cores)
+	Clock Speed 0		4581.14 MHz (Core #0)
+	Clock Speed 1		3167.81 MHz (Core #1)
+	Clock Speed 2		3167.81 MHz (Core #2)
+	Clock Speed 3		3167.81 MHz (Core #3)
+	Clock Speed 4		3167.81 MHz (Core #4)
+	Clock Speed 5		3167.81 MHz (Core #5)
+	Clock Speed 6		3167.81 MHz (Core #6)
+	Clock Speed 7		3547.94 MHz (Core #7)
+	Core 0 max ratio	(effective) 47.00
+	Core 1 max ratio	(effective) 46.00
+	Core 2 max ratio	(effective) 46.00
+	Core 3 max ratio	(effective) 45.75
+	Core 4 max ratio	(effective) 45.75
+	Core 5 max ratio	(effective) 46.75
+	Core 6 max ratio	(effective) 46.00
+	Core 7 max ratio	(effective) 45.50
+```
+
+### Chipset
+```
+Chipset
+-------------------------------------------------------------------------
+
+Northbridge			AMD Ryzen SOC rev. 00
+Southbridge			AMD Carrizo FCH rev. 51
+Bus Specification		PCI-Express 4.0 (16.0 GT/s)
+Graphic Interface		PCI-Express 4.0
+PCI-E Link Width		x16 (max 16x)
+PCI-E Link Speed		8.0 GT/s (max 16.0 GT/s)
+Memory Type			DDR4
+Memory Size			32 GBytes
+Channels			Dual
+Memory Frequency		1582.4 MHz (1:16)
+CAS# latency (CL)		20.0
+RAS# to CAS# delay (tRCD)	22
+RAS# Precharge (tRP)		22
+Cycle Time (tRAS)		42
+Bank Cycle Time (tRC)		74
+Command Rate (CR)		1T
+Uncore Frequency		779.8 MHz
+```
+
+### Memory SPD
+```
+Memory SPD
+-------------------------------------------------------------------------
+
+DIMM #				1
+	SMBus address		0x50
+	Memory type		DDR4
+	Module format		SO-DIMM
+	Module Manufacturer(ID)	Kingston (7F98000000000000000000000000)
+	SDRAM Manufacturer (ID)	Micron Technology (2C00000000000000000000000000)
+	Size			16384 MBytes
+	Max bandwidth		DDR4-3200 (1600 MHz)
+	Part number		KHX3200C20S4/16GX   
+	Manufacturing date	Week 26/Year 21
+	Nominal Voltage		1.20 Volts
+	EPP			no
+	XMP			yes, rev. 2.0
+	AMP			no
+JEDEC timings table		CL-tRCD-tRP-tRAS-tRC @ frequency
+	JEDEC #1		9.0-11-11-20-34 @ 733 MHz
+	JEDEC #2		10.0-11-11-21-37 @ 800 MHz
+	JEDEC #3		11.0-12-12-23-40 @ 866 MHz
+	JEDEC #4		12.0-14-14-26-45 @ 966 MHz
+	JEDEC #5		13.0-15-15-28-48 @ 1033 MHz
+	JEDEC #6		14.0-16-16-30-52 @ 1133 MHz
+	JEDEC #7		15.0-17-17-32-55 @ 1200 MHz
+	JEDEC #8		16.0-18-18-34-58 @ 1266 MHz
+	JEDEC #9		17.0-19-19-36-63 @ 1366 MHz
+	JEDEC #10		18.0-20-20-38-66 @ 1433 MHz
+	JEDEC #11		19.0-22-22-41-71 @ 1533 MHz
+	JEDEC #12		20.0-22-22-42-74 @ 1600 MHz
+	JEDEC #13		21.0-22-22-42-74 @ 1600 MHz
+	JEDEC #14		22.0-22-22-42-74 @ 1600 MHz
+XMP profile			XMP-3200
+	Specification		DDR4-3200
+	VDD Voltage		1.200 Volts
+	Min Cycle time		0.625 ns (1600 MHz)
+	Max CL			20.0
+	Min tRP			13.75 ns
+	Min tRCD		13.75 ns
+	Min tRAS		26.25 ns
+	Min tRC			45.75 ns
+	Min tRRD		4.38 ns
+XMP timings table		CL-tRCD-tRP-tRAS-tRC-CR @ frequency (voltage)
+	XMP #1			9.0-10-10-19-33-n.a @ 720 MHz (1.200 Volts)
+	XMP #2			10.0-11-11-21-37-n.a @ 800 MHz (1.200 Volts)
+	XMP #3			11.0-13-13-24-41-n.a @ 880 MHz (1.200 Volts)
+	XMP #4			12.0-14-14-26-44-n.a @ 960 MHz (1.200 Volts)
+	XMP #5			13.0-15-15-28-48-n.a @ 1040 MHz (1.200 Volts)
+	XMP #6			14.0-16-16-30-52-n.a @ 1120 MHz (1.200 Volts)
+	XMP #7			15.0-17-17-32-55-n.a @ 1200 MHz (1.200 Volts)
+	XMP #8			16.0-18-18-34-59-n.a @ 1280 MHz (1.200 Volts)
+	XMP #9			17.0-19-19-36-63-n.a @ 1360 MHz (1.200 Volts)
+	XMP #10			18.0-20-20-38-66-n.a @ 1440 MHz (1.200 Volts)
+	XMP #11			19.0-21-21-40-70-n.a @ 1520 MHz (1.200 Volts)
+	XMP #12			20.0-22-22-42-74-n.a @ 1600 MHz (1.200 Volts)
+	XMP #13			21.0-22-22-42-74-n.a @ 1600 MHz (1.200 Volts)
+	XMP #14			22.0-22-22-42-74-n.a @ 1600 MHz (1.200 Volts)
+XMP profile			XMP-2936
+	Specification		DDR4-2936
+	VDD Voltage		1.200 Volts
+	Min Cycle time		0.681 ns (1468 MHz)
+	Max CL			17.0
+	Min tRP			12.94 ns
+	Min tRCD		12.94 ns
+	Min tRAS		26.50 ns
+	Min tRC			45.75 ns
+	Min tRRD		4.77 ns
+XMP timings table		CL-tRCD-tRP-tRAS-tRC-CR @ frequency (voltage)
+	XMP #1			9.0-11-11-21-36-n.a @ 777 MHz (1.200 Volts)
+	XMP #2			10.0-12-12-23-40-n.a @ 863 MHz (1.200 Volts)
+	XMP #3			11.0-13-13-26-44-n.a @ 950 MHz (1.200 Volts)
+	XMP #4			12.0-14-14-28-48-n.a @ 1036 MHz (1.200 Volts)
+	XMP #5			13.0-15-15-30-52-n.a @ 1122 MHz (1.200 Volts)
+	XMP #6			14.0-16-16-33-56-n.a @ 1209 MHz (1.200 Volts)
+	XMP #7			15.0-17-17-35-60-n.a @ 1295 MHz (1.200 Volts)
+	XMP #8			16.0-18-18-37-64-n.a @ 1382 MHz (1.200 Volts)
+	XMP #9			17.0-19-19-39-68-n.a @ 1468 MHz (1.200 Volts)
+	XMP #10			18.0-19-19-39-68-n.a @ 1468 MHz (1.200 Volts)
+
+DIMM #				2
+	SMBus address		0x51
+	Memory type		DDR4
+	Module format		SO-DIMM
+	Module Manufacturer(ID)	Kingston (7F98000000000000000000000000)
+	SDRAM Manufacturer (ID)	Micron Technology (2C00000000000000000000000000)
+	Size			16384 MBytes
+	Max bandwidth		DDR4-3200 (1600 MHz)
+	Part number		KHX3200C20S4/16GX   
+	Manufacturing date	Week 26/Year 21
+	Nominal Voltage		1.20 Volts
+	EPP			no
+	XMP			yes, rev. 2.0
+	AMP			no
+JEDEC timings table		CL-tRCD-tRP-tRAS-tRC @ frequency
+	JEDEC #1		9.0-11-11-20-34 @ 733 MHz
+	JEDEC #2		10.0-11-11-21-37 @ 800 MHz
+	JEDEC #3		11.0-12-12-23-40 @ 866 MHz
+	JEDEC #4		12.0-14-14-26-45 @ 966 MHz
+	JEDEC #5		13.0-15-15-28-48 @ 1033 MHz
+	JEDEC #6		14.0-16-16-30-52 @ 1133 MHz
+	JEDEC #7		15.0-17-17-32-55 @ 1200 MHz
+	JEDEC #8		16.0-18-18-34-58 @ 1266 MHz
+	JEDEC #9		17.0-19-19-36-63 @ 1366 MHz
+	JEDEC #10		18.0-20-20-38-66 @ 1433 MHz
+	JEDEC #11		19.0-22-22-41-71 @ 1533 MHz
+	JEDEC #12		20.0-22-22-42-74 @ 1600 MHz
+	JEDEC #13		21.0-22-22-42-74 @ 1600 MHz
+	JEDEC #14		22.0-22-22-42-74 @ 1600 MHz
+XMP profile			XMP-3200
+	Specification		DDR4-3200
+	VDD Voltage		1.200 Volts
+	Min Cycle time		0.625 ns (1600 MHz)
+	Max CL			20.0
+	Min tRP			13.75 ns
+	Min tRCD		13.75 ns
+	Min tRAS		26.25 ns
+	Min tRC			45.75 ns
+	Min tRRD		4.38 ns
+XMP timings table		CL-tRCD-tRP-tRAS-tRC-CR @ frequency (voltage)
+	XMP #1			9.0-10-10-19-33-n.a @ 720 MHz (1.200 Volts)
+	XMP #2			10.0-11-11-21-37-n.a @ 800 MHz (1.200 Volts)
+	XMP #3			11.0-13-13-24-41-n.a @ 880 MHz (1.200 Volts)
+	XMP #4			12.0-14-14-26-44-n.a @ 960 MHz (1.200 Volts)
+	XMP #5			13.0-15-15-28-48-n.a @ 1040 MHz (1.200 Volts)
+	XMP #6			14.0-16-16-30-52-n.a @ 1120 MHz (1.200 Volts)
+	XMP #7			15.0-17-17-32-55-n.a @ 1200 MHz (1.200 Volts)
+	XMP #8			16.0-18-18-34-59-n.a @ 1280 MHz (1.200 Volts)
+	XMP #9			17.0-19-19-36-63-n.a @ 1360 MHz (1.200 Volts)
+	XMP #10			18.0-20-20-38-66-n.a @ 1440 MHz (1.200 Volts)
+	XMP #11			19.0-21-21-40-70-n.a @ 1520 MHz (1.200 Volts)
+	XMP #12			20.0-22-22-42-74-n.a @ 1600 MHz (1.200 Volts)
+	XMP #13			21.0-22-22-42-74-n.a @ 1600 MHz (1.200 Volts)
+	XMP #14			22.0-22-22-42-74-n.a @ 1600 MHz (1.200 Volts)
+XMP profile			XMP-2936
+	Specification		DDR4-2936
+	VDD Voltage		1.200 Volts
+	Min Cycle time		0.681 ns (1468 MHz)
+	Max CL			17.0
+	Min tRP			12.94 ns
+	Min tRCD		12.94 ns
+	Min tRAS		26.50 ns
+	Min tRC			45.75 ns
+	Min tRRD		4.77 ns
+XMP timings table		CL-tRCD-tRP-tRAS-tRC-CR @ frequency (voltage)
+	XMP #1			9.0-11-11-21-36-n.a @ 777 MHz (1.200 Volts)
+	XMP #2			10.0-12-12-23-40-n.a @ 863 MHz (1.200 Volts)
+	XMP #3			11.0-13-13-26-44-n.a @ 950 MHz (1.200 Volts)
+	XMP #4			12.0-14-14-28-48-n.a @ 1036 MHz (1.200 Volts)
+	XMP #5			13.0-15-15-30-52-n.a @ 1122 MHz (1.200 Volts)
+	XMP #6			14.0-16-16-33-56-n.a @ 1209 MHz (1.200 Volts)
+	XMP #7			15.0-17-17-35-60-n.a @ 1295 MHz (1.200 Volts)
+	XMP #8			16.0-18-18-37-64-n.a @ 1382 MHz (1.200 Volts)
+	XMP #9			17.0-19-19-39-68-n.a @ 1468 MHz (1.200 Volts)
+	XMP #10			18.0-19-19-39-68-n.a @ 1468 MHz (1.200 Volts)
+```
+
+### DMI
+```
+SMBIOS Version			3.3
+
+DMI BIOS		
+	vendor			American Megatrends International LLC.
+	version			G513QY.316
+	date			11/29/2021
+	ROM size		16384 KB
+```
+
+### Display Adapters
+```
+Display adapter 1	
+	ID			0x2170003
+	Name			AMD Radeon RX 6800M
+	Board Manufacturer	ASUSTeK Computer Inc.
+	Codename		Navi 22
+	Cores			2560
+	ROP Units		32
+	Technology		7 nm
+	Memory type		GDDR6 (Samsung)
+	Memory size		12272 MB
+	PCI device		bus 3 (0x3), device 0 (0x0), function 0 (0x0)
+		Vendor ID	0x1002 (0x1043)
+		Model ID	0x73DF (0x16C2)
+		Revision ID	0xC3
+	PCI device		bus 2 (0x2), device 0 (0x0), function 0 (0x0)
+		Vendor ID	0x1002
+		Model ID	0x1479
+		Revision ID	0x0
+	PCI device		bus 1 (0x1), device 0 (0x0), function 0 (0x0)
+		Vendor ID	0x1002
+		Model ID	0x1478
+		Revision ID	0xC3
+	Root device		bus 0 (0x0), device 1 (0x1), function 1 (0x1)
+	Performance Level	Current
+		Core clock	9.0 MHz
+		Memory clock	1990.0 MHz
+	Driver version		30.0.13025.5005
+	WDDM Model		2.7
+```
+---!##

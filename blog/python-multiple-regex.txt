@@ -1,0 +1,73 @@
+title: Python How to Replace Multiple Regexes Without Overlaps
+date: 2022-08-06
+body:
+When I was building a new blog generator for this site, I did not want to use any third party packages, therefore I needed some simple markdown like parsing.
+I need to convert markdown in a line, to html.
+
+## Problem: Overlapping Regex Replacements
+I started with multiple regexes using `re.search()`, and doing a simple replacement on the each line.
+However, I was running each regex on the line, one after the other, which performed multiple replacements on the substrings which was bad.
+Let's start with these two:
+`[some url](https://andrewshay.me/__somewebsite__/)`. This should get converted to an html a href with text.
+`__text__`. This should get converted to italics.
+
+Notice that the url text contains the regex for italics. What was happening, first the markdown url would be converted to html a, and then part of that url would get html tags for italics injected. Bad.
+What I needed to do was apply all the regexes, but not overlap them. Once one is used, do not apply another.
+
+## Mega Regex with re.findall()
+I have no idea if this is the correct way to handle this, or if there a term for this, but I couldn't find it online.
+This is easiest to use by using the debugger and looking at the output of `re.findall()`
+
+The process is:
+<ol>
+<li>Create variables for each of your patterns (for readability).</li>
+<li>If a regex has multiple groups (e.g. my img pattern), wrap the entire regex as a group too.</li>
+<li>Create a new variable that ORs them together with `|`.</li>
+<li>Execute `re.findall(combined_pattern, line)`</li>
+<li>Each index in the match objects is the match group(s) for the patterns, in order, from the combined regex.</li>
+<li>My img pattern will always be index 0: the entire img markdown. index 1: the alt text. index 2: the img src.</li>
+<li>I can trim off the markdown characters from 1 and 2, form my html string, then on the line, do a replace of 0 with my new html.</li>
+<li>And the rest of the regexes will not run on the text that already matched.</li>
+<li>Order of the patterns in your combined regex is important.</li>
+</ol>
+
+Here is the code from this blog.
+```
+img_pattern = r&apos;((!\[.+\])(\(.+\)))&apos;
+url_pattern = r&quot;((\[.+\])(\(.+\)))&quot;
+i_pattern = r&apos;(__.*?__)&apos;
+strong_pattern = r&apos;(\*\*.*\*\*)&apos;
+code_pattern = r&apos;(`.+?`)&apos;
+# 0=img total group / 1=img text / 2=img link / 3=url group / 4=url text / 5=url link / 6=code text / 7=i text / 8=strong text / 
+combine = img_pattern + r&apos;|&apos; + url_pattern + r&apos;|&apos; + code_pattern + r&apos;|&apos; + i_pattern + r&apos;|&apos; + strong_pattern
+match = re.findall(combine, new_line)
+
+if match:
+    for m in match:
+        if m[0]:
+            img_alt = m[1][2:-1]
+            img_src = m[2][1:-1]
+            if img_src.startswith(&quot;http&quot;):
+                new_text = f&apos;&lt;img alt=&quot;{img_alt}&quot; src=&quot;{img_src}&quot;&gt;&apos;
+            else:
+                new_text = f&apos;&lt;img alt=&quot;{img_alt}&quot; src=&quot;images/{img_src}&quot;&gt;&apos;
+            new_line = new_line.replace(m[0], new_text)
+
+        if m[3]:
+            url_text = m[4][1:-1]
+            url_href = m[5][1:-1]
+            new_text = f&apos;&lt;a href=&quot;{url_href}&quot;&gt;{url_text}&lt;/a&gt;&apos;
+            new_line = new_line.replace(m[3], new_text)
+
+        if m[6]:
+            code_text = m[6][1:-1]
+            new_line = new_line.replace(m[6], f&apos;&lt;code&gt;{code_text}&lt;/code&gt;&apos;)
+
+        if m[7]:
+            i_text = m[7][2:-2]
+            new_line = new_line.replace(m[7], f&apos;&lt;i&gt;{i_text}&lt;/i&gt;&apos;)
+
+        if m[8]:
+            strong_text = m[8][2:-2]
+            new_line = new_line.replace(m[8], f&apos;&lt;strong&gt;{strong_text}&lt;/strong&gt;&apos;)
+```

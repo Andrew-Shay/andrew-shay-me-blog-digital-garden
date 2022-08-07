@@ -1,0 +1,28 @@
+title: Software Engineering
+icon: 💾
+
+---##
+title: Inside Look At Modern Web Browser
+url: https://developers.google.com/web/updates/2018/09/inside-browser-part1
+date: 2022-02-01
+---!##
+
+---##
+title: JSON-LD
+description: Structured data in JSON for websites
+url: https://json-ld.org/
+date: 2022-02-01
+---!##
+
+---##
+title: Microdata
+description: Structured data in for websites with attributes
+url: https://developer.mozilla.org/en-US/docs/Web/HTML/Microdata
+date: 2022-02-01
+---!##
+
+---##
+title: HTML Tips
+url: https://markodenic.com/html-tips/
+date: 2022-02-01
+---!##

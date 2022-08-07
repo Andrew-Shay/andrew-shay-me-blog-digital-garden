@@ -1,0 +1,40 @@
+title: Software
+icon: 💽
+
+---##
+title: Transmitic
+url: https://transmitic.net
+description: Encrypted peer-to-peer file transfer and sharing
+date: 2022-08-06
+star:
+---!##
+
+---##
+title: Photopea
+description: Free online photo editor like Photoshop
+url: https://www.photopea.com/
+date: 2022-02-01
+star:
+---!##
+
+---##
+title: Affinity Photo
+description: More affordable alternative to Photoshop
+url: https://affinity.serif.com/en-gb/photo/
+date: 2022-02-01
+star:
+---!##
+
+---##
+title: Archive Box
+description: Archive websites
+url: https://archivebox.io/
+date: 2022-07-01
+---!##
+
+---##
+title: Shotcut
+description: Video editor and exporter
+url: https://shotcut.org/
+date: 2022-07-01
+---!##

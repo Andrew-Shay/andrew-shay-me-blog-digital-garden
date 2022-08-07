@@ -1,0 +1,34 @@
+title: Hacker News Links
+icon: 🔗
+
+---##
+title: 20% of requests for Wikimedia Commons are for one image of a flower
+url: https://news.ycombinator.com/item?id=26072025, https://phabricator.wikimedia.org/T273741
+date: 2022-02-01
+---!##
+
+---##
+title: Artvee
+description: Browse and download high-resolution, public domain artworks.
+url: https://news.ycombinator.com/item?id=25370804, https://artvee.com/
+date: 2022-02-01
+---!##
+
+---##
+title: Dependency on rust removes support for a number of platforms for pyca/cryptography
+url: https://lobste.rs/s/f4chm2/dependency_on_rust_removes_support_for, https://github.com/pyca/cryptography/issues/5771
+date: 2022-08-01
+---!##
+
+---##
+title: LinkedIn’s Alternate Universe
+url: https://news.ycombinator.com/item?id=25320536,https://divinations.substack.com/p/linkedins-alternate-universe
+date: 2022-08-01
+---!##
+
+---##
+title: Mojeek
+description: Independent search engine with its own spider
+url: https://news.ycombinator.com/item?id=25372401,https://www.mojeek.com/
+date: 2022-08-01
+---!##
