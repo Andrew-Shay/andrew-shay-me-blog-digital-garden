@@ -38,3 +38,17 @@ description: Video editor and exporter
 url: https://shotcut.org/
 date: 2022-07-01
 ---!##
+
+---##
+title: Zim
+description: A Desktop Wiki
+url: https://zim-wiki.org/
+date: 2022-08-07
+---!##
+
+---##
+title: diagrams.net
+description: Online diagram software
+url: https://diagrams.net
+date: 2022-08-07
+---!##

@@ -241,7 +241,7 @@ def read_garden():
 
 
 def get_blog_block(blog_posts: List[BlogPost], root):
-    blog_block = """
+    blog_block = """<section>
 <h1>💭 Blog Posts</h1>
 <div class="blog-listing">
 """
@@ -264,14 +264,15 @@ def get_blog_block(blog_posts: List[BlogPost], root):
         else:
             counter += 1
 
-    blog_block += """</div><!--final row-->
+    blog_block += """
 </div><!--blog-listing-->
+</section>
 """
     return blog_block
 
 
 def get_garden_block(categories: List[Category], root):
-    garden_block = """
+    garden_block = """<section>
     <h1>🌱 Digital Garden</h1>
 """
     url = root + "digital-garden/"
@@ -319,7 +320,7 @@ def get_garden_block(categories: List[Category], root):
             no_dupe_entries.append(entry)
 
     starred_entries = [entry for entry in no_dupe_entries if entry.is_starred]
-    starred_entries = starred_entries[:20]
+    starred_entries = starred_entries[:10]
 
     min_count = 10 if 10 > len(starred_entries) else len(starred_entries)
     newest_entries = no_dupe_entries[:min_count]
@@ -348,7 +349,7 @@ def get_garden_block(categories: List[Category], root):
     garden_block += """
     </ol>
         </div>
-    </div>
+    </div></section>
 """
 
 
@@ -364,7 +365,7 @@ def write_index(blog_posts, categories: List[Category]):
     blog_block = get_blog_block(blog_posts, root)
     garden_block = get_garden_block(categories, root)
 
-    html = f"{header} {blog_block} <br> {garden_block} {footer_html}"
+    html = f"{header} {blog_block} {garden_block} {footer_html}"
 
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(html)
@@ -398,7 +399,7 @@ def write_blog(blog_posts: List[BlogPost], root):
         post_date_update = f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {post.updated})" if post.updated != post.date else ""
         post_date_block = f'<div class="blog-date">{post.date}{post_date_update}</div>' if post.date else ''
         breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}blog">Blog</a> &gt; {post.title[:20]}...'
-        post_html = f'{header}{breadcrumbs}<br><br><h1>{post.title}</h1>{post_date_block}{post_html}{footer_html}'
+        post_html = f'{header}{breadcrumbs}<br><br>\n<article><h1>{post.title}</h1>{post_date_block}{post_html}</article>\n{footer_html}'
 
         post_index_path = os.path.join(post_path, 'index.html')
         assert not os.path.exists(post_index_path), post_index_path
@@ -450,7 +451,7 @@ def write_garden(categories: List[Category], root):
                 breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a> &gt; <a href="{root}digital-garden/{post.html_name}">{post.title}</a> &gt; {post.title[:20]}...'
                 post_date_update = f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {entry.updated})" if entry.updated != entry.date else ""
                 post_date_block = f'<div class="blog-date">{entry.date}{post_date_update}</div>' if entry.date else ''
-                html = f'{eheader}{breadcrumbs}<br><br><h1>{entry.title}</h1>{post_date_block}{html}{footer_html}'
+                html = f'{eheader}{breadcrumbs}<br><br>\n<article><h1>{entry.title}</h1>{post_date_block}{html}</article>\n{footer_html}'
 
                 p=os.path.join(post_path, entry.file)
                 assert not os.path.exists(p), p
@@ -516,7 +517,6 @@ def write_feed(blog_posts: List[BlogPost]):
     import time
     date_time = datetime.fromtimestamp(time.time())
     str_date_time = date_time.strftime("%Y-%m-%dT%H:%M:%SZ")
-    print("Current timestamp", str_date_time)
 
     feed_xml = f"""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
