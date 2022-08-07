@@ -1,3 +1,4 @@
+import html
 from importlib.resources import contents
 import os
 from turtle import title
@@ -531,12 +532,17 @@ def write_feed(blog_posts: List[BlogPost]):
 """
 
     for post in blog_posts:
+        body = '\n'.join(post.body_lines_formatted)
+        body = html.escape(body)
         feed_xml += f"""
 <entry>
     <title>{post.title}</title>
     <link href="https://andrewshay.me/blog/{post.html_name}"/>
     <id>{post.file_name}</id>
     <updated>{post.updated}</updated>
+    <content type="html">
+        {body}
+    </content>
 </entry>
         """
 
