@@ -2,6 +2,12 @@ title: Rust
 icon: ⚙️
 
 ---##
+title: Using unwrap() in Rust is okay
+url: https://blog.burntsushi.net/unwrap/,https://news.ycombinator.com/item?id=32385102,https://doc.rust-lang.org/book/ch09-03-to-panic-or-not-to-panic.html#cases-in-which-you-have-more-information-than-the-compiler
+date: 2022-08-08
+---!##
+
+---##
 title: Transmitic
 url: https://transmitic.net
 description: Encrypted peer-to-peer file transfer and sharing

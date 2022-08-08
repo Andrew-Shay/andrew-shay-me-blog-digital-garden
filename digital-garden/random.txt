@@ -2,6 +2,20 @@ title: Random
 icon: 🔮
 
 ---##
+title: Dalle 2
+description: AI generated art
+url: https://openai.com/dall-e-2
+date: 2022-08-08
+star:
+---!##
+
+---##
+title: Hotline Webring
+url: https://hotlinewebring.club/
+date: 2022-08-07
+---!##
+
+---##
 title: Blog Surf
 description: Blog Search Engine
 url: https://blogsurf.io/
@@ -98,4 +112,477 @@ title: nnneon
 description: Glowing SVG shapes
 url: https://fffuel.co/nnneon/
 date: 2022-08-07
+---!##
+
+---##
+title: Battle of the Networks
+file: battle-of-the-networks.html
+description: Describes networks before "The Internet"
+url: https://fffuel.co/nnneon/
+date: 2022-08-07
+body:
+Great read about the history of networks before "The Internet".
+
+`Chapter 2: Battle of the Networks` from the book `The Future of the Internet and How to Stop It`
+by Jonathan L. Zittrain
+
+1) [Book website](http://yupnet.org/zittrain/)
+2) [PDF from Harvard Libary](https://dash.harvard.edu/bitstream/handle/1/4455262/Zittrain_Future%20of%20the%20Internet.pdf?sequence=1&isAllowed=y)
+
+This work is licensed under a [Creative Commons Attribution-Noncommercial-Share Alike 3.0 Unported License](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+
+## Chapter 2: Battle of the Networks
+As the price of computer processors and peripheral components
+dropped precipitously from the days of mainframes, it became easier
+for computer technology to end up in people’s homes. But the crucial
+element of the PC’s success is not that it has a cheap processor inside,
+but that it is generative: it is open to reprogramming and thus repurposing by anyone. Its technical architecture, whether Windows, Mac,
+or other, makes it easy for authors to write and owners to run new
+code both large and small. As prices dropped, distributed ownership
+of computers, rather than leasing within institutional environments,
+became a practical reality, removing legal and business practice barriers to generative tinkering with the machines.
+If the hobbyist PC had not established the value of tinkering so that
+the PC could enter the mainstream in the late 1980s,1 what cheap
+processors would small firms and mainstream consumers be using 
+today? One possibility is a set of information appliances. In such a
+world, people would use smart typewriters for word processing from
+companies like Brother: all-in-one units with integrated screens and
+printers that could be used only to produce documents. For gaming,
+they would use dedicated video game consoles—just as many do today. A personal checkbook might have had its own souped-up adding machine/calculator unit for balancing accounts—or it might have had no appliance at all, since
+the cost of deploying specialized hardware for that purpose might have exceeded consumer demand.
+There is still the question of networking. People would likely still want to exchange word processing and other documents with colleagues or friends. To
+balance checkbooks conveniently would require communication with the
+bank so that the user would not have to manually enter cleared checks and their
+dates from a paper statement. Networking is not impossible in a world of
+stand-alone appliances. Brother word processor users could exchange diskettes
+with each other, and the bank could mail its customers cassettes, diskettes, or
+CD-ROMs containing data usable only with the bank’s in-home appliance. Or
+the home appliance could try to contact the bank’s computer from afar—an activity that would require the home and the bank to be networked somehow.
+This configuration converges on the Hollerith model, where a central computer could be loaded with the right information automatically if it were in the
+custody of the bank, or if the bank had a business relationship with a thirdparty manager. Then the question becomes how far away the various dumb terminals could be from the central computer. The considerable expense of building networks would suggest placing the machines in clusters, letting people
+come to them. Electronic balancing of one’s checkbook would take place at a
+computer installed in a bank lobby or strategically located cyber café, just as 
+automated teller machines (ATMs) are dispersed around cities today. People
+could perform electronic document research over another kind of terminal
+found at libraries and schools. Computers, then, are only one piece of a mosaic
+that can be more or less generative. Another critical piece is the network, its
+own generativity hinging on how much it costs to use, how its costs are measured, and the circumstances under which its users can connect to one another.
+Just as information processing devices can be appliance, mainframe, PC, or
+something in between, there are a variety of ways to design a network. The
+choice of configuration involves many trade-offs. This chapter explains why
+the Internet was not the only way to build a network—and that different network configurations lead not only to different levels of generativity, but also to
+different levels of regulability and control. That we use the Internet today is not
+solely a matter of some policy-maker’s choice, although certain regulatory interventions and government funding were necessary to its success. It is due to
+an interplay of market forces and network externalities that are based on pre20 The Rise and Stall of the Generative Net
+sumptions such as how trustworthy we can expect people to be. As those presumptions begin to change, so too will the shape of the network and the things
+we connect to it.
+
+BUILDING NETWORKS ON A NETWORK
+Returning to a threshold question: if we wanted to allow people to use information technology at home and to be able to network in ways beyond sending
+floppy diskettes through the mail, how can we connect homes to the wider
+world? A natural answer would be to piggyback on the telephone network,
+which was already set up to convey people’s voices from one house to another,
+or between houses and institutions. Cyberlaw scholar Tim Wu and others have
+pointed out how difficult it was at first to put the telephone network to any new
+purpose,not for technical reasons, but for ones of legal control—and thus how
+important early regulatory decisions forcing an opening of the network were to
+the success of digital networking.2
+In early twentieth-century America, AT&T controlled not only the telephone network, but also the devices attached to it. People rented their phones
+from AT&T, and the company prohibited them from making any modifications to the phones. To be sure, there were no AT&T phone police to see what
+customers were doing, but AT&T could and did go after the sellers of accessories like the Hush-A-Phone, which was invented in 1921 as a way to have a
+conversation without others nearby overhearing it.3 It was a huge plastic funnel
+enveloping the user’s mouth on one end and strapped to the microphone of
+the handset on the other, muffling the conversation. Over 125,000 units were
+sold.
+As the monopoly utility telephone provider, AT&T faced specialized regulation from the U.S. Federal Communications Commission (FCC). In 1955, the
+FCC held that AT&T could block the sale of the funnels as “unauthorized foreign attachments,” and terminate phone service to those who purchased them,
+but the agency’s decision was reversed by an appellate court. The court drolly
+noted, “[AT&T does] not challenge the subscriber’s right to seek privacy. They
+say only that he should achieve it by cupping his hand between the transmitter
+and his mouth and speaking in a low voice into this makeshift muffler.”4
+Cupping a hand and placing a plastic funnel on the phone seemed the same
+to the court. It found that at least in cases that were not “publicly detrimental”—in other words, where the phone system was not itself harmed—AT&T
+had to allow customers to make physical additions to their handsets, and manBattle of the Networks 21
+ufacturers to produce and distribute those additions. AT&T could have invented the Hush-A-Phone funnel itself. It did not; it took outsiders to begin
+changing the system, even in small ways.
+Hush-A-Phone was followed by more sweeping outside innovations. During
+the 1940s, inventor Tom Carter sold and installed two-way radios for companies with workers out in the field. As his business caught on, he realized
+how much more helpful it would be to be able to hook up a base station’s radio to a telephone so that faraway executives could be patched in to the front
+lines. He invented the Carterfone to do just that in 1959 and sold over 3,500
+units. AT&T told its customers that they were not allowed to use Carterfones,
+because these devices hooked up to the network itself, unlike the Hush-APhone, which connected only to the telephone handset. Carter petitioned
+against the rule and won.5 Mindful of the ideals behind the Hush-A-Phone
+decision, the FCC agreed that so long as the network was not harmed, AT&T
+could not block new devices, even ones that directly hooked up to the phone
+network.
+These decisions paved the way for advances invented and distributed by
+third parties, advances that were the exceptions to the comparative innovation
+desert of the telephone system. Outsiders introduced devices such as the answering machine, the fax machine, and the cordless phone that were rapidly
+adopted.6 The most important advance, however, was the dial-up modem, a
+crucial piece of hardware bridging consumer information processors and the
+world of computer networks, whether proprietary or the Internet.
+With the advent of the modem, people could acquire plain terminals or PCs
+and connect them to central servers over a telephone line. Users could dial up
+whichever service they wanted: a call to the bank’s network for banking, followed by a call to a more generic “information service” for interactive weather
+and news.
+The development of this capability illustrates the relationships among the
+standard layers that can be said to exist in a network: at the bottom are the
+physical wires, with services above, and then applications, and finally content
+and social interaction. If AT&T had prevailed in the Carterfone proceeding, it
+would have been able to insist that its customers use the phone network only
+for traditional point-to-point telephone calls. The phone network would have
+been repurposed for data solely at AT&T’s discretion and pace. Because AT&T
+lost, others’ experiments in data transmission could move forward. The physical layer had become generative, and this generativity meant that additional
+types of activity in higher layers were made possible. While AT&T continued
+22 The Rise and Stall of the Generative Net
+collecting rents from the phone network’s use whether for voice or modem
+calls, both amateurs working for fun and entrepreneurs seeking new business
+opportunities got into the online services business.
+THE PROPRIETARY NETWORK MODEL
+The first online services built on top of AT&T’s phone network were natural
+extensions of the 1960s IBM-model minicomputer usage within businesses:
+one centrally managed machine to which employees’ dumb terminals connected. Networks like CompuServe, The Source, America Online, Prodigy,
+GEnie, and MCI Mail gave their subscribers access to content and services deployed solely by the network providers themselves.7
+In 1983, a home computer user with a telephone line and a CompuServe
+subscription could pursue a variety of pastimes8—reading an Associated Press
+news feed, chatting in typed sentences with other CompuServe subscribers
+through a “CB radio simulator,” sending private e-mail to fellow subscribers,
+messaging on bulletin boards, and playing rudimentary multiplayer games.9
+But if a subscriber or an outside company wanted to develop a new service that
+might appeal to CompuServe subscribers, it could not automatically do so.
+Even if it knew how to program on CompuServe’s mainframes, an aspiring
+provider needed CompuServe’s approval. CompuServe entered into development agreements with outside content providers10 like the Associated Press
+and, in some cases, with outside programmers,11 but between 1984 and 1994,
+as the service grew from one hundred thousand subscribers to almost two million, its core functionalities remained largely unchanged.12
+Innovation within services like CompuServe took place at the center of the
+network rather than at its fringes. PCs were to be only the delivery vehicles for
+data sent to customers, and users were not themselves expected to program or
+to be able to receive services from anyone other than their central service
+provider. CompuServe depended on the phone network’s physical layer generativity to get the last mile to a subscriber’s house, but CompuServe as a service
+was not open to third-party tinkering.
+Why would CompuServe hold to the same line that AT&T tried to draw?
+After all, the economic model for almost every service was the connect charge:
+a per-minute fee for access rather than advertising or transactional revenue.13
+With mere connect time as the goal, one might think activity-garnering usercontributed software running on the service would be welcome, just as usercontributed content in the CB simulator or on a message board produced revBattle of the Networks 23
+enue if it drew other users in. Why would the proprietary services not harness
+the potential generativity of their offerings by making their own servers more
+open to third-party coding? Some networks’ mainframes permitted an area in
+which subscribers could write and execute their own software,14 but in each
+case restrictions were quickly put in place to prevent other users from running
+that software online. The “programming areas” became relics, and the Hollerith model prevailed.
+Perhaps the companies surmised that little value could come to them from
+user and third-party tinkering if there were no formal relationship between
+those outside programmers and the information service’s in-house developers.
+Perhaps they thought it too risky: a single mainframe or set of mainframes running a variety of applications could not risk being compromised by poorly
+coded or downright rogue applications.
+Perhaps they simply could not grasp the potential to produce new works that
+could be found among an important subset of their subscribers—all were instead thought of solely as consumers. Or they may have thought that all the
+important applications for online consumer services had already been invented—news, weather, bulletin boards, chat, e-mail, and the rudiments of
+shopping.
+In the early 1990s the future seemed to be converging on a handful of corporate-run networks that did not interconnect. There was competition of a sort
+that recalls AT&T’s early competitors: firms with their own separate wires going to homes and businesses. Some people maintained an e-mail address on
+each major online service simply so that they could interact with friends and
+business contacts regardless of the service the others selected. Each information
+service put together a proprietary blend of offerings, mediated by software produced by the service. Each service had the power to decide who could subscribe, under what terms, and what content would be allowed or disallowed, 
+either generally (should there be a forum about gay rights?) or specifically
+(should this particular message about gay rights be deleted?). For example,
+Prodigy sought a reputation as a family-friendly service and was more aggressive about deleting sensitive user-contributed content; CompuServe was more
+of a free-for-all.15
+But none seemed prepared to budge from the business models built around
+their mainframes, and, as explained in detail in Chapter Four, works by scholars such as Mary Benner and Michael Tushman shed some light on why. Mature firms can acquire “stabilizing organizational routines”: “internal biases for
+certainty and predictable results [which] favor exploitative innovation at the
+24 The Rise and Stall of the Generative Net
+expense of exploratory innovation.”16 And so far as the proprietary services
+could tell, they had only one competitor other than each other: generative PCs
+that used their modems to call other PCs instead of the centralized services. Exactly how proprietary networks would have evolved if left only to that competition will never be known, for CompuServe and its proprietary counterparts
+were soon overwhelmed by the Internet and the powerful PC browsers used to
+access it.17 But it is useful to recall how those PC-to-PC networks worked, and
+who built them.
+
+A GRASSROOTS NETWORK OF PCs
+Even before PC owners had an opportunity to connect to the Internet, they
+had an alternative to paying for appliancized proprietary networks. Several
+people wrote BBS (“bulletin board system”) software that could turn any PC
+into its own information service.18 Lacking ready arrangements with institutional content providers like the Associated Press, computers running BBS
+software largely depended on their callers to provide information as well as to
+consume it. Vibrant message boards, some with thousands of regular participants, sprang up. But they were limited by the physical properties and business
+model of the phone system that carried their data. Even though the Carterfone
+decision permitted the use of modems to connect users’ computers, a PC hosting a BBS was limited to one incoming call at a time unless its owner wanted to
+pay for more phone lines and some arcane multiplexing equipment.19 With
+many interested users having to share one incoming line to a BBS, it was the
+opposite of the proprietary connect time model: users were asked to spend as
+little time connected as possible.
+PC generativity provided a way to ameliorate some of these limitations. 
+A PC owner named Tom Jennings wrote FIDOnet in the spring of 1984.20
+FIDOnet was BBS software that could be installed on many PCs. Each FIDOnet BBS could call another in the FIDO network and they would exchange
+their respective message stores. That way, users could post messages to a single
+PC’s BBS and find it copied automatically, relay-style, to hundreds of other
+BBSs around the world, with replies slowly working their way around to all the
+FIDOnet BBSs. In the fall of 1984 FIDOnet claimed 160 associated PCs; by
+the early 1990s it boasted 32,000, and many other programmers had made
+contributions to improve Jennings’s work.21
+Of course, FIDOnet was the ultimate kludge, simultaneously a testament to
+the distributed ingenuity of those who tinker with generative technologies and
+Battle of the Networks 25
+a crude workaround that was bound to collapse under its own weight. Jennings
+found that his network did not scale well, especially since it was built on top of
+a physical network whose primary use was to allow two people, not many computers, to talk to each other. As the FIDOnet community grew bigger, it was no
+longer a community—at least not a set of people who each knew one another.
+Some new FIDOnet installations had the wrong dial-in numbers for their
+peers, which meant that computers were calling people instead of other computers, redialing every time a computer did not answer.
+“To impress on you the seriousness of wrong numbers in the node list,” Jennings wrote, “imagine you are a poor old lady, who every single night is getting
+phone calls EVERY TWO MINUTES AT 4:00AM, no one says anything,
+then hangs up. This actually happened; I would sit up and watch when there
+was mail that didn’t go out for a week or two, and I’d pick up the phone after dialing, and was left in the embarrasing [sic] position of having to explain bulletin boards to an extremely tired, extremely annoyed person.”22
+In some ways, this was the fear AT&T had expressed to the FCC during the
+Carterfone controversy. When AT&T was no longer allowed to perform quality
+control on the devices hooking up to the network, problems could arise and
+AT&T would reasonably disclaim responsibility. Jennings and others worked
+to fix software problems as they arose with new releases, but as FIDOnet authors wrestled with the consequences of their catastrophic success, it was clear
+that the proprietary services were better suited for mainstream consumers.
+They were more reliable, better advertised, and easier to use. But FIDOnet
+demonstrates that amateur innovation—cobbling together bits and pieces
+from volunteers—can produce a surprisingly functional and effective result—
+one that has been rediscovered today in some severely bandwidth-constrained
+areas of the world.23
+Those with Jennings’s urge to code soon had an alternative outlet, one that
+even the proprietary networks did not foresee as a threat until far too late: the
+Internet, which appeared to combine the reliability of the pay networks with
+the ethos and flexibility of user-written FIDOnet.
+
+ENTER THE INTERNET
+Just as the general-purpose PC beat leased and appliancized counterparts that
+could perform only their manufacturers’ applications and nothing else, the Internet first linked to and then functionally replaced a host of proprietary consumer network services.24
+26 The Rise and Stall of the Generative Net
+The Internet’s founding is pegged to a message sent on October 29, 1969. It
+was transmitted from UCLA to Stanford by computers hooked up to prototype “Interface Message Processors” (IMPs).25 A variety of otherwise-incompatible computer systems existed at the time—just as they do now—and the
+IMP was conceived as a way to connect them.26 (The UCLA programmers
+typed “log” to begin logging in to the Stanford computer. The Stanford computer crashed after the second letter, making “Lo” the first Internet message.)
+From its start, the Internet was oriented differently from the proprietary networks and their ethos of bundling and control. Its goals were in some ways
+more modest. The point of building the network was not to offer a particular
+set of information or services like news or weather to customers, for which the
+network was necessary but incidental. Rather, it was to connect anyone on the
+network to anyone else. It was up to the people connected to figure out why
+they wanted to be in touch in the first place; the network would simply carry
+data between the two points.
+The Internet thus has more in common with FIDOnet than it does with
+CompuServe, yet it has proven far more useful and flexible than any of the proprietary networks. Most of the Internet’s architects were academics, amateurs
+like Tom Jennings in the sense that they undertook their work for the innate interest of it, but professionals in the sense that they could devote themselves full
+time to its development. They secured crucial government research funding
+and other support to lease some of the original raw telecommunications facilities that would form the backbone of the new network, helping to make the
+protocols they developed on paper testable in a real-world environment. The
+money supporting this was relatively meager—on the order of tens of millions
+of dollars from 1970 to 1990, and far less than a single popular startup raised in
+an initial public offering once the Internet had gone mainstream. (For example,
+ten-month-old, money-losing Yahoo! raised $35 million at its 1996 initial public offering.27 On the first day it started trading, the offered chunk of the company hit over $100 million in value, for a total corporate valuation of more
+than $1 billion.28)
+The Internet’s design reflects the situation and outlook of the Internet’s
+framers: they were primarily academic researchers and moonlighting corporate
+engineers who commanded no vast resources to implement a global network.29
+The early Internet was implemented at university computer science departments, U.S. government research units,30 and select telecommunications companies with an interest in cutting-edge network research.31 These users might
+naturally work on advances in bandwidth management or tools for researchers
+Battle of the Networks 27
+to use for discussion with each other, including informal, non-work-related
+discussions. Unlike, say, FedEx, whose wildly successful paper transport network depended initially on the singularly focused application of venture capital to design and create an efficient physical infrastructure for delivery, those individuals thinking about the Internet in the 1960s and ’70s planned a network
+that would cobble together existing research and government networks and
+then wring as much use as possible from them.32
+The design of the Internet reflected not only the financial constraints of its
+creators, but also their motives. They had little concern for controlling the network or its users’ behavior.33 The network’s design was publicly available and
+freely shared from the earliest moments of its development. If designers disagreed over how a particular protocol should work, they would argue until one
+had persuaded most of the interested parties. The motto among them was, “We
+reject: kings, presidents, and voting. We believe in: rough consensus and running code.”34 Energy spent running the network was seen as a burden rather
+than a boon. Keeping options open for later network use and growth was seen
+as sensible, and abuse of the network by those joining it without an explicit approval process was of little worry since the people using it were the very people
+designing it—engineers bound by their desire to see the network work.35
+The Internet was so different in character and audience from the proprietary
+networks that few even saw them as competing with one another. However, by
+the early 1990s, the Internet had proven its use enough that some large firms
+were eager to begin using it for data transfers for their enterprise applications. It
+helped that the network was subsidized by the U.S. government, allowing flatrate pricing for its users. The National Science Foundation (NSF) managed the
+Internet backbone and asked that it be used only for noncommercial purposes,
+but by 1991 was eager to see it privatized.36 Internet designers devised an entirely new protocol so that the backbone no longer needed to be centrally managed by the NSF or a single private successor, paving the way for multiple private network providers to bid to take up chunks of the old backbone, with no
+one vendor wholly controlling it.37
+Consumer applications were originally nowhere to be found, but that
+changed after the Internet began accepting commercial interconnections without network research pretexts in 1991. The public at large was soon able to sign
+up, which opened development of Internet applications and destinations to a
+broad, commercially driven audience.
+No major PC producer immediately moved to design Internet Protocol
+28 The Rise and Stall of the Generative Net
+compatibility into its PC operating system. PCs could dial in to a single computer like that of CompuServe or AOL and communicate with it, but the ability to run Internet-aware applications on the PC itself was limited. To attach to
+the Internet, one would need a minicomputer or workstation of the sort typically found within university computer science departments—and usually
+used with direct network connections rather than modems and phone lines.
+A single hobbyist took advantage of PC generativity and forged the missing
+technological link. Peter Tattam, an employee in the psychology department of
+the University of Tasmania, wrote Trumpet Winsock, a program that allowed
+owners of PCs running Microsoft Windows to forge a point-to-point Internet
+connection with the dial-up servers run by nascent Internet Service Providers
+(ISPs).38With no formal marketing or packaging, Tattam distributed Winsock
+as shareware. He asked people to try out the program for free and to send him
+$25 if they kept using it beyond a certain tryout period.39
+Winsock was a runaway success, and in the mid-1990s it was the primary
+way that Windows users could access the Internet. Even before there was wide
+public access to an Internet through which to distribute his software, he
+claimed hundreds of thousands of registrations for it,40 and many more people
+were no doubt using it and declining to register. Consumer accessibility to Internet-enabled applications, coupled with the development of graphic-friendly
+World Wide Web protocols and the PC browsers to support them—both initially noncommercial ventures—marked the beginning of the end of proprietary information services and jerry-rigged systems like FIDOnet. Consumers
+began to explore the Internet, and those who wanted to reach this group, such
+as commercial merchants and advertising-driven content providers, found it
+easier to set up outposts there than through the negotiated gates of the proprietary services.
+Microsoft bundled the functionality of Winsock with late versions of Windows 95.41 After that, anyone buying a PC could hook up to the Internet instead of only to AOL’s or CompuServe’s walled gardens. Proprietary information services scrambled to reorient their business models away from corralled
+content and to ones of accessibility to the wider Internet.42 Network providers
+offering a bundle of content along with access increasingly registered their appeal simply as ISPs. They became mere on-ramps to the Internet, with their
+users branching out to quickly thriving Internet destinations that had no relationship to the ISP for their programs and services.43 For example, CompuServe’s “Electronic Mall,” an e-commerce service intended as the exclusive
+Battle of the Networks 29
+means by which outside vendors could sell products to CompuServe subscribers,44 disappeared under the avalanche of individual Web sites selling
+goods to anyone with Internet access.
+The resulting Internet was a network that no one in particular owned and
+that anyone could join. Of course, joining required the acquiescence of at least
+one current Internet participant, but if one was turned away at one place, there
+were innumerable other points of entry, and commercial ISPs emerged to provide service at commoditized rates.45
+The bundled proprietary model, designed expressly for consumer uptake,
+had been defeated by the Internet model, designed without consumer demands
+in mind. Proprietary services tried to have everything under one roof and to vet
+each of their offerings, just as IBM leased its general-purpose computers to its
+1960s customers and wholly managed them, tailoring them to those customers’ perceived needs in an ordered way. The Internet had no substantive
+offerings at all—but also no meaningful barriers to someone else’s setting up
+shop online. It was a model similar to that of the PC, a platform rather than a
+fully finished edifice, one open to a set of offerings from anyone who wanted to
+code for it.
+
+DESIGN CHOICES AND THE INTERNET ETHOS
+Recall that our endpoint devices can possess varying levels of accessibility to
+outside coding. Where they are found along that spectrum creates certain basic
+trade-offs. A less generative device like an information appliance or a generalpurpose computer managed by a single vendor can work more smoothly because there is only one cook over the stew, and it can be optimized to a particular perceived purpose. But it cannot be easily adapted for new uses. A more
+generative device like a PC makes innovation easier and produces a broader
+range of applications because the audience of people who can adapt it to new
+uses is much greater. Moreover, these devices can at first be simpler because
+they can be improved upon later; at the point they leave the factory they do not
+have to be complete. That is why the first hobbyist PCs could be so inexpensive: they had only the basics, enough so that others could write software to
+make them truly useful. But it is harder to maintain a consistent experience
+with such a device because its behavior is then shaped by multiple software authors not acting in concert. Shipping an incomplete device also requires a certain measure of trust: trust that at least some third-party software writers will
+write good and useful code, and trust that users of the device will be able to ac30 The Rise and Stall of the Generative Net
+cess and sort out the good and useful code from the bad and even potentially
+harmful code.
+These same trade-offs existed between proprietary services and the Internet,
+and Internet design, like its generative PC counterpart, tilted toward the simple
+and basic. The Internet’s framers made simplicity a core value—a risky bet with
+a high payoff. The bet was risky because a design whose main focus is simplicity may omit elaboration that solves certain foreseeable problems. The simple
+design that the Internet’s framers settled upon makes sense only with a set of
+principles that go beyond mere engineering. These principles are not obvious
+ones—for example, the proprietary networks were not designed with them in
+mind—and their power depends on assumptions about people that, even if
+true, could change. The most important are what we might label the procrastination principle and the trust-your-neighbor approach.
+The procrastination principle rests on the assumption that most problems
+confronting a network can be solved later or by others. It says that the network
+should not be designed to do anything that can be taken care of by its users. Its
+origins can be found in a 1984 paper by Internet architects David Clark, David
+Reed, and Jerry Saltzer. In it they coined the notion of an “end-to-end argument” to indicate that most features in a network ought to be implemented at
+its computer endpoints—and by those endpoints’ computer programmers—
+rather than “in the middle,” taken care of by the network itself, and designed by
+the network architects.46 The paper makes a pure engineering argument, explaining that any features not universally useful should not be implemented, in
+part because not implementing these features helpfully prevents the generic
+network from becoming tilted toward certain uses. Once the network was optimized for one use, they reasoned, it might not easily be put to other uses that
+may have different requirements.
+The end-to-end argument stands for modularity in network design: it allows
+the network nerds, both protocol designers and ISP implementers, to do their
+work without giving a thought to network hardware or PC software. More generally, the procrastination principle is an invitation to others to overcome the
+network’s shortcomings, and to continue adding to its uses.
+Another fundamental assumption, reflected repeatedly in various Internet
+design decisions that tilted toward simplicity, is about trust. The people using
+this network of networks and configuring its endpoints had to be trusted to be
+more or less competent and pure enough at heart that they would not intentionally or negligently disrupt the network. The network’s simplicity meant
+that many features found in other networks to keep them secure from fools and
+Battle of the Networks 31
+knaves would be absent. Banks would be simpler and more efficient if they did
+not need vaults for the cash but could instead keep it in accessible bins in plain
+view. Our houses would be simpler if we did not have locks on our doors, and
+it would be ideal to catch a flight by following an unimpeded path from the airport entrance to the gate—the way access to many trains and buses persists today.
+An almost casual trust for the users of secured institutions and systems is
+rarely found: banks are designed with robbers in mind. Yet the assumption that
+network participants can be trusted, and indeed that they will be participants
+rather than customers, infuses the Internet’s design at nearly every level. Anyone can become part of the network so long as any existing member of the network is ready to share access. And once someone is on the network, the network’s design is intended to allow all data to be treated the same way: it can be
+sent from anyone to anyone, and it can be in support of any application developed by an outsider.
+Two examples illustrate these principles and their trade-offs: the Internet’s
+lack of structure to manage personal identity, and its inability to guarantee
+transmission speed between two points.
+There are lots of reasons for a network to be built to identify the people using it, rather than just the machines found on it. Proprietary networks like
+CompuServe and AOL were built just that way. They wanted to offer different
+services to different people, and to charge them accordingly, so they ensured
+that the very first prompt a user encountered when connecting to the network
+was to type in a prearranged user ID and password. No ID, no network access.
+This had the added benefit of accountability: anyone engaging in bad behavior
+on the network could have access terminated by whoever managed the IDs.
+The Internet, however, has no such framework; connectivity is much more
+readily shared. User identification is left to individual Internet users and
+servers to sort out if they wish to demand credentials of some kind from those
+with whom they communicate. For example, a particular Web site might demand that a user create an ID and password in order to gain access to its contents.
+This basic design omission has led to the well-documented headaches of
+identifying wrongdoers online, from those who swap copyrighted content to
+hackers who attack the network itself.47 At best, a source of bad bits might be
+traced to a single Internet address. But that address might be shared by more
+than one person, or it might represent a mere point of access by someone at yet
+another address—a link in a chain of addresses that can recede into the dis32 The Rise and Stall of the Generative Net
+tance. Because the user does not have to log in the way he or she would to use a
+proprietary service, identity is obscured. Some celebrate this feature. It can be
+seen as a bulwark against oppressive governments who wish to monitor their
+Internet-surfing populations. As many scholars have explored, whether one is
+for or against anonymity online, a design decision bearing on it, made first as
+an engineering matter, can end up with major implications for social interaction and regulation.48
+Another example of the trade-offs of procrastination and trust can be found
+in the Internet’s absence of “quality of service,” a guarantee of bandwidth between one point and another. The Internet was designed as a network of networks—a bucket-brigade partnership in which network neighbors pass along
+each other’s packets for perhaps ten, twenty, or even thirty hops between two
+points.49 Internet Service Providers might be able to maximize their bandwidth for one or two hops along this path, but the cobbled-together nature of a
+typical Internet link from a source all the way to a destination means that there
+is no easy way to guarantee speed the whole way through. Too many intermediaries exist in between, and their relationship may be one of a handshake
+rather than a contract: “you pass my packets and I’ll pass yours.”50 An endpoint
+several hops from a critical network intermediary will have no contract or
+arrangement at all with the original sender or the sender’s ISP. The person at the
+endpoint must instead rely on falling dominos of trust. The Internet is thus
+known as a “best efforts” network, sometimes rephrased as “Send it and pray”
+or “Every packet an adventure.”51
+The Internet’s protocols thus assume that all packets of data are intended to
+be delivered with equal urgency (or perhaps, more accurately, lack of urgency).
+This assumption of equality is a fiction because some packets are valuable only
+if they can make it to their destination in a timely way. Delay an e-mail by a
+minute or two and no one may be the poorer; delay a stream of music too long
+and there is an interruption in playback. The network could be built to prioritize a certain data stream on the basis of its sender, its recipient, or the nature of
+the stream’s contents. Yet the Internet’s framers and implementers have largely
+clung to simplicity, omitting an architecture that would label and then speed
+along “special delivery” packets despite the uses it might have and the efficiencies it could achieve. As the backbone grew, it did not seem to matter. Those
+with lots of content to share have found ways to stage data “near” its destination
+for others, and the network has proved itself remarkably effective even in areas,
+like video and audio transmission, in which it initially fell short.52 The future
+need not resemble the past, however, and a robust debate exists today about the
+Battle of the Networks 33
+extent to which ISPs ought to be able to prioritize certain data streams over others by favoring some destinations or particular service providers over others.53
+(That debate is joined in a later chapter.)
+***
+The assumptions made by the Internet’s framers and embedded in the network—that most problems could be solved later and by others, and that those
+others themselves would be interested in solving rather than creating problems—arose naturally within the research environment that gave birth to the
+Internet. For all the pettiness sometimes associated with academia, there was a
+collaborative spirit present in computer science research labs, in part because
+the project of designing and implementing a new network—connecting people—can benefit so readily from collaboration.
+It is one thing for the Internet to work the way it was designed when deployed among academics whose raison d’être was to build functioning networks. But the network managed an astonishing leap as it continued to work
+when expanded into the general populace, one which did not share the worldview that informed the engineers’ designs. Indeed, it not only continued to
+work, but experienced spectacular growth in the uses to which it was put. It is
+as if the bizarre social and economic configuration of the quasi-anarchist Burning Man festival turned out to function in the middle of a city.54 What works
+in a desert is harder to imagine in Manhattan: people crashing on each others’
+couches, routinely sharing rides and food, and loosely bartering things of value.
+At the turn of the twenty-first century, then, the developed world has found
+itself with a wildly generative information technology environment.
+Today we enjoy an abundance of PCs hosting routine, if not always-on,
+broadband Internet connections.55The generative PC has become intertwined
+with the generative Internet, and the brief era during which information appliances and appliancized networks flourished—Brother word processors and
+CompuServe—might appear to be an evolutionary dead end.
+Those alternatives are not dead. They have been only sleeping. To see why,
+we now turn to the next step of the pattern that emerges at each layer of generative technologies: initial success triggers expansion, which is followed by
+boundary, one that grows out of the very elements that make that layer appealing. The Internet flourished by beginning in a backwater with few expectations, allowing its architecture to be simple and fluid. The PC had parallel 
+hobbyist backwater days. Each was first adopted in an ethos of sharing and 
+tinkering, with profit ancillary, and each was then embraced and greatly im34 The Rise and Stall of the Generative Net
+proved by commercial forces. But each is now facing problems that call for
+some form of intervention, a tricky situation since intervention is not easy—
+and, if undertaken, might ruin the very environment it is trying to save. The
+next chapter explains this process at the technological layer: why the status quo
+is drawing to a close, confronting us—policy-makers, entrepreneurs, technology providers, and, most importantly, Internet and PC users—with choices we
+can no longer ignore.
 ---!##
