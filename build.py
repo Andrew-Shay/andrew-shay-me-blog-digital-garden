@@ -357,6 +357,14 @@ def get_garden_block(categories: List[Category], root):
 
 def write_index(blog_posts, categories: List[Category]):
 
+    webring = """
+<section style="text-align:center; padding-top: 2rem;">
+<a href="https://hotlinewebring.club/andrew-shay/previous">&lt;--- Previous Site</a>
+<a style="padding-left:1rem;padding-right: 1rem;" href="https://hotlinewebring.club/">Hotline Webring</a>
+<a href="https://hotlinewebring.club/andrew-shay/next">Next Site ---&gt;</a>
+</section>    
+"""
+
     index_path = os.path.join(build_root, 'index.html')
     root = "./"
 
@@ -365,7 +373,7 @@ def write_index(blog_posts, categories: List[Category]):
     blog_block = get_blog_block(blog_posts, root)
     garden_block = get_garden_block(categories, root)
 
-    html = f"{header} {blog_block} {garden_block} {footer_html}"
+    html = f"{header} {blog_block} {garden_block} {webring} {footer_html}"
 
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(html)
