@@ -1,0 +1,35 @@
+title: Transmitic: Encrypted p2p file transfer and sharing. Built with Rust.
+date:2022-08-09
+tags:rust,p2p,transmitic
+body:
+I created, [Transmitic](https://transmitic.net/), desktop software for encrypted, peer to peer, file transfer and sharing.
+It's built with Rust and the GUI is created with [sciter](https://sciter.com/).
+I'm working to make it as easy as possible to use.
+
+It automatically generates an x25519 public signing key. Users must then exchange their public keys and IPs out of band.
+They can choose files and folders on their computer to share, and select which users they want to share those files with.
+Connections are encrypted with AES-GCM.
+
+User's can download the files, and the downloads will resume if it gets disconnected.
+This means it's easy to transfer huge files (no file size limits) without needing to compress them, break them into smaller files etc., or worry about disconnects while uploading.
+
+There's no third party servers involved and no cloud storage, so there is no cost associated with transferring, other than each user's bandwidth. 
+
+## Nothing else quite like Transmitic
+I've always wanted software like Transmitic, especially for transferring 100GB files, but could never find anything quite like it.
+I would think to myself __"I just want to send these files directly from this computer to another."__
+Why is that so difficult and not secure?
+
+There is BitTorrent, but that's difficult to use (in comparison), no out of the box encryption, no easy way to select files to share with specific users.
+
+There is file syncing software, but that syncs whole folders, is harder to quickly add users, and harder to choose what to share with them (more like all or nothing).
+
+[Transmitic](https://transmitic.net/)
+[Download from GitHub](https://github.com/transmitic/transmitic/releases)
+
+## Demo
+![Transmitic Screenshot](https://github.com/transmitic/transmitic/raw/main/screenshot.png)
+
+<video controls style="max-width: 100%;">
+<source src="https://transmitic.net/demo.mp4" type="video/mp4">
+</video>
