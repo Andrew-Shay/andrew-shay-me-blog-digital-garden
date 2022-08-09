@@ -117,11 +117,11 @@ date: 2022-08-07
 ---##
 title: Battle of the Networks
 file: battle-of-the-networks.html
-description: Describes networks before "The Internet"
+description: Describes networks before "The World Wide Web"
 url: https://fffuel.co/nnneon/
 date: 2022-08-07
 body:
-Great read about the history of networks before "The Internet".
+Great read about the history of networks before "The World Wide Web".
 
 `Chapter 2: Battle of the Networks` from the book `The Future of the Internet and How to Stop It`
 by Jonathan L. Zittrain
