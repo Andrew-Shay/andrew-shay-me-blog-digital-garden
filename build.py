@@ -211,7 +211,7 @@ class Category:
             else:
                 assert False, f"{self.title} failed line, '{line_no_strip}'"
 
-        self.entries = sorted(self.entries, key=lambda x: x.title)
+        self.entries = sorted(self.entries, key=lambda x: x.title.lower())
 
         assert self.entries
 
@@ -236,7 +236,7 @@ def read_garden():
             contents = f.read()
             categories.append(Category(contents, file_name))
     
-    categories = sorted(categories, key=lambda x: x.title)
+    categories = sorted(categories, key=lambda x: x.title.lower())
     return categories
 
 
@@ -443,9 +443,9 @@ def write_garden(categories: List[Category], root):
 
         entries = post.entries[:]
         starred_entres = [e for e in entries if e.is_starred]
-        starred_entres = sorted(starred_entres, key= lambda x: x.title)
+        starred_entres = sorted(starred_entres, key= lambda x: x.title.lower())
         other = [e for e in entries if not e.is_starred]
-        other = sorted(other, key=lambda x: x.title)
+        other = sorted(other, key=lambda x: x.title.lower())
 
         entries = starred_entres + other
 
