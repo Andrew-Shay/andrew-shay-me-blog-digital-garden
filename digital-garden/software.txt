@@ -2,6 +2,13 @@ title: Software
 icon: 💽
 
 ---##
+title: kvass
+url: https://github.com/maxmunzel/kvass
+description: a personal key-value store
+date: 2022-08-13
+---!##
+
+---##
 title: Transmitic
 url: https://transmitic.net
 description: Encrypted peer-to-peer file transfer and sharing
@@ -22,7 +29,6 @@ title: Affinity Photo
 description: More affordable alternative to Photoshop
 url: https://affinity.serif.com/en-gb/photo/
 date: 2022-02-01
-star:
 ---!##
 
 ---##

@@ -2,6 +2,26 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Free clouds
+url: https://paul.totterman.name/posts/free-clouds/
+date: 2022-08-26
+---!##
+
+---##
+title: github.com/gelstudios/gitfiti
+description: abusing github commit history for the lulz 
+url: https://github.com/gelstudios/gitfiti
+date: 2022-08-26
+---!##
+
+---##
+title: (A few) Ops Lessons We All Learn The Hard Way
+url: https://www.netmeister.org/blog/ops-lessons.html
+date: 2022-08-24
+star:
+---!##
+
+---##
 title: Inside Look At Modern Web Browser
 url: https://developers.google.com/web/updates/2018/09/inside-browser-part1
 date: 2022-02-01

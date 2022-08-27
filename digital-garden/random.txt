@@ -2,6 +2,27 @@ title: Random
 icon: 🔮
 
 ---##
+title: Colour Photography Before Colour Photography
+url: https://worksthatwork.com/6/sergey-prokudin-gorskii
+date: 2022-08-26
+---!##
+
+---##
+title: Johnny Decimal System
+description: A system to organise projects
+url: https://fortelabs.co/blog/para/
+date: 2022-08-24
+star:
+---!##
+
+---##
+title: PARA Organizing  Method 
+description: A Universal System for Organizing Digital Information
+url: https://fortelabs.co/blog/para/
+date: 2022-08-23
+---!##
+
+---##
 title: Dalle 2
 description: AI generated art
 url: https://openai.com/dall-e-2
@@ -41,7 +62,6 @@ title: Marginalia
 description: Independent DIY search engine that focuses on non-commercial content
 url: https://search.marginalia.nu/
 date: 2022-08-05
-star:
 ---!##
 
 ---##
@@ -49,7 +69,6 @@ title: Webpage List
 description: Discover new websites
 url: https://webpagelist.com/
 date: 2022-08-05
-star:
 ---!##
 
 ---##

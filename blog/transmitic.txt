@@ -10,7 +10,7 @@ It automatically generates an x25519 public signing key. Users must then exchang
 They can choose files and folders on their computer to share, and select which users they want to share those files with.
 Connections are encrypted with AES-GCM.
 
-User's can download the files, and the downloads will resume if it gets disconnected.
+Users can download the files, and the downloads will resume if it gets disconnected.
 This means it's easy to transfer huge files (no file size limits) without needing to compress them, break them into smaller files etc., or worry about disconnects while uploading.
 
 There's no third party servers involved and no cloud storage, so there is no cost associated with transferring, other than each user's bandwidth. 

@@ -1,6 +1,11 @@
 title: Programming Books
 icon: 📘
 
+---##
+title: High Performance Browser Networking
+url: https://hpbn.co/
+date: 2022-08-26
+---!##
 
 ---##
 title: Beej's Guide to Network Programming
