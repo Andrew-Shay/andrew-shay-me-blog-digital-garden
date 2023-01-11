@@ -30,9 +30,33 @@ date: 2022-02-01
 ---!##
 
 ---##
-title: The Rust Performance Book
+title: book: The Rust Performance Book
 url: https://nnethercote.github.io/perf-book/
 date: 2022-02-01
+---!##
+
+---##
+title: book: Comprehensive Rust
+url: https://google.github.io/comprehensive-rust/
+date: 2023-01-10
+---!##
+
+---##
+title: book: Rust Atomics and Locks
+url: https://marabos.nl/atomics/
+date: 2023-01-10
+---!##
+
+---##
+title: book: Profile-guided Optimization
+url: https://doc.rust-lang.org/rustc/profile-guided-optimization.html
+date: 2023-01-10
+---!##
+
+---##
+title: book: The Rustonomicon
+url: https://doc.rust-lang.org/nomicon/
+date: 2023-01-10
 ---!##
 
 ---##

@@ -2,6 +2,12 @@ title: Random
 icon: 🔮
 
 ---##
+title: Map of Reddit
+url: https://anvaka.github.io/map-of-reddit
+date: 2022-08-27
+---!##
+
+---##
 title: Colour Photography Before Colour Photography
 url: https://worksthatwork.com/6/sergey-prokudin-gorskii
 date: 2022-08-26
@@ -10,7 +16,7 @@ date: 2022-08-26
 ---##
 title: Johnny Decimal System
 description: A system to organise projects
-url: https://fortelabs.co/blog/para/
+url: https://johnnydecimal.com/
 date: 2022-08-24
 star:
 ---!##
@@ -27,7 +33,6 @@ title: Dalle 2
 description: AI generated art
 url: https://openai.com/dall-e-2
 date: 2022-08-08
-star:
 ---!##
 
 ---##

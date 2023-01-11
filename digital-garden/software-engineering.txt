@@ -2,15 +2,14 @@ title: Software Engineering
 icon: 💾
 
 ---##
-title: Free clouds
-url: https://paul.totterman.name/posts/free-clouds/
-date: 2022-08-26
+title: Edge Super Duper Secure Mode
+url: https://microsoftedge.github.io/edgevr/posts/Super-Duper-Secure-Mode/
+date: 2022-09-14
 ---!##
 
 ---##
-title: github.com/gelstudios/gitfiti
-description: abusing github commit history for the lulz 
-url: https://github.com/gelstudios/gitfiti
+title: Free clouds
+url: https://paul.totterman.name/posts/free-clouds/
 date: 2022-08-26
 ---!##
 

@@ -362,6 +362,7 @@ def write_index(blog_posts, categories: List[Category]):
 <a href="https://hotlinewebring.club/andrew-shay/previous">&lt;--- Previous Site</a>
 <a style="padding-left:1rem;padding-right: 1rem;" href="https://hotlinewebring.club/">Hotline Webring</a>
 <a href="https://hotlinewebring.club/andrew-shay/next">Next Site ---&gt;</a>
+<a style="display: none;" rel="me" href="https://techhub.social/@andrewshay">Mastodon</a>
 </section>    
 """
 

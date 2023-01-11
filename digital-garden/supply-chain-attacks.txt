@@ -2,6 +2,12 @@ title: Supply Chain Attacks
 icon: 💣
 
 ---##
+title: Malicious ‘SentinelOne’ PyPI package steals data from developers
+url: https://www.bleepingcomputer.com/news/security/malicious-sentinelone-pypi-package-steals-data-from-developers/
+date: 2022-12-22
+---!##
+
+---##
 title: Supply chain attacks - Microsoft
 url: https://docs.microsoft.com/en-us/microsoft-365/security/intelligence/supply-chain-malware?view=o365-worldwide
 date: 2022-08-07
