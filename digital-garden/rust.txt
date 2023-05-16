@@ -2,6 +2,18 @@ title: Rust
 icon: ⚙️
 
 ---##
+title: book: High Assurance Rust
+url: https://highassurance.rs/
+date: 2023-01-21
+---!##
+
+---##
+title: book: Command-Line Rust
+url: https://www.oreilly.com/library/view/command-line-rust/9781098109424/
+date: 2023-01-21
+---!##
+
+---##
 title: Using unwrap() in Rust is okay
 url: https://blog.burntsushi.net/unwrap/,https://news.ycombinator.com/item?id=32385102,https://doc.rust-lang.org/book/ch09-03-to-panic-or-not-to-panic.html#cases-in-which-you-have-more-information-than-the-compiler
 date: 2022-08-08

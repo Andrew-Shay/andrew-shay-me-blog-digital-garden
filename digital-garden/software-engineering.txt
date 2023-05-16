@@ -2,6 +2,61 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Windows 11 in Svelte
+url: https://github.com/yashash-pugalia/win11-svelte
+date: 2023-05-10
+---!##
+
+---##
+title: The Legacy of Peer-to-Peer Systems
+url: https://cacm.acm.org/blogs/blog-cacm/267236-the-legacy-of-peer-to-peer-systems/fulltext
+date: 2023-05-11
+---!##
+
+---##
+title: Microspeak: Cookie licking
+url: https://devblogs.microsoft.com/oldnewthing/20091201-00/?p=15843
+date: 2023-05-11
+---!##
+
+---##
+title: Protocol Wars
+url: https://en.wikipedia.org/wiki/Protocol_Wars
+date: 2023-05-11
+---!##
+
+---##
+title: Protocol Wars
+url: Protocol ossification
+date: 2023-05-10
+---!##
+
+---##
+title: The weird world of Windows file paths
+url: https://www.fileside.app/blog/2023-03-17_windows-file-paths/
+date: 2023-05-11
+---!##
+
+---##
+title: MarkoJS
+url: https://markojs.com/
+date: 2023-01-31
+---!##
+
+---##
+title: Preventing the Collapse of Civilization - Jonathan Blow
+url: https://www.youtube.com/watch?v=ZSRHeXYDLko&t=0s
+date: 2023-01-21
+star:
+---!##
+
+---##
+title: The Birth & Death of JavaScript
+url: https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
+date: 2023-01-13
+---!##
+
+---##
 title: Edge Super Duper Secure Mode
 url: https://microsoftedge.github.io/edgevr/posts/Super-Duper-Secure-Mode/
 date: 2022-09-14

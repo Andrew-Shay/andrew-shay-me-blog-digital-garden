@@ -2,6 +2,12 @@ title:  Decentralized Internet
 icon: 🌐
 
 ---##
+title: The Legacy of Peer-to-Peer Systems
+url: https://cacm.acm.org/blogs/blog-cacm/267236-the-legacy-of-peer-to-peer-systems/fulltext
+date: 2023-05-11
+---!##
+
+---##
 title: Transmitic
 url: https://transmitic.net
 description: Encrypted peer-to-peer file transfer and sharing

@@ -5,7 +5,6 @@ icon: 🔐
 title: TLS Illustrated
 url: https://tls12.xargs.org/
 date: 2022-08-01
-star:
 ---!##
 
 ---##

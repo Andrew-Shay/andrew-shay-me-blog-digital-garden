@@ -2,6 +2,36 @@ title: Programming Books
 icon: 📘
 
 ---##
+title: Build Your Own Text Editor
+url: https://viewsourcecode.org/snaptoken/kilo/
+date: 2023-01-30
+---!##
+
+---##
+title: Build Your Own Redis with C/C++
+url: https://build-your-own.org/redis/
+date: 2023-01-29
+---!##
+
+---##
+title: roadmap.sh
+url: https://roadmap.sh/
+date: 2023-01-13
+---!##
+
+---##
+title: Peer-to-Peer Communication Across Network Address Translators
+url: https://bford.info/pub/net/p2pnat/index.html
+date: 2023-01-13
+---!##
+
+---##
+title: Software Engineering at Google
+url: https://abseil.io/resources/swe-book
+date: 2023-01-12
+---!##
+
+---##
 title: High Performance Browser Networking
 url: https://hpbn.co/
 date: 2022-08-26

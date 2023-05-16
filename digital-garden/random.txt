@@ -2,6 +2,39 @@ title: Random
 icon: 🔮
 
 ---##
+title: Books By the Foot
+url: https://booksbythefoot.com/
+date: 2023-05-11
+---!##
+
+---##
+title: Wonders of Street View
+url: https://neal.fun/wonders-of-street-view/
+date: 2023-01-29
+star:
+---!##
+
+---##
+title: Preventing the Collapse of Civilization - Jonathan Blow
+url: https://www.youtube.com/watch?v=ZSRHeXYDLko&t=0s
+date: 2023-01-21
+star:
+---!##
+
+---##
+title: Car Sized
+url: https://www.carsized.com/
+date: 2023-01-21
+---!##
+
+---##
+title: We’re the Only Plane in the Sky
+description: Where was the president in the eight hours after the Sept. 11 attacks? The strange, harrowing journey of Air Force One, as told by the people who were on board.
+url: https://www.politico.com/magazine/story/2016/09/were-the-only-plane-in-the-sky-214230/
+date: 2023-01-12
+---!##
+
+---##
 title: Map of Reddit
 url: https://anvaka.github.io/map-of-reddit
 date: 2022-08-27
@@ -41,12 +74,6 @@ url: https://hotlinewebring.club/
 date: 2022-08-07
 ---!##
 
----##
-title: Blog Surf
-description: Blog Search Engine
-url: https://blogsurf.io/
-date: 2022-08-06
----!##
 
 ---##
 title: BookStack

@@ -2,6 +2,13 @@ title: Software
 icon: 💽
 
 ---##
+title: HTTrack
+url: https://www.httrack.com/
+description: Website copier
+date: 2023-01-12
+---!##
+
+---##
 title: kvass
 url: https://github.com/maxmunzel/kvass
 description: a personal key-value store
