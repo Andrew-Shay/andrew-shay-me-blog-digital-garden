@@ -1,5 +1,6 @@
 title: 🔬 Projects
 description: Projects by Andrew Shay
+updated: 2023-10-01
 body:
 ## 🌟 Transmitic
 Encrypted, peer to peer, file transfer and sharing, built with Rust.

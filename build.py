@@ -1,3 +1,4 @@
+import datetime
 import html
 from importlib.resources import contents
 import os
@@ -8,25 +9,25 @@ import shutil
 import re
 from functools import lru_cache
 
-
+TIMESTAMP_NOW = datetime.datetime.now().strftime("%Y-%m-%d")
 HERE = os.path.dirname(os.path.abspath(__file__))
 print(HERE)
 
-src_root_garden = os.path.join(HERE, 'digital-garden')
-src_root_blog = os.path.join(HERE, 'blog')
-src_root_pages = os.path.join(HERE, 'pages')
-src_root_images = os.path.join(HERE, 'images')
-build_root = os.path.join(HERE, 'build')
+src_root_garden = os.path.join(HERE, "digital-garden")
+src_root_blog = os.path.join(HERE, "blog")
+src_root_pages = os.path.join(HERE, "pages")
+src_root_images = os.path.join(HERE, "images")
+build_root = os.path.join(HERE, "build")
 
-with open(os.path.join(HERE, 'header.html'), 'r', encoding='utf-8') as fh:
+with open(os.path.join(HERE, "header.html"), "r", encoding="utf-8") as fh:
     header_html = fh.read()
 
-with open(os.path.join(HERE, 'footer.html'), 'r', encoding='utf-8') as fh:
+with open(os.path.join(HERE, "footer.html"), "r", encoding="utf-8") as fh:
     footer_html = fh.read()
 
-class BlogPost:
 
-    def __init__(self, contents: str, file_name: str, category=''):
+class BlogPost:
+    def __init__(self, contents: str, file_name: str, category=""):
         self.category = category
         self.file_name = file_name
         self.html_name = file_name[:-4]
@@ -55,7 +56,7 @@ class BlogPost:
                 self.url = [self.file]
             elif line.startswith("url:"):
                 url = line[4:].strip()
-                url = url.split(',')
+                url = url.split(",")
                 self.url = [u.strip() for u in url if u.strip()]
             elif line.startswith("date:"):
                 self.date = line[5:].strip()
@@ -67,7 +68,7 @@ class BlogPost:
                 self.is_starred = True
             elif line.startswith("tags:"):
                 self.tags = line[5:].strip()
-                self.tags = self.tags.split(',')
+                self.tags = self.tags.split(",")
                 self.tags = [tag.strip() for tag in self.tags]
                 self.tags = [tag.lower() for tag in self.tags if tag]
             elif line.startswith("body:"):
@@ -75,11 +76,13 @@ class BlogPost:
                 self.body_type = line[5:].strip()
             else:
                 assert False, f"Unknown key '{line}' for '{self.file_name}'"
-        
+
         if self.body_type == "":
             self.body_type = "custom"
         elif self.body_type != "html":
-            assert False, f"Incorrect body type '{self.body_type}' for '{self.file_name}'"
+            assert (
+                False
+            ), f"Incorrect body type '{self.body_type}' for '{self.file_name}'"
 
         if not self.updated:
             self.updated = self.date
@@ -90,22 +93,22 @@ class BlogPost:
         return f"{self.__class__.__name__} - {self.title}"
 
     def format_body(self):
-        if self.body_type == 'html':
+        if self.body_type == "html":
             self.body_lines_formatted = self.body_lines
             return
 
         url_pattern = r"(\[.+\])(\(.+\))"
         img_pattern = r"(!\[.+\])(\(.+\))"
         formatted_lines = []
-        is_code_block=False
+        is_code_block = False
         for line_no_strip in self.body_lines:
             line = line_no_strip.strip()
-            
+
             new_line = line_no_strip
-            if is_code_block and line.startswith('```'):
+            if is_code_block and line.startswith("```"):
                 new_line = "</pre>"
                 is_code_block = False
-            elif line.startswith('```') and not is_code_block:
+            elif line.startswith("```") and not is_code_block:
                 new_line = '<pre class="code-pre">'
                 is_code_block = True
             elif is_code_block:
@@ -123,13 +126,23 @@ class BlogPost:
                 new_line = line[1:].strip()
                 new_line = f"<h1>{new_line}</h1>"
             else:
-                img_pattern = r'((!\[.+\])(\(.+\)))'
+                img_pattern = r"((!\[.+\])(\(.+\)))"
                 url_pattern = r"((\[.+\])(\(.+\)))"
-                i_pattern = r'(__.*?__)'
-                strong_pattern = r'(\*\*.*\*\*)'
-                code_pattern = r'(`.+?`)'
-                # 0=img total group / 1=img text / 2=img link / 3=url group / 4=url text / 5=url link / 6=code text / 7=i text / 8=strong text / 
-                combine = img_pattern + r'|' + url_pattern + r'|' + code_pattern + r'|' + i_pattern + r'|' + strong_pattern
+                i_pattern = r"(__.*?__)"
+                strong_pattern = r"(\*\*.*\*\*)"
+                code_pattern = r"(`.+?`)"
+                # 0=img total group / 1=img text / 2=img link / 3=url group / 4=url text / 5=url link / 6=code text / 7=i text / 8=strong text /
+                combine = (
+                    img_pattern
+                    + r"|"
+                    + url_pattern
+                    + r"|"
+                    + code_pattern
+                    + r"|"
+                    + i_pattern
+                    + r"|"
+                    + strong_pattern
+                )
                 match = re.findall(combine, new_line)
 
                 if match:
@@ -151,27 +164,34 @@ class BlogPost:
 
                         if m[6]:
                             code_text = m[6][1:-1]
-                            new_line = new_line.replace(m[6], f'<code>{code_text}</code>')
+                            new_line = new_line.replace(
+                                m[6], f"<code>{code_text}</code>"
+                            )
 
                         if m[7]:
                             i_text = m[7][2:-2]
-                            new_line = new_line.replace(m[7], f'<i>{i_text}</i>')
+                            new_line = new_line.replace(m[7], f"<i>{i_text}</i>")
 
                         if m[8]:
                             strong_text = m[8][2:-2]
-                            new_line = new_line.replace(m[8], f'<strong>{strong_text}</strong>')
+                            new_line = new_line.replace(
+                                m[8], f"<strong>{strong_text}</strong>"
+                            )
 
-
-                if not new_line.startswith("<li>") and not new_line.startswith("<ol>") and not new_line.startswith("</ol>"):
+                if (
+                    not new_line.startswith("<li>")
+                    and not new_line.startswith("<ol>")
+                    and not new_line.startswith("</ol>")
+                ):
                     new_line += "<br/>"
 
             formatted_lines.append(new_line)
 
         self.body_lines_formatted = formatted_lines
 
-class Category:
 
-    def __init__(self, contents: str, file_name:str) -> None:
+class Category:
+    def __init__(self, contents: str, file_name: str) -> None:
         self.file_name = file_name
         self.html_name = self.file_name[:-4]
 
@@ -195,13 +215,17 @@ class Category:
         for line_no_strip in lines:
             line = line_no_strip.strip()
 
-            if line == '---##':
+            if line == "---##":
                 if collect:
-                    assert False, f"Collect found while already collecting. Missing end marker. {self.file_name} {line}"
+                    assert (
+                        False
+                    ), f"Collect found while already collecting. Missing end marker. {self.file_name} {line}"
                 collect = True
-            elif line == '---!##':
-                entry_contents = '\n'.join(collected_lines)
-                self.entries.append(BlogPost(entry_contents, "fakefile.txt", category=self.html_name))
+            elif line == "---!##":
+                entry_contents = "\n".join(collected_lines)
+                self.entries.append(
+                    BlogPost(entry_contents, "fakefile.txt", category=self.html_name)
+                )
                 collected_lines = []
                 collect = False
             elif collect:
@@ -218,10 +242,11 @@ class Category:
     def __str__(self):
         return f"<{self.__class__.__name__} - {self.title} - {len(self.entries)}>"
 
+
 def read_blogs():
     blog_posts = []
     for file_name in os.listdir(src_root_blog):
-        with open(os.path.join(src_root_blog, file_name), 'r', encoding='utf-8') as f:
+        with open(os.path.join(src_root_blog, file_name), "r", encoding="utf-8") as f:
             contents = f.read()
         post = BlogPost(contents, file_name)
         blog_posts.append(post)
@@ -229,13 +254,14 @@ def read_blogs():
     blog_posts = sorted(blog_posts, key=lambda x: x.date, reverse=True)
     return blog_posts
 
+
 def read_garden():
     categories = []
     for file_name in os.listdir(src_root_garden):
-        with open(os.path.join(src_root_garden, file_name), 'r', encoding='utf-8') as f:
+        with open(os.path.join(src_root_garden, file_name), "r", encoding="utf-8") as f:
             contents = f.read()
             categories.append(Category(contents, file_name))
-    
+
     categories = sorted(categories, key=lambda x: x.title.lower())
     return categories
 
@@ -250,16 +276,18 @@ def get_blog_block(blog_posts: List[BlogPost], root):
     for index, post in enumerate(blog_posts):
         if counter == 0:
             blog_block += '\n\n<div class="row">'
-        
+
         post_url = url + post.html_name
         blog_block += """
         <div class="column2">
             {num}) <a class="blog-listing-a" style="padding-bottom: 1rem;" href="{post_url}/">{title}</a>
         </div>     
-""".format(title=post.title, num=index+1, post_url=post_url)
-        
+""".format(
+            title=post.title, num=index + 1, post_url=post_url
+        )
+
         if counter == 1:
-            blog_block += '</div>'
+            blog_block += "</div>"
             counter = 0
         else:
             counter += 1
@@ -292,14 +320,16 @@ def get_garden_block(categories: List[Category], root):
                 <div class="tag-bubble">{icon} {title} ({count})</div>
             </a>
         </div>
-""".format(title=title, count=count, post_url=post_url, icon=icon)
+""".format(
+            title=title, count=count, post_url=post_url, icon=icon
+        )
 
         if counter == 1:
-            garden_block += '</div>'
+            garden_block += "</div>"
             counter = 0
         else:
             counter += 1
-    
+
     garden_block += "</div>"
 
     # Get latest and starred
@@ -309,7 +339,7 @@ def get_garden_block(categories: List[Category], root):
     titles = []
     for category in categories:
         all_entries.extend(category.entries)
-    all_entries = sorted(all_entries, key= lambda x: x.date, reverse=True)
+    all_entries = sorted(all_entries, key=lambda x: x.date, reverse=True)
 
     no_dupe_entries: List[BlogPost] = []
     titles = []
@@ -330,10 +360,14 @@ def get_garden_block(categories: List[Category], root):
             <div class="column2">
             <h3>📡 Newest Entries</h3>
                         <ol>
-""" 
+"""
 
     for entry in newest_entries:
-        url = f'{root}digital-garden/{entry.category}/{entry.file}' if entry.body_lines_formatted else entry.url[0]
+        url = (
+            f"{root}digital-garden/{entry.category}/{entry.file}"
+            if entry.body_lines_formatted
+            else entry.url[0]
+        )
         garden_block += f'<li><a href="{url}">{entry.title}</a></li>'
 
     garden_block += """
@@ -352,11 +386,10 @@ def get_garden_block(categories: List[Category], root):
     </div></section>
 """
 
-
     return garden_block
 
-def write_index(blog_posts, categories: List[Category]):
 
+def write_index(blog_posts, categories: List[Category]):
     webring = """
 <section style="text-align:center; padding-top: 2rem;">
 <a href="https://hotlinewebring.club/andrew-shay/previous">&lt;--- Previous Site</a>
@@ -366,33 +399,45 @@ def write_index(blog_posts, categories: List[Category]):
 </section>    
 """
 
-    index_path = os.path.join(build_root, 'index.html')
+    index_path = os.path.join(build_root, "index.html")
     root = "./"
 
-    header = header_html.format(ROOT=root, TITLE="Home", DESCRIPTION="Andrew Shay's Blog and Digital Garden", OGURL="")
+    header = header_html.format(
+        ROOT=root,
+        TITLE="Home",
+        DESCRIPTION="Andrew Shay's Blog and Digital Garden",
+        OGURL="",
+        UPDATED_TIME=TIMESTAMP_NOW,
+    )
 
     blog_block = get_blog_block(blog_posts, root)
     garden_block = get_garden_block(categories, root)
 
     html = f"{header} {blog_block} {garden_block} {webring} {footer_html}"
 
-    with open(index_path, 'w', encoding='utf-8') as f:
+    with open(index_path, "w", encoding="utf-8") as f:
         f.write(html)
 
-def write_blog(blog_posts: List[BlogPost], root):
 
+def write_blog(blog_posts: List[BlogPost], root):
     # write index
     blog_block = get_blog_block(blog_posts, root)
-    build_blog_root = os.path.join(build_root, 'blog')
+    build_blog_root = os.path.join(build_root, "blog")
     os.makedirs(build_blog_root)
 
-    blog_path = os.path.join(build_blog_root, 'index.html')
+    blog_path = os.path.join(build_blog_root, "index.html")
 
-    header = header_html.format(ROOT=root, TITLE="Blog", DESCRIPTION="Andrew Shay's Blog", OGURL="blog")
+    header = header_html.format(
+        ROOT=root,
+        TITLE="Blog",
+        DESCRIPTION="Andrew Shay's Blog",
+        OGURL="blog",
+        UPDATED_TIME=TIMESTAMP_NOW,
+    )
 
     html = f"{header} {blog_block} {footer_html}"
 
-    with open(blog_path, 'w', encoding='utf-8') as f:
+    with open(blog_path, "w", encoding="utf-8") as f:
         f.write(html)
 
     # write posts
@@ -402,33 +447,53 @@ def write_blog(blog_posts: List[BlogPost], root):
         os.makedirs(post_path)
 
         description = post.description or post.title
-        header = header_html.format(ROOT=root, TITLE=post.title, DESCRIPTION=description, OGURL=f"blog/{post.html_name}")
-        post_html = '\n'.join(post.body_lines_formatted)
+        header = header_html.format(
+            ROOT=root,
+            TITLE=post.title,
+            DESCRIPTION=description,
+            OGURL=f"blog/{post.html_name}",
+            UPDATED_TIME=post.updated,
+        )
+        post_html = "\n".join(post.body_lines_formatted)
         post_html = post_html.replace("{ROOT}", root)
-        post_date_update = f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {post.updated})" if post.updated != post.date else ""
-        post_date_block = f'<div class="blog-date">{post.date}{post_date_update}</div>' if post.date else ''
-        breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}blog">Blog</a> &gt; {post.title[:20]}...'
-        post_html = f'{header}{breadcrumbs}<br><br>\n<article><h1>{post.title}</h1>{post_date_block}{post_html}</article>\n{footer_html}'
+        post_date_update = (
+            f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {post.updated})"
+            if post.updated != post.date
+            else ""
+        )
+        post_date_block = (
+            f'<div class="blog-date">{post.date}{post_date_update}</div>'
+            if post.date
+            else ""
+        )
+        breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}blog">Blog</a> &gt; {post.title[:30]}...'
+        post_html = f"{header}{breadcrumbs}<br><br>\n<article><h1>{post.title}</h1>{post_date_block}{post_html}</article>\n{footer_html}"
 
-        post_index_path = os.path.join(post_path, 'index.html')
+        post_index_path = os.path.join(post_path, "index.html")
         assert not os.path.exists(post_index_path), post_index_path
-        with open(post_index_path, 'w', encoding='utf-8') as f:
+        with open(post_index_path, "w", encoding="utf-8") as f:
             f.write(post_html)
 
-def write_garden(categories: List[Category], root):
 
+def write_garden(categories: List[Category], root):
     # write index
     blog_block = get_garden_block(categories, root)
-    build_blog_root = os.path.join(build_root, 'digital-garden')
+    build_blog_root = os.path.join(build_root, "digital-garden")
     os.makedirs(build_blog_root)
 
-    blog_path = os.path.join(build_blog_root, 'index.html')
+    blog_path = os.path.join(build_blog_root, "index.html")
 
-    header = header_html.format(ROOT=root, TITLE="Digital Garden", DESCRIPTION="Andrew Shay's Digital Garden", OGURL="digital-garden")
+    header = header_html.format(
+        ROOT=root,
+        TITLE="Digital Garden",
+        DESCRIPTION="Andrew Shay's Digital Garden",
+        OGURL="digital-garden",
+        UPDATED_TIME=TIMESTAMP_NOW,
+    )
 
     html = f"{header} {blog_block} {footer_html}"
     assert not os.path.exists(blog_path), blog_path
-    with open(blog_path, 'w', encoding='utf-8') as f:
+    with open(blog_path, "w", encoding="utf-8") as f:
         f.write(html)
 
     # write posts
@@ -437,14 +502,22 @@ def write_garden(categories: List[Category], root):
         post_path = os.path.join(build_blog_root, post.html_name)
         os.makedirs(post_path)
 
+        entries = post.entries[:]
+        latest_timestamp = max([entry.updated for entry in entries])
+
         description = post.title
-        header = header_html.format(ROOT=root, TITLE=post.title, DESCRIPTION=description, OGURL=f"digital-garden/{post.html_name}")
-        
+        header = header_html.format(
+            ROOT=root,
+            TITLE=post.title,
+            DESCRIPTION=description,
+            OGURL=f"digital-garden/{post.html_name}",
+            UPDATED_TIME=latest_timestamp,  # TODO
+        )
+
         post_html = "<ol>"
 
-        entries = post.entries[:]
         starred_entres = [e for e in entries if e.is_starred]
-        starred_entres = sorted(starred_entres, key= lambda x: x.title.lower())
+        starred_entres = sorted(starred_entres, key=lambda x: x.title.lower())
         other = [e for e in entries if not e.is_starred]
         other = sorted(other, key=lambda x: x.title.lower())
 
@@ -454,23 +527,37 @@ def write_garden(categories: List[Category], root):
             entry_description = entry.description if entry.description else entry.title
 
             if entry.body_lines_formatted:
-                eheader = header_html.format(ROOT=root, TITLE=entry.title, DESCRIPTION=entry_description, OGURL=f"digital-garden/{post.html_name}/{entry.file}")
-                html = '\n'.join(entry.body_lines_formatted)
+                eheader = header_html.format(
+                    ROOT=root,
+                    TITLE=entry.title,
+                    DESCRIPTION=entry_description,
+                    OGURL=f"digital-garden/{post.html_name}/{entry.file}",
+                    UPDATED_TIME=entry.updated,
+                )
+                html = "\n".join(entry.body_lines_formatted)
 
-                breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a> &gt; <a href="{root}digital-garden/{post.html_name}">{post.title}</a> &gt; {post.title[:20]}...'
-                post_date_update = f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {entry.updated})" if entry.updated != entry.date else ""
-                post_date_block = f'<div class="blog-date">{entry.date}{post_date_update}</div>' if entry.date else ''
-                html = f'{eheader}{breadcrumbs}<br><br>\n<article><h1>{entry.title}</h1>{post_date_block}{html}</article>\n{footer_html}'
+                breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a> &gt; <a href="{root}digital-garden/{post.html_name}">{post.title}</a> &gt; {entry.title[:30]}...'
+                post_date_update = (
+                    f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {entry.updated})"
+                    if entry.updated != entry.date
+                    else ""
+                )
+                post_date_block = (
+                    f'<div class="blog-date">{entry.date}{post_date_update}</div>'
+                    if entry.date
+                    else ""
+                )
+                html = f"{eheader}{breadcrumbs}<br><br>\n<article><h1>{entry.title}</h1>{post_date_block}{html}</article>\n{footer_html}"
 
-                p=os.path.join(post_path, entry.file)
+                p = os.path.join(post_path, entry.file)
                 assert not os.path.exists(p), p
-                with open(p, 'w', encoding='utf-8') as f:
+                with open(p, "w", encoding="utf-8") as f:
                     f.write(html)
-            
-            star = "⭐" if entry.is_starred else ''
-            icon = "📝" if entry.file else '🔗'
+
+            star = "⭐" if entry.is_starred else ""
+            icon = "📝" if entry.file else "🔗"
             if entry.file:  # This is a note
-                href = f'{root}digital-garden/{post.html_name}/{entry.file}'
+                href = f"{root}digital-garden/{post.html_name}/{entry.file}"
             else:
                 href = entry.url[0]
 
@@ -485,45 +572,54 @@ def write_garden(categories: List[Category], root):
         post_html += "</ol>"
 
         post_html = post_html.replace("{ROOT}", root)
-        breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a>'
-        post_html = f'{header}{breadcrumbs}<br><br><h1>{post.icon} {post.title} ({len(post.entries)})</h1>{post_html}{footer_html}'
+        breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a> &gt; {post.title}'
+        post_html = f"{header}{breadcrumbs}<br><br><h1>{post.icon} {post.title} ({len(post.entries)})</h1>{post_html}{footer_html}"
 
-        post_index_path = os.path.join(post_path, 'index.html')
+        post_index_path = os.path.join(post_path, "index.html")
         assert not os.path.exists(post_index_path), post_index_path
-        with open(post_index_path, 'w', encoding='utf-8') as f:
+        with open(post_index_path, "w", encoding="utf-8") as f:
             f.write(post_html)
 
-    
 
 def write_pages(root):
-
-    for file_name in os.listdir(os.path.join(HERE, 'pages')):
-        file_path = os.path.join(HERE, 'pages', file_name)
-        with open(file_path, 'r', encoding='utf-8') as f:
+    for file_name in os.listdir(os.path.join(HERE, "pages")):
+        file_path = os.path.join(HERE, "pages", file_name)
+        with open(file_path, "r", encoding="utf-8") as f:
             contents = f.read()
-        
+
         new_name = file_name[:-4]
         new_path = os.path.join(build_root, new_name)
         os.makedirs(new_path)
-        index_path = os.path.join(new_path, 'index.html')
+        index_path = os.path.join(new_path, "index.html")
 
         post = BlogPost(contents, file_name)
 
         description = post.description or post.title
-        header = header_html.format(ROOT=root, TITLE=post.title, DESCRIPTION=description, OGURL=file_name)
-        post_html = '\n'.join(post.body_lines_formatted)
+        header = header_html.format(
+            ROOT=root,
+            TITLE=post.title,
+            DESCRIPTION=description,
+            OGURL=file_name,
+            UPDATED_TIME=post.updated,
+        )
+        post_html = "\n".join(post.body_lines_formatted)
         post_html = post_html.replace("{ROOT}", root)
-        post_date_block = f'<div class="blog-date">{post.date}</div>' if post.date else ''
-        post_html = f'{header}<h1>{post.title}</h1>{post_date_block}{post_html}{footer_html}'
+        post_date_block = (
+            f'<div class="blog-date">{post.date}</div>' if post.date else ""
+        )
+        post_html = (
+            f"{header}<h1>{post.title}</h1>{post_date_block}{post_html}{footer_html}"
+        )
 
         assert not os.path.exists(index_path), index_path
-        with open(index_path, 'w', encoding='utf-8') as f:
+        with open(index_path, "w", encoding="utf-8") as f:
             f.write(post_html)
 
-def write_feed(blog_posts: List[BlogPost]):
 
+def write_feed(blog_posts: List[BlogPost]):
     from datetime import datetime
     import time
+
     date_time = datetime.fromtimestamp(time.time())
     str_date_time = date_time.strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -541,7 +637,7 @@ def write_feed(blog_posts: List[BlogPost]):
 """
 
     for post in blog_posts:
-        body = '\n'.join(post.body_lines_formatted)
+        body = "\n".join(post.body_lines_formatted)
         body = html.escape(body)
         feed_xml += f"""
 <entry>
@@ -557,9 +653,10 @@ def write_feed(blog_posts: List[BlogPost]):
 
     feed_xml += "</feed>"
 
-    feed_path = os.path.join(build_root, 'feed.xml')
-    with open(feed_path, 'w', encoding='utf-8') as f:
+    feed_path = os.path.join(build_root, "feed.xml")
+    with open(feed_path, "w", encoding="utf-8") as f:
         f.write(feed_xml)
+
 
 def main():
     blog_posts = read_blogs()
@@ -575,14 +672,15 @@ def main():
         shutil.rmtree(build_root)
     os.makedirs(build_root)
 
-    shutil.copy2(os.path.join(HERE, 'style.css'), os.path.join(build_root, 'style.css'))
-    shutil.copytree(os.path.join(HERE, 'images'), os.path.join(build_root, 'images'))
+    shutil.copy2(os.path.join(HERE, "style.css"), os.path.join(build_root, "style.css"))
+    shutil.copytree(os.path.join(HERE, "images"), os.path.join(build_root, "images"))
 
     write_index(blog_posts, categories)
-    write_blog(blog_posts, '../')
-    write_garden(categories, '../')
-    write_pages('../')
+    write_blog(blog_posts, "../")
+    write_garden(categories, "../")
+    write_pages("../")
     write_feed(blog_posts)
+
 
 if __name__ == "__main__":
     main()

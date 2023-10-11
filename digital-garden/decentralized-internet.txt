@@ -2,6 +2,25 @@ title:  Decentralized Internet
 icon: 🌐
 
 ---##
+title: The Dark Forest Theory of the Internet
+url: https://onezero.medium.com/the-dark-forest-theory-of-the-internet-7dc3e68a7cb1
+date: 2023-05-28
+---!##
+
+---##
+title: The Extended Internet Universe
+url: https://studio.ribbonfarm.com/p/the-extended-internet-universe
+date: 2023-05-28
+---!##
+
+---##
+title: The Dark Forest and the Cozy Web
+url: https://maggieappleton.com/cozy-web
+date: 2023-05-28
+star:
+---!##
+
+---##
 title: The Legacy of Peer-to-Peer Systems
 url: https://cacm.acm.org/blogs/blog-cacm/267236-the-legacy-of-peer-to-peer-systems/fulltext
 date: 2023-05-11

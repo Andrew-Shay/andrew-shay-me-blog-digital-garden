@@ -2,6 +2,30 @@ title: Random
 icon: 🔮
 
 ---##
+title: textfiles.com
+url: http://textfiles.com/
+date: 2023-09-24
+---!##
+
+---##
+title: Kagi Search Engine
+url: https://kagi.com/
+date: 2023-08-25
+---!##
+
+---##
+title: Lindy effect
+url: https://en.wikipedia.org/wiki/Lindy_effect
+date: 2023-05-28
+---!##
+
+---##
+title: Paper Airplane Designs
+url: https://www.foldnfly.com/#/1-1-1-1-1-1-1-1-2
+date: 2023-05-28
+---!##
+
+---##
 title: Books By the Foot
 url: https://booksbythefoot.com/
 date: 2023-05-11

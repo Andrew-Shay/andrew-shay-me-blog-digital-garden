@@ -2,6 +2,26 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Flappy Dird
+url: https://eieio.games/nonsense/game-11-flappy-bird-finder/
+description: It’s Flappy Bird inside MacOS Finder.
+date: 2023-10-10
+---!##
+
+---##
+title: Coze
+url: https://github.com/Cyphrme/Coze
+description: cryptographic JSON messaging specification
+date: 2023-09-24
+---!##
+
+---##
+title: NO_COLOR
+url: https://no-color.org/
+date: 2023-05-28
+---!##
+
+---##
 title: Windows 11 in Svelte
 url: https://github.com/yashash-pugalia/win11-svelte
 date: 2023-05-10

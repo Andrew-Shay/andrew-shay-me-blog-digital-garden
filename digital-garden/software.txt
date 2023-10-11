@@ -2,6 +2,48 @@ title: Software
 icon: 💽
 
 ---##
+title: Monitorian
+url: https://github.com/emoacht/Monitorian
+description: A Windows desktop tool to adjust the brightness of multiple monitors with ease
+date: 2023-10-01
+---!##
+
+---##
+title: lapce
+url: https://github.com/CodeEditApp/CodeEdit
+description: Lightning-fast and Powerful Code Editor written in Rust 
+date: 2023-10-01
+---!##
+
+---##
+title: CodeEdit
+url: https://github.com/CodeEditApp/CodeEdit
+description: CodeEdit App for macOS – Elevate your code editing experience.
+date: 2023-10-01
+---!##
+
+---##
+title: ShareX
+url: https://github.com/ShareX/ShareX
+description: capture or record any area of your screen
+date: 2023-09-24
+---!##
+
+---##
+title: μMon
+url: https://tomscii.sig7.se/2022/07/uMon-stupid-simple-monitoring
+description: simple monitoring
+date: 2023-09-24
+---!##
+
+---##
+title: Microsoft PowerToys
+url: https://learn.microsoft.com/en-us/windows/powertoys/
+description: Utilities to customize Windows
+date: 2023-09-24
+---!##
+
+---##
 title: HTTrack
 url: https://www.httrack.com/
 description: Website copier
