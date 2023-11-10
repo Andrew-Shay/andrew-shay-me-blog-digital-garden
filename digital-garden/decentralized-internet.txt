@@ -2,6 +2,12 @@ title:  Decentralized Internet
 icon: 🌐
 
 ---##
+title: Owncast
+url: https://owncast.online/
+date: 2023-11-09
+---!##
+
+---##
 title: The Dark Forest Theory of the Internet
 url: https://onezero.medium.com/the-dark-forest-theory-of-the-internet-7dc3e68a7cb1
 date: 2023-05-28
@@ -40,13 +46,6 @@ url: https://gemini.circumlunar.space/
 description: Alternative internet to www and http
 date: 2022-08-06
 star:
----!##
-
----##
-title: Beaker Browser
-url: https://beakerbrowser.com/
-description: An experimental peer-to-peer Web browser. 
-date: 2022-02-01
 ---!##
 
 ---##

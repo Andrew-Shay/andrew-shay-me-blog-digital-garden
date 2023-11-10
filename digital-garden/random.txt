@@ -2,6 +2,34 @@ title: Random
 icon: 🔮
 
 ---##
+title: ALTER
+description: Horror short films
+url: https://www.youtube.com/WatchALTER/videos
+date: 2023-10-29
+---!##
+
+---##
+title: MagicaVoxel
+description: A free lightweight GPU-based voxel art editor and interactive path tracing renderer
+url: https://ephtracy.github.io/#ss-carousel_ss
+date: 2023-10-29
+---!##
+
+---##
+title: kaleidescape
+description: Kaleidescape is a digital provider of movies with lossless audio and full reference video quality.
+url: https://www.kaleidescape.com/
+date: 2023-10-14
+---!##
+
+---##
+title: Nucleus Co-op
+description: Application that starts multiple instances of a game for split-screen multiplayer gaming
+url: https://github.com/SplitScreen-Me/splitscreenme-nucleus
+date: 2023-10-14
+---!##
+
+---##
 title: textfiles.com
 url: http://textfiles.com/
 date: 2023-09-24

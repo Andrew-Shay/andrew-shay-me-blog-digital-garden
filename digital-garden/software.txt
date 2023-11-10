@@ -2,6 +2,54 @@ title: Software
 icon: 💽
 
 ---##
+title: Owncast
+url: https://owncast.online/
+date: 2023-11-09
+---!##
+
+---##
+title: gifski
+url: https://github.com/ImageOptim/gifski
+description: GIF encoder based on libimagequant (pngquant). Squeezes maximum possible quality from the awful GIF format. 
+date: 2023-10-24
+---!##
+
+---##
+title: GifCam
+url: https://blog.bahraniapps.com/gifcam/
+description: Easy and fun animated gif making app.
+date: 2023-10-24
+---!##
+
+---##
+title: ImageGlass
+url: https://imageglass.org/
+description: A lightweight, versatile image viewer
+date: 2023-10-22
+---!##
+
+---##
+title: AlomWare
+url: https://www.alomware.com/
+description: Productivity app for Windows
+date: 2023-10-20
+---!##
+
+---##
+title: czkawka
+url: https://github.com/qarmin/czkawka
+description: Multi functional app to find duplicates, empty folders, similar images etc.
+date: 2023-10-19
+---!##
+
+---##
+title: TiddlyWiki
+url: https://tiddlywiki.com/
+description: A unique non-linear notebook for capturing, organising and sharing complex information
+date: 2023-10-19
+---!##
+
+---##
 title: Monitorian
 url: https://github.com/emoacht/Monitorian
 description: A Windows desktop tool to adjust the brightness of multiple monitors with ease
@@ -10,7 +58,7 @@ date: 2023-10-01
 
 ---##
 title: lapce
-url: https://github.com/CodeEditApp/CodeEdit
+url: https://github.com/lapce/lapce
 description: Lightning-fast and Powerful Code Editor written in Rust 
 date: 2023-10-01
 ---!##
