@@ -2,13 +2,18 @@
 	--nc-font-sans: sans-serif, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--nc-font-mono: Consolas, monaco, 'Ubuntu Mono', 'Liberation Mono', 'Courier New', Courier, monospace;
 
+	--text-blue: #2db7ff;
+	--text-pink: #FF2DE8;
+	--neon-pink: #f301ff;
+	--neon-blue: #00e1ff;
+
 	/* Light theme */
 	--nc-tx-1: #000000;
 	--nc-tx-2: #1A1A1A;
 	--nc-bg-1: #FFFFFF;
 	--nc-bg-2: #F6F8FA;
 	--nc-bg-3: #E5E7EB;
-	--nc-lk-1: #0070F3;
+	--nc-lk-1: #2db7ff;
 	--nc-lk-2: #0366D6;
 	--nc-lk-tx: #FFFFFF;
 	--nc-ac-1: #79FFE1;
@@ -20,7 +25,7 @@
 	--nc-d-bg-1: #000000;
 	--nc-d-bg-2: #111111;
 	--nc-d-bg-3: #222222;
-	--nc-d-lk-1: #48A5AB;
+	--nc-d-lk-1: var(--text-blue);
 	--nc-d-lk-2: #eeeeee;
 	--nc-d-lk-tx: #FFFFFF;
 	--nc-d-ac-1: #48A5AB;
@@ -28,7 +33,6 @@
 
 	--dark-accent: #0a282c;
 	--gray: #999999;
-
 }
 
 
@@ -50,7 +54,6 @@
 	/* Reset margins and padding */
 	margin: 0;
 	padding: 0;
-
 }
 
 address,
@@ -115,8 +118,8 @@ body {
 
 ::selection {
 	/* Set background color for selected text */
-	background: var(--nc-ac-1);
-	color: var(--nc-ac-tx);
+	background: var(--text-pink);
+	color: #000;
 }
 
 h1,
@@ -146,15 +149,12 @@ h6 {
 
 h1 {
 	font-size: 2.25rem;
-	border-bottom: 3px solid var(--nc-bg-3);
 	padding-bottom: 0.8rem;
 	margin-bottom: 1rem;
+	font-style: italic;
+	font-variant: small-caps;
 }
 
-h1::selection {
-	background: var(--nc-lk-1);
-	color: var(--nc-tx-1);
-}
 
 h2 {
 	font-size: 1.85rem;
@@ -181,13 +181,10 @@ a {
 }
 
 a:hover {
-	color: var(--nc-lk-2);
+	color: var(--text-pink);
 }
 
-a::selection {
-	background: var(--nc-lk-1);
-	color: var(--nc-tx-1);
-}
+
 
 abbr:hover {
 	/* Set the '?' cursor while hovering an abbreviation */
@@ -216,31 +213,50 @@ blockquote *:last-child {
 	width: 100%;
 	height: 0.5em;
 	background: rgb(72, 165, 171);
-	background: linear-gradient(90deg, rgba(72, 165, 171, 1) 0%, rgba(46, 117, 122, 1) 100%);
+	background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+
+	position: relative;
 }
+
+
+
+
+.line:before {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+	transform: translate3d(0px, 20px, 0) scale(1);
+	filter: blur(20px);
+	opacity: var(1);
+	transition: opacity 0.3s;
+	border-radius: inherit;
+}
+
+.line::after {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: inherit;
+	border-radius: inherit;
+}
+
 
 header {
 	background-color: #000000;
-	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(360,638,660)'%3E%3Cstop offset='0' stop-color='%23000000'/%3E%3Cstop offset='1' stop-color='%235B5B5B'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='300' height='250' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.05'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
-	/* background by SVGBackgrounds.com */
-	background-attachment: fixed;
-	background-size: cover;
+	background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23222222' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+
 	padding: 2rem 1.5rem;
-
-	/* This sets the right and left margins to cancel out the body's margins. It's width is still the same, but the background stretches across the page's width. */
-
 	margin: -2rem calc(50% - 50vw) 2rem;
 
-	/* Shorthand for:
-
-	margin-top: -2rem;
-	margin-bottom: 2rem;
-
-	margin-left: calc(50% - 50vw);
-	margin-right: calc(50% - 50vw); */
-
-	padding-left: calc(50vw - 50%);
-	padding-right: calc(50vw - 50%);
 }
 
 header h1,
@@ -523,21 +539,101 @@ nav>a {
 	width: 50%;
 }
 
+.h1-line {
+	height: 2px;
+	background: linear-gradient(90deg, #00ff00, #4fff00, #70ff00, #89ff00, #9eff00, #b0ff00, #c1ff00, #d1ff00);
+	box-shadow: 1px -10px 35px 4px rgba(0, 255, 0, 0.75);
+	margin-top: -20px;
+	margin-bottom: 30px;
+}
+
 .tag-bubble {
 	text-align: center;
-	background: var(--nc-lk-1);
-	/* background: linear-gradient(90deg, rgba(72, 165, 171, 1) 0%, rgba(46, 117, 122, 1) 100%); */
 	padding: 8px;
-	/* border-radius: 30px; */
-	/* border-bottom: solid 10px var(--dark-accent); */
 	margin-right: 5px;
 	margin-left: 5px;
+	color: #fff;
+	position: relative;
+
+	background: linear-gradient(#000000, #000000) 50% 50%/calc(100% - 5px) calc(100% - 5px) no-repeat,
+		linear-gradient(216deg, var(--neon-pink) 0%, var(--neon-blue) 100%);
+	border-radius: 0px;
+	padding: 16px;
+	box-sizing: border-box;
+
 }
 
 .tag-bubble:hover {
-	color: var(--nc-lk-1);
-	background: var(--nc-tx-2);
+	background: linear-gradient(#000000, #000000) 50% 50%/calc(100% - 5px) calc(100% - 5px) no-repeat,
+		linear-gradient(-216deg, var(--neon-pink) 0%, var(--neon-blue) 100%);
 }
+
+.tag-bubble-even {
+	background: linear-gradient(#000000, #000000) 50% 50%/calc(100% - 5px) calc(100% - 5px) no-repeat,
+		linear-gradient(216deg, #01abff 0%, #ff0000 100%);
+
+}
+
+.tag-bubble-even:hover {
+	background: linear-gradient(#000000, #000000) 50% 50%/calc(100% - 5px) calc(100% - 5px) no-repeat,
+		linear-gradient(-216deg, #01abff 0%, #ff0000 100%);
+
+}
+
+
+.tag-bubble:before {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+	transform: translate3d(0px, 0px, 0) scale(1);
+	filter: blur(5px);
+	opacity: var(1);
+	transition: opacity 0.3s;
+	border-radius: inherit;
+}
+
+.tag-bubble:hover:before {
+	background: linear-gradient(45deg, #e81cff 0%, #40c9ff 100%);
+
+}
+
+.tag-bubble::after {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: inherit;
+	border-radius: inherit;
+}
+
+.tag-bubble-even:before {
+	content: "";
+	z-index: -1;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: linear-gradient(-45deg, #01abff 0%, #ff0000 100%);
+	transform: translate3d(0px, 0px, 0) scale(1);
+	filter: blur(5px);
+	opacity: var(1);
+	transition: opacity 0.3s;
+	border-radius: inherit;
+}
+
+.tag-bubble-even:hover:before {
+	background: linear-gradient(45deg, #01abff 0%, #ff0000 100%);
+}
+
 
 .row {
 	padding-bottom: 1rem;
@@ -554,6 +650,7 @@ nav>a {
 	color: var(--nc-tx-2);
 	text-decoration: none;
 }
+
 
 .blog-tags>a {
 	text-decoration: none;
@@ -585,7 +682,7 @@ nav>a {
 }
 
 code {
-	color: var(--nc-tx-1);
+	color: #000;
 	background-color: var(--nc-lk-1);
 	margin-top: 0.3rem;
 	display: inline-block;
@@ -599,6 +696,7 @@ span.hightlight {
 	padding-right: 0.5rem;
 	padding-left: 0.5rem;
 	display: inline-block;
+	color: #000;
 }
 
 .tagline {
@@ -606,10 +704,6 @@ span.hightlight {
 	color: #999999;
 }
 
-.tagline::selection {
-	background: var(--nc-lk-1);
-	color: var(--nc-tx-1);
-}
 
 .desc {
 	padding-left: 2rem;

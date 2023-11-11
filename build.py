@@ -269,6 +269,7 @@ def read_garden():
 def get_blog_block(blog_posts: List[BlogPost], root):
     blog_block = """<section>
 <h1>💭 Blog Posts</h1>
+<div class="h1-line"></div>
 <div class="blog-listing">
 """
     url = root + "blog/"
@@ -302,9 +303,11 @@ def get_blog_block(blog_posts: List[BlogPost], root):
 def get_garden_block(categories: List[Category], root):
     garden_block = """<section>
     <h1>🌱 Digital Garden</h1>
+    <div class="h1-line"></div>
 """
     url = root + "digital-garden/"
     counter = 0
+    bubble_counter = 0
     for index, category in enumerate(categories):
         title = category.title
         count = len(category.entries)
@@ -312,16 +315,24 @@ def get_garden_block(categories: List[Category], root):
         if counter == 0:
             garden_block += '\n\n<div class="row">'
 
+        bubble_class = "tag-bubble"
+        if bubble_counter in (2, 3):
+            bubble_class = "tag-bubble tag-bubble-even"
+
         post_url = url + category.html_name
         icon = category.icon
         garden_block += """
         <div class="column2">
             <a class="tag-bubble-a" href="{post_url}">
-                <div class="tag-bubble">{icon} {title} ({count})</div>
+                <div class="{bubble_class}">{icon} {title} ({count})</div>
             </a>
         </div>
 """.format(
-            title=title, count=count, post_url=post_url, icon=icon
+            title=title,
+            count=count,
+            post_url=post_url,
+            icon=icon,
+            bubble_class=bubble_class,
         )
 
         if counter == 1:
@@ -329,6 +340,11 @@ def get_garden_block(categories: List[Category], root):
             counter = 0
         else:
             counter += 1
+
+        if bubble_counter == 3:
+            bubble_counter = 0
+        else:
+            bubble_counter += 1
 
     garden_block += "</div>"
 
@@ -358,7 +374,7 @@ def get_garden_block(categories: List[Category], root):
     garden_block += """
     <div class="row" style="text-align: center; padding-top: 2rem;">
             <div class="column2">
-            <h3>📡 Newest Entries</h3>
+            <h3 style="font-variant: small-caps;">📡 Newest Entries</h3>
                         <ol>
 """
 
@@ -374,7 +390,7 @@ def get_garden_block(categories: List[Category], root):
         </ol>
         </div>
         <div class="column2">
-            <h3>⭐ Starred Entries</h3>
+            <h3 style="font-variant: small-caps;">⭐ Starred Entries</h3>
             <ol>
 """
     for entry in starred_entries:
@@ -467,7 +483,7 @@ def write_blog(blog_posts: List[BlogPost], root):
             else ""
         )
         breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}blog">Blog</a> &gt; {post.title[:30]}...'
-        post_html = f"{header}{breadcrumbs}<br><br>\n<article><h1>{post.title}</h1>{post_date_block}{post_html}</article>\n{footer_html}"
+        post_html = f"{header}{breadcrumbs}<br><br>\n<article><h1>{post.title}</h1><div class='h1-line'></div>{post_date_block}{post_html}</article>\n{footer_html}"
 
         post_index_path = os.path.join(post_path, "index.html")
         assert not os.path.exists(post_index_path), post_index_path
@@ -547,7 +563,7 @@ def write_garden(categories: List[Category], root):
                     if entry.date
                     else ""
                 )
-                html = f"{eheader}{breadcrumbs}<br><br>\n<article><h1>{entry.title}</h1>{post_date_block}{html}</article>\n{footer_html}"
+                html = f"{eheader}{breadcrumbs}<br><br>\n<article><h1>{entry.title}</h1><div class='h1-line'></div>{post_date_block}{html}</article>\n{footer_html}"
 
                 p = os.path.join(post_path, entry.file)
                 assert not os.path.exists(p), p
@@ -573,7 +589,7 @@ def write_garden(categories: List[Category], root):
 
         post_html = post_html.replace("{ROOT}", root)
         breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a> &gt; {post.title}'
-        post_html = f"{header}{breadcrumbs}<br><br><h1>{post.icon} {post.title} ({len(post.entries)})</h1>{post_html}{footer_html}"
+        post_html = f"{header}{breadcrumbs}<br><br><h1>{post.icon} {post.title} ({len(post.entries)})</h1><div class='h1-line'></div>{post_html}{footer_html}"
 
         post_index_path = os.path.join(post_path, "index.html")
         assert not os.path.exists(post_index_path), post_index_path
@@ -607,9 +623,7 @@ def write_pages(root):
         post_date_block = (
             f'<div class="blog-date">{post.date}</div>' if post.date else ""
         )
-        post_html = (
-            f"{header}<h1>{post.title}</h1>{post_date_block}{post_html}{footer_html}"
-        )
+        post_html = f"{header}<h1>{post.title}</h1><div class='h1-line'>{post_date_block}{post_html}{footer_html}"
 
         assert not os.path.exists(index_path), index_path
         with open(index_path, "w", encoding="utf-8") as f:
