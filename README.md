@@ -6,3 +6,7 @@ Code is awful, copy paste etc. Use at your own risk.
 
 No third party dependencies so I have basic hand rolled markdown parsing.  
 Only supports what I've needed so far.
+
+# Screenshot
+
+![website screenshot](https://github.com/Andrew-Shay/andrew-shay-me-blog-digital-garden/blob/main/website_screenshot.png)
