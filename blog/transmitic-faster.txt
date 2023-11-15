@@ -1,0 +1,113 @@
+title: Making Transmitic Faster...By Doing Less!
+date:2023-11-12
+tags:rust,p2p,transmitic
+body:
+## What is Transmitic & The Prototype Phase
+[Transmitic](https://github.com/transmitic/transmitic) is an encrypted, p2p, file transfer and sharing program.  I created it because, while there are many file transfer programs out there, there was nothing quite like Transmitic.  
+The main difference is in the UI.  You add users you want to share with and which files and folders each user can download from you.  Then users can download those files whenever they want.  Completely p2p.
+
+A few years ago, I wanted to learn a new programming language and decided on Rust.  I then decided my first project with Rust should be Transmitic.  
+Learning Rust was quite difficult at first, and when combined with creating a new p2p application, it was a lot to try and handle after work.  
+Therefore, I could not try to optimize, cache, or really architect anything.  
+In order to not get overwhelmed by the project, I decided that I would just learn, and code, little bits at a time, without being concerned about code quality (except for the crypto) or performance.  
+
+This worked out well because I have been able to get Transmitic to a very functional (yet still Beta) state.  It now includes all the primary features I wanted it to have.  
+There is still much more I want to do though.  
+
+Until very recently, it was really more in an alpha/prototype state. There was wasted bandwidth and things that could be cached, but weren't.  
+I will discuss some of the enhancements that helped make Transmitic faster and use less bandwidth, which can be summarized as "do less!"  
+
+None of this is novel. It's all obvious, and if you're able to truly focus on a project and plan it, you won't hit these.  
+I just couldn't think about it at the time.  Once the feature worked, ship it!  
+
+## Overview of Features
+A quick overview of the features that will be discussed.  
+<ol>
+<li> The protocol is simple. It sends u16 messages to instruct the action to be performed, with a u32 payload size, followed by the payload itself.</li>
+<li> File Listings are JSON strings. They contain all file paths, and their sizes, that are shared with an individual user.  </li>
+<li> To determine when a file download is complete, the client sends the file path and current file size on disk to the server. The server sends more chunks of data or a download complete message.  </li>
+<li> "Reverse Connection" is a feature, that when enabled, Transmitic will periodically connect to each user (outgoing) to establish a connection for sharing. This feature is for users with networking limitations that cannot accept incoming connections. </li> 
+</ol>
+## Cache File Listings
+When a user refreshes files that are shared with them, they download JSON data containing the file paths shared with them and the file sizes.  
+This is the "File Listing".  
+Initially, when a user started downloading files, the file listing was requested __again__. This ensured they had the latest, valid, list of files shared with them.  
+The client could then determine locally if the file was invalid or not (of course, the server would still reject any invalid files that were requested).
+However, this is wasted bandwidth. Especially if the file listing was large, like 50MB. A user downloads 50MB worth of JSON to see what's available, and once they start downloading, they immediately download 50MB again. 
+Wasteful!  
+
+The same scenario occurred with the Reverse Connection feature.  
+A user with Reverse Connection enabled, periodically connects to everyone they share with, and "hands off" that connection to allow file listings and downloads to occur.  
+Because the File Listing was not cached, every Reverse Connection would trigger the file listing to be downloaded.  
+Therefore, if you were sharing with anyone who used Reverse Connection, they would continually trigger your client to download the File Listing even if you already had the latest File Listing!  
+Wasteful!  
+
+__Let's cache it!__
+
+Reducing this waste is simple. We just need to cache the File Listing, ensure the appropriate threads have access to it, and determine when we need a new copy.  
+
+When a client starts downloading files, instead of requesting a new File Listing immediately, first it checks if it already has one. If it does, it attempts to download the file.  
+Now, it will only get a new File Listing if the server responds with the file choice being "Invalid" i.e. Not shared with you.  
+
+The Reverse Connection logic now maintains a list of users who have the latest File Listing. This list is reset when the user changes which files they're sharing.  
+When the Reverse Connection is established, there is now a new message that can be sent, `MSG_REVERSE_NO_LIST`.  
+This tells the client a Reverse Connection is being established, but the server thinks you have the latest File Listing.  
+The client does not __need__ to request a new one.  
+
+## If the Client Can Do It Alone, Do It Alone
+When a user downloads a directory, the client loops through every sub file in the File Listing and requests it from the server.  
+If the download is interrupted, it can continue where it left off.  
+It would NOT __redownload__ every file, but it would start from the first file in the directory and loop through them all again.  
+Originally, the logic was simple. The next file is pulled from the file listing, check its size on disk, and send it to the server which would respond.  
+This would happen for files that were already finished. The client would tell the server the current size and the server would respond, __download finished__.  
+Wasteful!  
+
+We have the File Listing locally, which already contains the expected file sizes!  
+Now, when the client loops through the File Listing again, if the file size on disk matches the File Listing, it just moves onto the next file.  
+The client does __not__ contact the server for finished files anymore!  
+
+After that change, a bug was introduced.  I noticed it when transferring some test directories.  
+__0 byte files.__  
+When getting ready to process a file for download, the client sets the current size on disk, but if the file does not exist, it sets it to 0.  
+That, combined with "if the size on disk matches the File Listing, move on to the next file", meant 0 byte files were not being created anymore. Oops!  
+That was an easy fix though. If the File Listing says a file's size is 0 bytes, the client just creates the file locally. There is no need to ask the server anything!  
+
+## Redundant Server Messages
+Originally, the server would send a `MSG_FILE_CHUNK` message which contains a chunk of file as the payload.  
+When the file completed, the server would then send a `MSG_FILE_FINISHED` message with no payload.  
+This means every file download ended with an extra message, `MSG_FILE_FINISHED`.  And it has no data...  
+Wasteful!  
+
+So, I extended `MSG_FILE_FINISHED` to also contain a payload.  
+Now, the last chunk of file would be `MSG_FILE_FINISHED` instead of `MSG_FILE_CHUNK`.  
+I was able to remove the pointless extra message of `MSG_FILE_FINISHED` with no payload.  
+
+I also uncovered another wasteful message.  
+The code looked like this  
+```
+bytes_read = -1
+while bytes_read != 0:
+    bytes_read = read_file_into_buffer(buf)
+    send_to_client(MSG_FILE_CHUNK, buf)
+```
+The intent is to keep sending chunks until nothing left was read from the file, i.e. Everything has been sent.  
+However, `while bytes_read != 0` means loop UNTIL `bytes_read == 0`, which means we need a pass through the loop that __has read__ nothing.  
+This causes the server to send a `MSG_FILE_CHUNK` with a payload of nothing!
+The server tells the client, "Here's a 0 byte chunk of your download."  
+Wasteful!  
+So, I refactored the loop and the inner logic to not send this useless message.  
+
+## In Summary
+<ol>
+<li>Cache data where you can so you do not have to rerequest it</li>
+<li>Look for useless communication. i.e. Data with no payloads</li>
+<li>If you can operate with only local data, do not contact the server</li>
+</ol>
+It's always fun to make these optimizations! Big or Small.  
+Not worrying about them from the beginning allowed me to keep working and deliver value to users.  
+Thinking about everything from the beginning would have been too much, burned me out, and I would have given up.  I was already close to giving up as is, but I'm so glad I didn't!
+
+[https://transmitic.net/](https://transmitic.net/)
+[https://github.com/transmitic/transmitic/](https://github.com/transmitic/transmitic/)
+
+![Transmitic Screenshot](https://github.com/transmitic/transmitic/raw/main/screenshot.png)
