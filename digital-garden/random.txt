@@ -2,6 +2,13 @@ title: Random
 icon: 🔮
 
 ---##
+title: Copy Paste Fancy Text
+description: Copy and pastable fancy text and more
+url: https://copy-paste.net/en/
+date: 2023-11-11
+---!##
+
+---##
 title: ALTER
 description: Horror short films
 url: https://www.youtube.com/WatchALTER/videos

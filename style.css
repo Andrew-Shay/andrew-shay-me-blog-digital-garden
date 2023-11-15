@@ -102,7 +102,7 @@ body {
 	/* Center body in page */
 	margin: 0 auto;
 	max-width: 750px;
-	padding: 2rem;
+	padding: 1rem;
 	border-radius: 6px;
 	overflow-x: hidden;
 	word-break: break-word;
@@ -519,8 +519,8 @@ nav>a {
 
 .blog-date {
 	font-size: 0.9rem;
-	margin-top: -0.5rem;
-	padding-bottom: 1rem;
+	margin-top: -1.5rem;
+	padding-bottom: 1.5rem;
 	padding-top: 0.5rem;
 }
 
@@ -733,5 +733,9 @@ span.hightlight {
 	.tagline {
 		margin-top: 0rem;
 		color: #999999;
+	}
+
+	.post-icon {
+		font-size: 1.5rem;
 	}
 }

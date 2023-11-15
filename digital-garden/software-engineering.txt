@@ -2,6 +2,13 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: monaspace
+description: Multiple monospace fonts meant to work together
+url: https://monaspace.githubnext.com/
+date: 2023-11-13
+---!##
+
+---##
 title: ZeroVer: 0-based Versioning
 url: https://0ver.org/
 date: 2023-11-02

@@ -32,7 +32,6 @@ title: sciter
 url: https://sciter.com/
 description: Create GUIs with HTML, CSS and Javascript. Great choice for Rust.
 date: 2022-08-05
-star:
 ---!##
 
 ---##

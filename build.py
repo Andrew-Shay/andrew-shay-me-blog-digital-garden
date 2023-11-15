@@ -302,7 +302,7 @@ def get_blog_block(blog_posts: List[BlogPost], root):
 
 def get_garden_block(categories: List[Category], root):
     garden_block = """<section>
-    <h1>🌱 Digital Garden</h1>
+    <h1><span class='post-icon'>🌱</span> Digital Garden</h1>
     <div class="h1-line"></div>
 """
     url = root + "digital-garden/"
@@ -384,7 +384,7 @@ def get_garden_block(categories: List[Category], root):
             if entry.body_lines_formatted
             else entry.url[0]
         )
-        garden_block += f'<li><a href="{url}">{entry.title}</a></li>'
+        garden_block += f'<li><a href="{url}" title="{entry.description or entry.title}">{entry.title}</a></li>'
 
     garden_block += """
         </ol>
@@ -394,7 +394,7 @@ def get_garden_block(categories: List[Category], root):
             <ol>
 """
     for entry in starred_entries:
-        garden_block += f'<li><a href="{entry.url[0]}">{entry.title}</a></li>'
+        garden_block += f'<li><a href="{entry.url[0]}"  title="{entry.description or entry.title}">{entry.title}</a></li>'
 
     garden_block += """
     </ol>
@@ -408,9 +408,9 @@ def get_garden_block(categories: List[Category], root):
 def write_index(blog_posts, categories: List[Category]):
     webring = """
 <section style="text-align:center; padding-top: 2rem;">
-<a href="https://hotlinewebring.club/andrew-shay/previous">&lt;--- Previous Site</a>
+<a href="https://hotlinewebring.club/andrew-shay/previous">← Previous Site</a>
 <a style="padding-left:1rem;padding-right: 1rem;" href="https://hotlinewebring.club/">Hotline Webring</a>
-<a href="https://hotlinewebring.club/andrew-shay/next">Next Site ---&gt;</a>
+<a href="https://hotlinewebring.club/andrew-shay/next">Next Site →</a>
 <a style="display: none;" rel="me" href="https://techhub.social/@andrewshay">Mastodon</a>
 </section>    
 """
@@ -589,7 +589,7 @@ def write_garden(categories: List[Category], root):
 
         post_html = post_html.replace("{ROOT}", root)
         breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a> &gt; {post.title}'
-        post_html = f"{header}{breadcrumbs}<br><br><h1>{post.icon} {post.title} ({len(post.entries)})</h1><div class='h1-line'></div>{post_html}{footer_html}"
+        post_html = f"{header}{breadcrumbs}<br><br><h1><span class='post-icon'>{post.icon}</span> {post.title} ({len(post.entries)})</h1><div class='h1-line'></div>{post_html}{footer_html}"
 
         post_index_path = os.path.join(post_path, "index.html")
         assert not os.path.exists(post_index_path), post_index_path
@@ -623,7 +623,7 @@ def write_pages(root):
         post_date_block = (
             f'<div class="blog-date">{post.date}</div>' if post.date else ""
         )
-        post_html = f"{header}<h1>{post.title}</h1><div class='h1-line'>{post_date_block}{post_html}{footer_html}"
+        post_html = f"{header}<h1>{post.title}</h1><div class='h1-line'></div>{post_date_block}{post_html}{footer_html}"
 
         assert not os.path.exists(index_path), index_path
         with open(index_path, "w", encoding="utf-8") as f:

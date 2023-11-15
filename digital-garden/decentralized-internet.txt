@@ -45,7 +45,6 @@ title: Gemini
 url: https://gemini.circumlunar.space/
 description: Alternative internet to www and http
 date: 2022-08-06
-star:
 ---!##
 
 ---##
