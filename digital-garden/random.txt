@@ -2,6 +2,28 @@ title: Random
 icon: 🔮
 
 ---##
+title: Consumer Aesthetics Research Institute
+description: An online community dedicated to developing a visual lexicon of consumer ephemera from the 1970s until now. 
+url: https://cari.institute/aesthetics
+date: 2023-11-17
+---!##
+
+---##
+title: Frutiger Aero
+description: Design style and aesthetic that was prevalent in advertising, media, stock imagery and technology from roughly 2004 to 2013
+url: https://aesthetics.fandom.com/wiki/Frutiger_Aero, https://www.youtube.com/watch?v=ostolucALTA, https://news.ycombinator.com/item?id=38276418
+date: 2023-11-17
+---!##
+
+---##
+title: The Forest
+description: Load a random website
+url: https://theforest.link/
+date: 2023-11-14
+star:
+---!##
+
+---##
 title: Copy Paste Fancy Text
 description: Copy and pastable fancy text and more
 url: https://copy-paste.net/en/
@@ -121,13 +143,6 @@ date: 2022-08-23
 ---!##
 
 ---##
-title: Dalle 2
-description: AI generated art
-url: https://openai.com/dall-e-2
-date: 2022-08-08
----!##
-
----##
 title: Hotline Webring
 url: https://hotlinewebring.club/
 date: 2022-08-07
@@ -152,13 +167,6 @@ date: 2022-01-05
 title: Marginalia
 description: Independent DIY search engine that focuses on non-commercial content
 url: https://search.marginalia.nu/
-date: 2022-08-05
----!##
-
----##
-title: Webpage List
-description: Discover new websites
-url: https://webpagelist.com/
 date: 2022-08-05
 ---!##
 

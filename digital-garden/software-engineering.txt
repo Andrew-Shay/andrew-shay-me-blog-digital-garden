@@ -2,6 +2,12 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Windows Longhorn Concept "WinUI Prototype"
+url: https://www.youtube.com/watch?v=I7FnBHrJSao
+date: 2023-11-17
+---!##
+
+---##
 title: monaspace
 description: Multiple monospace fonts meant to work together
 url: https://monaspace.githubnext.com/
@@ -72,8 +78,8 @@ date: 2023-05-11
 ---!##
 
 ---##
-title: Protocol Wars
-url: Protocol ossification
+title: Protocol Ossification
+url: https://en.wikipedia.org/wiki/Protocol_ossification
 date: 2023-05-10
 ---!##
 

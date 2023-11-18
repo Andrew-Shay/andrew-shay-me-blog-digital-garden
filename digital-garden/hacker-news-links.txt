@@ -32,3 +32,10 @@ description: Independent search engine with its own spider
 url: https://news.ycombinator.com/item?id=25372401,https://www.mojeek.com/
 date: 2022-08-01
 ---!##
+
+---##
+title: Frutiger Aero
+description: Design style and aesthetic that was prevalent in advertising, media, stock imagery and technology from roughly 2004 to 2013
+url: https://news.ycombinator.com/item?id=38276418, https://aesthetics.fandom.com/wiki/Frutiger_Aero, https://www.youtube.com/watch?v=ostolucALTA
+date: 2023-11-17
+---!##
