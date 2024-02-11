@@ -2,6 +2,30 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: A 2024 plea for lean software
+url: https://spectrum.ieee.org/lean-software-development
+date: 2024-02-10
+---!##
+
+---##
+title: Game-icons.net - Free icons
+url: https://game-icons.net/
+date: 2024-01-25
+---!##
+
+---##
+title: Spotify: How to shuffle songs?
+url: https://engineering.atspotify.com/2014/02/how-to-shuffle-songs/
+date: 2023-11-21
+---!##
+
+---##
+title: SmolCSS
+url: https://smolcss.dev/
+date: 2023-11-20
+---!##
+
+---##
 title: Windows Longhorn Concept "WinUI Prototype"
 url: https://www.youtube.com/watch?v=I7FnBHrJSao
 date: 2023-11-17

@@ -9,5 +9,4 @@ I created a program to simply gather information about a Windows system and then
 
 It is currently released in beta.  
 
-Download:  [https://shayconcepts.com/#device-checker](https://shayconcepts.com/#device-checker)  
 View on GitHub:   [shayConcepts/device-checker](https://github.com/shayConcepts/device-checker)

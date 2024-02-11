@@ -21,5 +21,5 @@ To drop support for this protocol you must
 
 <p>
 Also, here is the default conf file  
-<a href="https://github.com/certbot/certbot/blob/master/certbot-apache/certbot_apache/options-ssl-apache.conf">https://github.com/certbot/certbot/blob/master/certbot-apache/certbot_apache/options-ssl-apache.conf</a>
+<a href="https://github.com/certbot/certbot/blob/master/certbot-apache/certbot_apache/_internal/tls_configs/old-options-ssl-apache.conf">https://github.com/certbot/certbot/blob/master/certbot-apache/certbot_apache/_internal/tls_configs/old-options-ssl-apache.conf</a>
 </p>

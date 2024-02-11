@@ -268,7 +268,7 @@ def read_garden():
 
 def get_blog_block(blog_posts: List[BlogPost], root):
     blog_block = """<section>
-<h1>💭 Blog Posts</h1>
+<h1>💭 Blog</h1>
 <div class="h1-line"></div>
 <div class="blog-listing">
 """

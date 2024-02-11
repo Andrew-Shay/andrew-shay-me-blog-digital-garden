@@ -2,6 +2,40 @@ title: Random
 icon: 🔮
 
 ---##
+title: Artvee
+description: Browse and download high-resolution, public domain artworks.
+url: https://artvee.com/
+date: 2022-02-01
+---!##
+
+---##
+title: Mojeek
+description: Independent search engine with its own spider
+url: https://www.mojeek.com/,https://news.ycombinator.com/item?id=25372401
+date: 2022-08-01
+---!##
+
+---##
+title: Self Balancing Cube
+url: https://willempennings.nl/balancing-cube/
+date: 2024-02-11
+---!##
+
+---##
+title: Pinball Map
+description: Map of pinball machines
+url: https://pinballmap.com/
+date: 2024-02-05
+---!##
+
+---##
+title: Revenge Bedtime Procrastination
+description: When people delay going to sleep in order to feel in control of their life and schedule 
+url: https://solvingprocrastination.com/revenge-bedtime-procrastination/
+date: 2023-11-20
+---!##
+
+---##
 title: Consumer Aesthetics Research Institute
 description: An online community dedicated to developing a visual lexicon of consumer ephemera from the 1970s until now. 
 url: https://cari.institute/aesthetics

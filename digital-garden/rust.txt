@@ -36,7 +36,7 @@ date: 2022-08-05
 
 ---##
 title: Make a Language with Rust
-url: https://arzg.github.io/lang/
+url: https://lunacookies.github.io/lang/
 date: 2022-02-01
 ---!##
 
