@@ -2,6 +2,27 @@ title: Software
 icon: 💽
 
 ---##
+title: Obsidian
+url: https://obsidian.md/
+description: Note taking app that uses Markdown
+date: 2024-02-25
+---!##
+
+---##
+title: ImHex
+url: https://imhex.werwolv.net/
+description: Hex editor that can decode and analyze binary data
+date: 2024-02-17
+---!##
+
+---##
+title: Clip Studio Paint
+url: https://www.clipstudio.net
+description: Software for drawing
+date: 2024-02-17
+---!##
+
+---##
 title: NymphCast
 url: https://github.com/MayaPosch/NymphCast
 description: Like an open source ChromeCast

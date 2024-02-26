@@ -2,6 +2,18 @@ title: Rust
 icon: ⚙️
 
 ---##
+title: book: The Little Book of Rust Books
+url: https://lborb.github.io/book/
+date: 2024-02-17
+---!##
+
+---##
+title: book: Rust Design Patterns
+url: https://rust-unofficial.github.io/patterns/
+date: 2024-02-17
+---!##
+
+---##
 title: book: High Assurance Rust
 url: https://highassurance.rs/
 date: 2023-01-21

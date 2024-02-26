@@ -2,6 +2,13 @@ title: Random
 icon: 🔮
 
 ---##
+title: My productivity app is a never-ending .txt file
+url: https://jeffhuang.com/productivity_text_file/,https://news.ycombinator.com/item?id=39432876
+date: 2024-02-19
+star:
+---!##
+
+---##
 title: Artvee
 description: Browse and download high-resolution, public domain artworks.
 url: https://artvee.com/
@@ -126,7 +133,6 @@ date: 2023-05-11
 title: Wonders of Street View
 url: https://neal.fun/wonders-of-street-view/
 date: 2023-01-29
-star:
 ---!##
 
 ---##

@@ -44,6 +44,12 @@ date: 2022-08-05
 ---!##
 
 ---##
+title: Beej's Guide to Networking Concepts
+url: https://beej.us/guide/bgnet0/
+date: 2022-08-05
+---!##
+
+---##
 title: Computer Graphics from Scratch
 url: https://www.gabrielgambetta.com/computer-graphics-from-scratch/index.html
 date: 2022-02-01

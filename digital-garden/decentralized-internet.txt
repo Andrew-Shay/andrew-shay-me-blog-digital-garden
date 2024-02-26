@@ -23,7 +23,6 @@ date: 2023-05-28
 title: The Dark Forest and the Cozy Web
 url: https://maggieappleton.com/cozy-web
 date: 2023-05-28
-star:
 ---!##
 
 ---##

@@ -2,9 +2,24 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: The Original Proposal for the World Wide Web (1989) Tim Berners-Lee
+url: https://www.w3.org/History/1989/proposal.html
+date: 2024-02-21
+star:
+---!##
+
+---##
+title: codecrafters-io/build-your-own-x
+url: https://github.com/codecrafters-io/build-your-own-x
+description: Master programming by recreating your favorite technologies from scratch. 
+date: 2024-02-17
+---!##
+
+---##
 title: A 2024 plea for lean software
 url: https://spectrum.ieee.org/lean-software-development
 date: 2024-02-10
+star:
 ---!##
 
 ---##
