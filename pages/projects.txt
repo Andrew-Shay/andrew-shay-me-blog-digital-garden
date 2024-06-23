@@ -6,6 +6,6 @@ body:
 Encrypted, peer to peer, file transfer and sharing, built with Rust.
 [transmitic.net](https://transmitic.net/)
 
-## Neuron
-Create Python desktop applications with HTML and Javascript GUI.
-View on GitHub: [Andrew-Shay/Neuron](https://github.com/Andrew-Shay/Neuron)
+## Auto Magor
+A simple Python program to create a 3 column print magazine from text files and images.
+View on GitHub: [AutoMagor/AutoMagor](https://github.com/AutoMagor/AutoMagor)

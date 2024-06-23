@@ -2,6 +2,13 @@ title: Software
 icon: 💽
 
 ---##
+title: Auto Magor
+url: https://github.com/AutoMagor/AutoMagor
+description: A simple Python program to create a 3 column print magazine from text files and images
+date: 2024-02-06
+---!##
+
+---##
 title: Obsidian
 url: https://obsidian.md/
 description: Note taking app that uses Markdown
@@ -146,7 +153,6 @@ title: Photopea
 description: Free online photo editor like Photoshop
 url: https://www.photopea.com/
 date: 2022-02-01
-star:
 ---!##
 
 ---##

@@ -2,6 +2,30 @@ title: Supply Chain Attacks
 icon: 💣
 
 ---##
+title: Evan Boehs: Everything I know about the XZ backdoor
+url: https://boehs.org/node/everything-i-know-about-the-xz-backdoor
+date: 2024-06-03
+---!##
+
+---##
+title: Running the “Reflections on Trusting Trust” Compiler
+url: https://research.swtch.com/nih
+date: 2024-06-03
+---!##
+
+---##
+title: 170K Users Affected by Attack Using Fake Python Infrastructure
+url: https://checkmarx.com/blog/over-170k-users-affected-by-attack-using-fake-python-infrastructure/
+date: 2024-06-03
+---!##
+
+---##
+title: GitHub besieged by millions of malicious repositories
+url: https://arstechnica.com/security/2024/02/github-besieged-by-millions-of-malicious-repositories-in-ongoing-attack/
+date: 2024-03-01
+---!##
+
+---##
 title: Malicious ‘SentinelOne’ PyPI package steals data from developers
 url: https://www.bleepingcomputer.com/news/security/malicious-sentinelone-pypi-package-steals-data-from-developers/
 date: 2022-12-22

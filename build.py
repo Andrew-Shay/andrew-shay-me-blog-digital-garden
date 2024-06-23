@@ -266,7 +266,7 @@ def read_garden():
     return categories
 
 
-def get_blog_block(blog_posts: List[BlogPost], root):
+def get_blog_block(blog_posts: List[BlogPost], root, limit=None):
     blog_block = """<section>
 <h1>💭 Blog</h1>
 <div class="h1-line"></div>
@@ -274,7 +274,8 @@ def get_blog_block(blog_posts: List[BlogPost], root):
 """
     url = root + "blog/"
     counter = 0
-    for index, post in enumerate(blog_posts):
+    limit = limit or len(blog_posts)
+    for index, post in enumerate(blog_posts[:limit]):
         if counter == 0:
             blog_block += '\n\n<div class="row">'
 
@@ -426,7 +427,7 @@ def write_index(blog_posts, categories: List[Category]):
         UPDATED_TIME=TIMESTAMP_NOW,
     )
 
-    blog_block = get_blog_block(blog_posts, root)
+    blog_block = get_blog_block(blog_posts, root, limit=10)
     garden_block = get_garden_block(categories, root)
 
     html = f"{header} {blog_block} {garden_block} {webring} {footer_html}"

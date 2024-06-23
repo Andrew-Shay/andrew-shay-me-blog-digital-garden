@@ -2,6 +2,12 @@ title: Random
 icon: 🔮
 
 ---##
+title: Web Design Museum
+url: https://www.webdesignmuseum.org/
+date: 2024-03-08
+---!##
+
+---##
 title: My productivity app is a never-ending .txt file
 url: https://jeffhuang.com/productivity_text_file/,https://news.ycombinator.com/item?id=39432876
 date: 2024-02-19
