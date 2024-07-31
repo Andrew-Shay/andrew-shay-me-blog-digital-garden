@@ -1,0 +1,10 @@
+title: Vendor Base64 Project for Rust
+date: 2024-07-01
+tags:rust,base64
+body:
+## What is Vendor Base64
+[rust_vendor_base64](https://github.com/Andrew-Shay/rust_vendor_base64) is my implementation of base64, in rust, that is meant to be vendored in rust projects.  
+It is not available on crates.io to be installed.  
+
+I created it because it's something so simple that I think it should be included in the rust stdlib.  
+And when the [base64 crate](https://github.com/marshallpierce/rust-base64) broke their API, I decided I should implement it and have a module that others could vendor without risking the API breaking.

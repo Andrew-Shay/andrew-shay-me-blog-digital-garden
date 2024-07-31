@@ -18,9 +18,3 @@ title: StreetComplete
 url: https://play.google.com/store/apps/details?id=de.westnordost.streetcomplete&hl=en_US&gl=US
 date: 2022-08-08
 ---!##
-
----##
-title: Mapillary
-url: https://www.mapillary.com/
-date: 2022-08-09
----!##

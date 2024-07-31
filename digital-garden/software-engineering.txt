@@ -2,6 +2,27 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Engineering for Slow Internet
+url: https://brr.fyi/posts/engineering-for-slow-internet
+description: How to minimize user frustration in Antarctica.
+date: 2024-07-30
+star:
+---!##
+
+---##
+title: HEAD
+url: https://htmlhead.dev/
+description: A simple guide to HTML &lt;head&gt; elements
+date: 2024-07-15
+---!##
+
+---##
+title: Dev Fonts
+url: https://devfonts.gafi.dev/
+date: 2024-07-15
+---!##
+
+---##
 title: Web Check
 url: https://v1.web-check.xyz/
 date: 2024-06-23

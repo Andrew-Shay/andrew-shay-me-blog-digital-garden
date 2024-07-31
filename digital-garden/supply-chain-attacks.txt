@@ -33,7 +33,7 @@ date: 2022-12-22
 
 ---##
 title: Supply chain attacks - Microsoft
-url: https://docs.microsoft.com/en-us/microsoft-365/security/intelligence/supply-chain-malware?view=o365-worldwide
+url: https://learn.microsoft.com/en-us/defender-endpoint/malware/supply-chain-malware
 date: 2022-08-07
 star:
 ---!##

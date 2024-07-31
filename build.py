@@ -616,7 +616,7 @@ def write_pages(root):
             ROOT=root,
             TITLE=post.title,
             DESCRIPTION=description,
-            OGURL=file_name,
+            OGURL=new_name,
             UPDATED_TIME=post.updated,
         )
         post_html = "\n".join(post.body_lines_formatted)
