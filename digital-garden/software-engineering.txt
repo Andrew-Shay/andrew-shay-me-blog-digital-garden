@@ -2,6 +2,25 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Bill Gates tries to install Movie Maker
+url: https://www.techemails.com/p/bill-gates-tries-to-install-movie-maker
+date: 2024-10-09
+---!##
+
+---##
+title: Ping Storms at GreyNoise
+url: https://darthnull.org/noisestorms/
+date: 2024-10-09
+---!##
+
+---##
+title: The Disappearance of an Internet Domain
+url: https://every.to/p/the-disappearance-of-an-internet-domain
+description: How geopolitics can alter digital infrastructure
+date: 2024-10-09
+---!##
+
+---##
 title: Engineering for Slow Internet
 url: https://brr.fyi/posts/engineering-for-slow-internet
 description: How to minimize user frustration in Antarctica.
@@ -53,12 +72,6 @@ star:
 title: Game-icons.net - Free icons
 url: https://game-icons.net/
 date: 2024-01-25
----!##
-
----##
-title: Spotify: How to shuffle songs?
-url: https://engineering.atspotify.com/2014/02/how-to-shuffle-songs/
-date: 2023-11-21
 ---!##
 
 ---##

@@ -43,7 +43,7 @@ It's simple, but along the way I ran into a few things that were a little tricky
 The first thing I hit, was that some of the last lines of a paragraph were unexpectedly reaching the max column height, mid-sentence.
 I realized that it was caused by "low hanging" characters like `pqgy,)`.
 Before writing a new line, I check if it will be able to fit. 
-At first, I was (re)checking the height as each word was added. This was just for simplicity. So, once a word with a low hanging was attempted, it would push to the next line.
+At first, I was (re)checking the height as each word was added. This was just for simplicity. So, once a word with a low hanging character was attempted, it would push to the next line.
 I had to change it to test the new line height one time, and with the low hanging characters instead.
 
 I also had to start tracking when I was at the start of a new column.
@@ -55,7 +55,7 @@ Since I won't be running Auto Magor very often, I prefer code simplicity to exec
 But there are some things that I assume could make Auto Magor faster.
 
 I get the width of the column by appending the word, then calculating the new column width.
-But I do this for __every word__. So, it's constantly recalculating the line. i.e. every word that has already been applied.
+But I do this after __every word__. So, it's constantly recalculating the line. i.e. every word that has already been applied.
 I think I could maintain a width variable manually, get the width of each word by itself, and increment it until the max width is reached.
 
 If the above works, a cache of the widths for the most frequent words could be generated, and then maintained across runs for a given font and size.

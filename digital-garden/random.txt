@@ -2,6 +2,45 @@ title: Random
 icon: 🔮
 
 ---##
+title: Publii 
+description: Desktop app for creating static sites
+url: https://getpublii.com/
+date: 2024-10-12
+---!##
+
+---##
+title: windy.com
+description: Weather and storm tracking
+url: https://www.windy.com/
+date: 2024-10-10
+---!##
+
+---##
+title: Hurricane Ian Washes Away Ft. Myers Beach FL
+url: https://www.youtube.com/watch?v=igsz7cqg-Zk
+date: 2024-10-10
+---!##
+
+---##
+title: Apotris
+description: Tetris for the Gameboy Advance
+url: https://akouzoukos.com/apotris
+date: 2024-10-09
+---!##
+
+---##
+title: Winamp Skin Museum
+url: https://skins.webamp.org/
+date: 2024-10-09
+---!##
+
+---##
+title: The Effect of CRTs on Pixel Art
+url: https://www.datagubbe.se/crt/
+date: 2024-08-03
+---!##
+
+---##
 title: Web Design Museum
 url: https://www.webdesignmuseum.org/
 date: 2024-03-08

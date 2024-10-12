@@ -2,6 +2,12 @@ title: Rust
 icon: ⚙️
 
 ---##
+title: Rust needs an extended standard library
+url: https://kerkour.com/rust-stdx
+date: 2024-10-09
+---!##
+
+---##
 title: book: The Little Book of Rust Books
 url: https://lborb.github.io/book/
 date: 2024-02-17

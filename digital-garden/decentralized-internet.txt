@@ -41,7 +41,7 @@ star:
 
 ---##
 title: Gemini
-url: https://gemini.circumlunar.space/
+url: https://en.wikipedia.org/wiki/Gemini_(protocol)
 description: Alternative internet to www and http
 date: 2022-08-06
 ---!##
