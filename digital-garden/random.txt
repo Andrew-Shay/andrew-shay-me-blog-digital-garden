@@ -2,6 +2,13 @@ title: Random
 icon: 🔮
 
 ---##
+title: EarthCam 
+description: Live webcams from around the world
+url: https://www.earthcam.com/
+date: 2025-01-12
+---!##
+
+---##
 title: Publii 
 description: Desktop app for creating static sites
 url: https://getpublii.com/
@@ -270,7 +277,7 @@ date: 2022-02-01
 ---##
 title: Drive & Listen
 description: Listen to a local radio station with a dashcam feed of that town
-url: https://driveandlisten.herokuapp.com/
+url: https://drivenlisten.com/
 date: 2022-02-01
 ---!##
 
