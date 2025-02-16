@@ -2,6 +2,19 @@ title: Rust
 icon: ⚙️
 
 ---##
+title: Writing a Simple Driver in Rust
+url: https://scorpiosoftware.net/2025/02/08/writing-a-simple-driver-in-rust/
+date: 2025-02-08
+---!##
+
+---##
+title: Tauri
+url: https://tauri.app/
+description: Create small, fast, secure, cross-platform applications
+date: 2025-01-30
+---!##
+
+---##
 title: Rust needs an extended standard library
 url: https://kerkour.com/rust-stdx
 date: 2024-10-09
@@ -46,13 +59,6 @@ star:
 ---!##
 
 ---##
-title: sciter
-url: https://sciter.com/
-description: Create GUIs with HTML, CSS and Javascript. Great choice for Rust.
-date: 2022-08-05
----!##
-
----##
 title: Make a Language with Rust
 url: https://lunacookies.github.io/lang/
 date: 2022-02-01
@@ -92,4 +98,121 @@ date: 2023-01-10
 title: Dependency on rust removes support for a number of platforms for pyca/cryptography
 url: https://lobste.rs/s/f4chm2/dependency_on_rust_removes_support_for, https://github.com/pyca/cryptography/issues/5771
 date: 2022-08-01
+---!##
+
+---##
+title: axum - Download file with resume
+file: axum-download-file-resume.html
+date: 2025-02-01
+body:
+How to serve a file with axum that supports resuming if interrupted
+[gist.github.com/Andrew-Shay/566c18fc0e0e9ce721b7b85cdfd0c3ec](https://gist.github.com/Andrew-Shay/566c18fc0e0e9ce721b7b85cdfd0c3ec)
+
+```
+use axum::{
+    body::Body,
+    http::{header, StatusCode},
+    response::IntoResponse,
+    routing::get,
+    Router,
+};
+use tokio::{fs::File, io::AsyncSeekExt};
+use tokio_util::io::ReaderStream;
+
+/// How to serve a file with axum that supports resuming if interrupted
+/// https://andrewshay.me/digital-garden/rust/axum-download-file-resume.html
+///
+/// HOW TO USE
+/// Create input.zip in your current working directory. Likely the same dir as Cargo.toml
+/// $ cargo run
+/// Note: This doesn't seem to work in Chrome. If you can solve it, let me know.
+/// In Firefox go to 127.0.0.1:3000
+/// You should see Hello, World!
+/// Go to 127.0.0.1:3000/download
+/// File should start downloading
+/// Try pausing/resuming the download. And turning off the server mid download.
+/// When you resume the download, it should continue from where it left off. It should NOT start over.
+/// This is accomplished through CONTENT_RANGE and PARTIAL_CONTENT
+///
+/// Cargo.toml
+/// [dependencies]
+/// axum = "0.8.1"
+/// tokio = { version = "1.43.0", features = ["full"] }
+/// tokio-util = { version = "0.7.13", features = ["io"] }
+
+#[tokio::main]
+async fn main() {
+    let app = Router::new()
+        .route("/", get(root)) // Hello World test
+        .route("/download", get(download)); // Downloads the file
+
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:3000")
+        .await
+        .unwrap();
+    println!("listening...");
+    axum::serve(listener, app).await.unwrap();
+}
+
+async fn root() -> &'static str {
+    "Hello, World!"
+}
+
+// https://docs.rs/axum/latest/axum/extract/index.html
+async fn download(headers: header::HeaderMap) -> impl IntoResponse {
+    println!("\n\n######\n");
+    println!("Request Headers\n{:?}\n", headers);
+
+    // Get existing bytes downloaded.
+    // The browser sends this information.
+    // It may not exist when the download is first started.
+    // Sample from Firefox "range": "bytes=715808768-"
+    let range: u64 = match headers.get("range") {
+        Some(range) => match range.to_str() {
+            Ok(range) => {
+                let mut split = range.split("=");
+                match split.nth(1) {
+                    Some(range) => {
+                        let range = range.strip_suffix("-").unwrap_or(range);
+                        let range: u64 = range.parse().unwrap_or(0);
+                        range
+                    }
+                    None => 0,
+                }
+            }
+            Err(_) => 0,
+        },
+        None => 0,
+    };
+    println!("Parsed range: {:?}\n", range);
+
+    // Open file and seek into how much the browser has already downloaded
+    let mut file = File::open("input.zip").await.unwrap();
+    let file_len: u64 = file.metadata().await.unwrap().len();
+    let bytes_left = (file_len - range).to_string();
+    file.seek(std::io::SeekFrom::Start(range)).await.unwrap();
+
+    // Response headers telling browser we have an attachment with a given range already into the file
+    let reponse_headers = [
+        (header::ACCEPT_RANGES, "bytes".to_string()),
+        (header::CONTENT_TYPE, "application/octet-stream".to_string()),
+        (header::CONTENT_LENGTH, bytes_left),
+        (
+            header::CONTENT_DISPOSITION,
+            format!("attachment; filename=\"{}\"", "output.zip"), // attachment tells browser to download the file and not just display it
+        ),
+        (
+            header::CONTENT_RANGE,
+            format!("bytes {}-{}/{}", range, file_len - 1, file_len), // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Range
+        ),
+    ];
+
+    let stream = ReaderStream::new(file);
+    println!("Response Headers\n{:?}", reponse_headers);
+    (
+        StatusCode::PARTIAL_CONTENT,
+        reponse_headers,
+        Body::from_stream(stream),
+    )
+}
+```
 ---!##

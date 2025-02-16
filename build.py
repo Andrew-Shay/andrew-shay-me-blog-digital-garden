@@ -474,17 +474,18 @@ def write_blog(blog_posts: List[BlogPost], root):
         post_html = "\n".join(post.body_lines_formatted)
         post_html = post_html.replace("{ROOT}", root)
         post_date_update = (
-            f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {post.updated})"
+            f' &nbsp;&nbsp;&nbsp;&nbsp;(updated <span itemprop="dateModified" content="{post.updated}T00:00:00+00:00">{post.updated}</span>)'
             if post.updated != post.date
             else ""
         )
         post_date_block = (
-            f'<div class="blog-date">{post.date}{post_date_update}</div>'
+            f'<div class="blog-date"><span itemprop="datePublished" content="{post.date}T00:00:00+00:00">{post.date}</span>{post_date_update}</div>'
             if post.date
             else ""
         )
         breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}blog">Blog</a> &gt; {post.title[:30]}...'
-        post_html = f"{header}{breadcrumbs}<br><br>\n<article><h1>{post.title}</h1><div class='h1-line'></div>{post_date_block}{post_html}</article>\n{footer_html}"
+        author = '<meta itemprop="author" content="Andrew Shay" />'
+        post_html = f'{header}{breadcrumbs}<br><br>\n<article itemscope itemtype="https://schema.org/BlogPosting"><h1 itemprop="headline">{post.title}</h1><div class="h1-line"></div>{post_date_block}{author}<div itemprop="articleBody">{post_html}</div></article>\n{footer_html}'
 
         post_index_path = os.path.join(post_path, "index.html")
         assert not os.path.exists(post_index_path), post_index_path
@@ -555,16 +556,17 @@ def write_garden(categories: List[Category], root):
 
                 breadcrumbs = f'<a href="{root}">Home</a> &gt; <a href="{root}digital-garden">Digital Garden</a> &gt; <a href="{root}digital-garden/{post.html_name}">{post.title}</a> &gt; {entry.title[:30]}...'
                 post_date_update = (
-                    f" &nbsp;&nbsp;&nbsp;&nbsp;(updated {entry.updated})"
+                    f' &nbsp;&nbsp;&nbsp;&nbsp;(updated <span itemprop="dateModified" content="{entry.updated}T00:00:00+00:00">{entry.updated}</span>)'
                     if entry.updated != entry.date
                     else ""
                 )
                 post_date_block = (
-                    f'<div class="blog-date">{entry.date}{post_date_update}</div>'
+                    f'<div class="blog-date"><span itemprop="datePublished" content="{entry.date}T00:00:00+00:00">{entry.date}</span>{post_date_update}</div>'
                     if entry.date
                     else ""
                 )
-                html = f"{eheader}{breadcrumbs}<br><br>\n<article><h1>{entry.title}</h1><div class='h1-line'></div>{post_date_block}{html}</article>\n{footer_html}"
+                author = '<meta itemprop="author" content="Andrew Shay" />'
+                html = f'{eheader}{breadcrumbs}<br><br>\n<article itemscope itemtype="https://schema.org/BlogPosting"><h1 itemprop="headline">{entry.title}</h1><div class="h1-line"></div>{post_date_block}{author}<div itemprop="articleBody">{html}</div></article>\n{footer_html}'
 
                 p = os.path.join(post_path, entry.file)
                 assert not os.path.exists(p), p

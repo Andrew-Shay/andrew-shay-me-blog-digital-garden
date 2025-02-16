@@ -2,6 +2,12 @@ title: Random
 icon: 🔮
 
 ---##
+title: Calorie Calculator 
+url: https://www.musclehacking.com/calorie-calculator/
+date: 2025-01-26
+---!##
+
+---##
 title: EarthCam 
 description: Live webcams from around the world
 url: https://www.earthcam.com/

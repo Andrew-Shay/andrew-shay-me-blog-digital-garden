@@ -2,6 +2,25 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: We are destroying software
+url: https://antirez.com/news/145
+date: 2025-02-08
+---!##
+
+---##
+title: Neutralinojs
+description: Build lightweight cross-platform desktop apps with JavaScript, HTML, and CSS
+url: https://neutralino.js.org/
+date: 2025-02-07
+---!##
+
+---##
+title: free-for.dev
+url: https://free-for.dev
+date: 2025-02-05
+---!##
+
+---##
 title: Bill Gates tries to install Movie Maker
 url: https://www.techemails.com/p/bill-gates-tries-to-install-movie-maker
 date: 2024-10-09
