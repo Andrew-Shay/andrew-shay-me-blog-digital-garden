@@ -1,0 +1,20 @@
+title: BoxDiff: New project for detecting changes on Windows
+date:2025-04-02
+tags:boxdiff,python,sysadmin
+body:
+I created, [BoxDiff](https://github.com/boxdiff/boxdiff), a simple Python script for detecting changes on Windows.  It shows you what was added, removed, or changed.  
+There are no dependencies, and it's also extendable with a single Python module.  
+
+A small subset of the data that is collected
+<ul>
+<li>Devices</li>
+<li>Services</li>
+<li>Installed Programs</li>
+<li>Startup Programs</li>
+<li>Users</li>
+<li>Tasks</li>
+<li>Certificates</li>
+</ul>
+[Download from GitHub](https://github.com/boxdiff/boxdiff)
+
+![BoxDiff Cover](https://raw.githubusercontent.com/boxdiff/boxdiff/refs/heads/main/cover.png)
