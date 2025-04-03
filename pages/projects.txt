@@ -1,11 +1,20 @@
 title: 🔬 Projects
 description: Projects by Andrew Shay
-updated: 2023-10-01
-body:
-## <span class='post-icon'>🌟</span> Transmitic
-Encrypted, peer to peer, file transfer and sharing, built with Rust.
-[transmitic.net](https://transmitic.net/)
+updated: 2025-04-02
+body: html
+<div class="headerwimg"><img src="../images/transmitic-logo.png"><h2>Transmitic</h2></div>
+Encrypted, peer to peer, file transfer and sharing, built with Rust.<br>
+Website: <a href="https://transmitic.net">transmitic.net</a><br>
+View on GitHub: <a href="https://github.com/transmitic/transmitic">transmitic/transmitic</a>
 
-## Auto Magor
-A simple Python program to create a 3 column print magazine from text files and images.
-View on GitHub: [AutoMagor/AutoMagor](https://github.com/AutoMagor/AutoMagor)
+<br><br><br>
+
+<div class="headerwimg"><img src="../images/boxdiff-logo.png"><h2>BoxDiff</h2></div>
+A simple Python script that gives you a "diff" of your box to see what changed. <br>
+View on GitHub: <a href="https://github.com/boxdiff/boxdiff">boxdiff/boxdiff</a>
+
+<br><br><br>
+
+<div class="headerwimg"><img src="../images/automagor-logo.png"><h2>Auto Magor</h2></div>
+A simple Python program to create a 3 column print magazine from text files and images.<br>
+View on GitHub: <a href="https://github.com/AutoMagor/AutoMagor">AutoMagor/AutoMagor</a>

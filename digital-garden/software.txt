@@ -2,6 +2,14 @@ title: Software
 icon: 💽
 
 ---##
+title: BoxDiff
+url: https://github.com/boxdiff/boxdiff
+description: A simple Python script that gives you a diff of your box to see what changed 
+date: 2025-04-02
+star:
+---!##
+
+---##
 title: Auto Magor
 url: https://github.com/AutoMagor/AutoMagor
 description: A simple Python program to create a 3 column print magazine from text files and images
@@ -61,13 +69,6 @@ title: ImageGlass
 url: https://imageglass.org/
 description: A lightweight, versatile image viewer
 date: 2023-10-22
----!##
-
----##
-title: AlomWare
-url: https://www.alomware.com/
-description: Productivity app for Windows
-date: 2023-10-20
 ---!##
 
 ---##

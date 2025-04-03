@@ -182,6 +182,8 @@ class BlogPost:
                     not new_line.startswith("<li>")
                     and not new_line.startswith("<ol>")
                     and not new_line.startswith("</ol>")
+                    and not new_line.startswith("<ul>")
+                    and not new_line.startswith("</ul>")
                 ):
                     new_line += "<br/>"
 
@@ -266,7 +268,7 @@ def read_garden():
     return categories
 
 
-def get_blog_block(blog_posts: List[BlogPost], root, limit=None):
+def get_blog_block(blog_posts: List[BlogPost], root, limit=None, add_more_link=False):
     blog_block = """<section>
 <h1>💭 Blog</h1>
 <div class="h1-line"></div>
@@ -282,7 +284,7 @@ def get_blog_block(blog_posts: List[BlogPost], root, limit=None):
         post_url = url + post.html_name
         blog_block += """
         <div class="column2">
-            {num}) <a class="blog-listing-a" style="padding-bottom: 1rem;" href="{post_url}/">{title}</a>
+            {num}. <a class="blog-listing-a" style="padding-bottom: 1rem;" href="{post_url}/">{title}</a>
         </div>     
 """.format(
             title=post.title, num=index + 1, post_url=post_url
@@ -294,8 +296,13 @@ def get_blog_block(blog_posts: List[BlogPost], root, limit=None):
         else:
             counter += 1
 
-    blog_block += """
-</div><!--blog-listing-->
+    more_link = ""
+    if add_more_link:
+        more_link = f'<div id="blog-more" style="width: 100%;"><a style="text-decoration: none; padding-right: 2em;" href="{root}blog">More...</a></div>'
+    blog_block += f"""
+</div>
+{more_link}
+<!--blog-listing-->
 </section>
 """
     return blog_block
@@ -427,7 +434,7 @@ def write_index(blog_posts, categories: List[Category]):
         UPDATED_TIME=TIMESTAMP_NOW,
     )
 
-    blog_block = get_blog_block(blog_posts, root, limit=10)
+    blog_block = get_blog_block(blog_posts, root, limit=10, add_more_link=True)
     garden_block = get_garden_block(categories, root)
 
     html = f"{header} {blog_block} {garden_block} {webring} {footer_html}"

@@ -2,6 +2,25 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Why did Windows 95 setup use three operating systems?
+url: https://devblogs.microsoft.com/oldnewthing/20241112-00/?p=110507
+date: 2025-02-22
+---!##
+
+---##
+title: NASA's 10 rules for software development
+url: https://www.cs.otago.ac.nz/cosc345/resources/nasa-10-rules.htm
+date: 2025-02-16
+---!##
+
+---##
+title: the component gallery
+description: Reference for anyone building component-based user interfaces
+url: https://component.gallery/
+date: 2025-02-16
+---!##
+
+---##
 title: We are destroying software
 url: https://antirez.com/news/145
 date: 2025-02-08

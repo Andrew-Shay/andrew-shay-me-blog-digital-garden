@@ -2,6 +2,13 @@ title: Rust
 icon: ⚙️
 
 ---##
+title: Uutils
+url: https://github.com/uutils/
+description: Reimplementation of core tools in Rust
+date: 2025-02-21
+---!##
+
+---##
 title: Writing a Simple Driver in Rust
 url: https://scorpiosoftware.net/2025/02/08/writing-a-simple-driver-in-rust/
 date: 2025-02-08

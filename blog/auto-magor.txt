@@ -60,8 +60,6 @@ I think I could maintain a width variable manually, get the width of each word b
 
 If the above works, a cache of the widths for the most frequent words could be generated, and then maintained across runs for a given font and size.
 
-
-
 Download [Auto Magor](https://github.com/AutoMagor/AutoMagor)
 
 <a href="https://github.com/AutoMagor/AutoMagor">![Auto Magor logo](https://raw.githubusercontent.com/AutoMagor/AutoMagor/main/cover.png)</a>
