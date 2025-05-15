@@ -58,6 +58,7 @@ class BlogPost:
                 url = line[4:].strip()
                 url = url.split(",")
                 self.url = [u.strip() for u in url if u.strip()]
+                self.url = [u + "?ref=andrewshay.me" for u in self.url]
             elif line.startswith("date:"):
                 self.date = line[5:].strip()
             elif line.startswith("updated:"):
@@ -354,7 +355,7 @@ def get_garden_block(categories: List[Category], root):
         else:
             bubble_counter += 1
 
-    garden_block += "</div>"
+    #garden_block += "</div>"
 
     # Get latest and starred
     # Remove duplicate titles
@@ -374,9 +375,9 @@ def get_garden_block(categories: List[Category], root):
             no_dupe_entries.append(entry)
 
     starred_entries = [entry for entry in no_dupe_entries if entry.is_starred]
-    starred_entries = starred_entries[:10]
+    starred_entries = starred_entries[:9]
 
-    min_count = 10 if 10 > len(starred_entries) else len(starred_entries)
+    min_count = 9 if 9 > len(starred_entries) else len(starred_entries)
     newest_entries = no_dupe_entries[:min_count]
 
     garden_block += """
@@ -385,7 +386,7 @@ def get_garden_block(categories: List[Category], root):
             <h3 style="font-variant: small-caps;">📡 Newest Entries</h3>
                         <ol>
 """
-
+    garden_block += f'<li><a href="https://transmitic.net/?ref=andrewshay.me" title="Transmitic">Transmitic</a></li>'
     for entry in newest_entries:
         url = (
             f"{root}digital-garden/{entry.category}/{entry.file}"
@@ -401,6 +402,7 @@ def get_garden_block(categories: List[Category], root):
             <h3 style="font-variant: small-caps;">⭐ Starred Entries</h3>
             <ol>
 """
+    garden_block += f'<li><a href="https://transmitic.net/?ref=andrewshay.me"  title="Transmitic">Transmitic</a></li>'
     for entry in starred_entries:
         garden_block += f'<li><a href="{entry.url[0]}"  title="{entry.description or entry.title}">{entry.title}</a></li>'
 
@@ -608,6 +610,7 @@ def write_garden(categories: List[Category], root):
 
 
 def write_pages(root):
+    pages = []
     for file_name in os.listdir(os.path.join(HERE, "pages")):
         file_path = os.path.join(HERE, "pages", file_name)
         with open(file_path, "r", encoding="utf-8") as f:
@@ -619,6 +622,7 @@ def write_pages(root):
         index_path = os.path.join(new_path, "index.html")
 
         post = BlogPost(contents, file_name)
+        pages.append(post)
 
         description = post.description or post.title
         header = header_html.format(
@@ -639,6 +643,8 @@ def write_pages(root):
         with open(index_path, "w", encoding="utf-8") as f:
             f.write(post_html)
 
+    return pages
+
 
 def write_feed(blog_posts: List[BlogPost]):
     from datetime import datetime
@@ -646,6 +652,7 @@ def write_feed(blog_posts: List[BlogPost]):
 
     date_time = datetime.fromtimestamp(time.time())
     str_date_time = date_time.strftime("%Y-%m-%dT%H:%M:%SZ")
+    str_date_time_sitemap = date_time.strftime("%Y-%m-%d")
 
     feed_xml = f"""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
@@ -681,6 +688,80 @@ def write_feed(blog_posts: List[BlogPost]):
     with open(feed_path, "w", encoding="utf-8") as f:
         f.write(feed_xml)
 
+    return str_date_time_sitemap
+
+def write_sitemap(blog_posts: List[BlogPost], categories: List[Category], pages: List[BlogPost], feed_date: str):
+        sitemap = """<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    """
+        # Add blog posts to sitemap
+        updated = []
+        for post in blog_posts:
+            updated.append(post.updated)
+            sitemap += f"""
+        <url>
+            <loc>https://andrewshay.me/blog/{html.escape(post.html_name)}/index.html</loc>
+            <lastmod>{post.updated}</lastmod>
+        </url>
+    """
+        latest = max(updated)
+        sitemap += f"""
+        <url>
+            <loc>https://andrewshay.me/blog/index.html</loc>
+            <lastmod>{latest}</lastmod>
+        </url>
+    """
+
+        # Add categories to sitemap
+        updated = []
+        for category in categories:
+            cat_updated = []
+
+            for entry in category.entries:
+                cat_updated.append(entry.updated)
+                updated.append(entry.updated)
+                if entry.file:
+                    sitemap += f"""
+        <url>
+            <loc>https://andrewshay.me/digital-garden/{html.escape(category.html_name)}/{html.escape(entry.file)}</loc>
+            <lastmod>{entry.updated}</lastmod>
+        </url>
+    """
+            latest = max(cat_updated)
+            sitemap += f"""
+        <url>
+            <loc>https://andrewshay.me/digital-garden/{html.escape(category.html_name)}/index.html</loc>
+            <lastmod>{latest}</lastmod>
+        </url>
+    """
+                    
+        latest = max(updated)
+        sitemap += f"""
+        <url>
+            <loc>https://andrewshay.me/digital-garden/index.html</loc>
+            <lastmod>{latest}</lastmod>
+        </url>
+    """           
+        
+        for page in pages:
+            sitemap += f"""
+        <url>
+            <loc>https://andrewshay.me/{html.escape(page.html_name)}/index.html</loc>
+            <lastmod>{page.updated}</lastmod>
+        </url>
+    """
+            
+        sitemap += f"""
+        <url>
+            <loc>https://andrewshay.me/feed.xml</loc>
+            <lastmod>{feed_date}</lastmod>
+        </url>
+    """
+        sitemap += "</urlset>"
+    
+        sitemap_path = os.path.join(build_root, "sitemap.xml")
+        with open(sitemap_path, "w", encoding="utf-8") as f:
+            f.write(sitemap)
 
 def main():
     blog_posts = read_blogs()
@@ -702,9 +783,9 @@ def main():
     write_index(blog_posts, categories)
     write_blog(blog_posts, "../")
     write_garden(categories, "../")
-    write_pages("../")
-    write_feed(blog_posts)
-
+    pages = write_pages("../")
+    feed_date = write_feed(blog_posts)
+    write_sitemap(blog_posts, categories, pages, feed_date)
 
 if __name__ == "__main__":
     main()

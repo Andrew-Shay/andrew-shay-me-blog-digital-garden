@@ -2,9 +2,16 @@ title: Software
 icon: 💽
 
 ---##
+title: Simple Web Server
+url: https://github.com/boxdiff/boxdiff
+description: https://simplewebserver.org
+date: 2025-04-14
+---!##
+
+---##
 title: BoxDiff
 url: https://github.com/boxdiff/boxdiff
-description: A simple Python script that gives you a diff of your box to see what changed 
+description: A simple Python script that gives you a diff of your box to see what changed
 date: 2025-04-02
 star:
 ---!##
@@ -146,7 +153,6 @@ title: Transmitic
 url: https://transmitic.net
 description: Encrypted peer-to-peer file transfer and sharing
 date: 2022-08-06
-star:
 ---!##
 
 ---##

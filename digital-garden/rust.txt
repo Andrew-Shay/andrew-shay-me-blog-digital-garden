@@ -61,8 +61,7 @@ date: 2022-08-08
 title: Transmitic
 url: https://transmitic.net
 description: Encrypted peer-to-peer file transfer and sharing
-date: 2032-08-06
-star:
+date: 2022-08-06
 ---!##
 
 ---##

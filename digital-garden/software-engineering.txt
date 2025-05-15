@@ -2,6 +2,20 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Full spectrum Event Tracing
+description: Full spectrum Event Tracing for Windows detection in the kernel against rootkits
+url: https://fluxsec.red/full-spectrum-event-tracing-for-windows-detection-in-the-kernel-against-rootkits
+date: 2025-04-14
+---!##
+
+---##
+title: Uncontrolled PCDN
+description: Observation and Case Analysis of the Current State of PCDN Technology
+url: https://medium.com/@knownsec404team/uncontrolled-pcdn-observation-and-case-analysis-of-the-current-state-of-pcdn-technology-aac6ad048411
+date: 2025-04-14
+---!##
+
+---##
 title: Why did Windows 95 setup use three operating systems?
 url: https://devblogs.microsoft.com/oldnewthing/20241112-00/?p=110507
 date: 2025-02-22
