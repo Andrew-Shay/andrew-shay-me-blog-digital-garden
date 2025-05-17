@@ -214,12 +214,11 @@ blockquote *:last-child {
 	height: 0.5em;
 	background: rgb(72, 165, 171);
 	background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
-
+	background-size: 200% 100%;
+	background-position: 0% 50%;
+	animation: line-gradient-move 2s ease-in-out infinite alternate;
 	position: relative;
 }
-
-
-
 
 .line:before {
 	content: "";
@@ -230,6 +229,9 @@ blockquote *:last-child {
 	bottom: 0;
 	left: 0;
 	background: linear-gradient(90deg, var(--neon-blue), var(--neon-pink));
+	background-size: 200% 100%;
+	background-position: 0% 50%;
+	animation: line-before-gradient-move 2s ease-in-out infinite alternate, line-before-glow-pulse 2.5s ease-in-out infinite;
 	transform: translate3d(0px, 20px, 0) scale(1);
 	filter: blur(20px);
 	opacity: var(1);
@@ -839,5 +841,23 @@ span.hightlight {
 	.discord-popup-content {
 		padding: 1em 0.5em 1em 0.5em;
 		min-width: 0;
+	}
+}
+
+@keyframes line-gradient-move {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+@keyframes line-before-gradient-move {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
 	}
 }
