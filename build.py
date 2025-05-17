@@ -313,7 +313,7 @@ def get_blog_block(blog_posts: List[BlogPost], root, limit=None, add_more_link=F
 def get_logo_row_block(root="./"):
     html = '<div class="logo-row">\n'
     html += f'  <a href="https://github.com/Andrew-Shay"><img class="logo-img" src="{root}images/logo_github.svg" alt="GitHub Profile" /></a>\n'
-    html += f'  <a href="https://techhub.social/deck/@andrewshay"><img class="logo-img" src="{root}images/logo_mastodon.svg" alt="Mastodon Profile" /></a>\n'
+    html += f'  <a href="https://techhub.social/@andrewshay"><img class="logo-img" src="{root}images/logo_mastodon.svg" alt="Mastodon Profile" /></a>\n'
     html += f'  <a href="#" id="discord-logo-link"><img class="logo-img" src="{root}images/logo_discord.svg" alt="Discord Profile" /></a>\n'
     html += f'  <a href="https://bsky.app/profile/andrewshay.bsky.social"><img class="logo-img" src="{root}images/logo_bluesky.svg" alt="BlueSky Profile" /></a>\n'
     html += '</div>\n'
