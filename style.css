@@ -44,9 +44,9 @@
 	--nc-bg-3: var(--nc-d-bg-3);
 	--nc-lk-1: var(--nc-d-lk-1);
 	--nc-lk-2: var(--nc-d-lk-2);
-	--nc-lk-tx: var(--nc--dlk-tx);
+	--nc-lk-tx: var(--nc-d-lk-tx);
 	--nc-ac-1: var(--nc-d-ac-1);
-	--nc-ac-tx: var(--nc--dac-tx);
+	--nc-ac-tx: var(--nc-d-ac-tx);
 }
 
 
@@ -343,7 +343,6 @@ pre {
 	border: 1px solid var(--nc-bg-3);
 	border-radius: 4px;
 	padding: 3px 6px;
-	/* ↓ font-size is relative to containing element, so it scales for titles*/
 	font-size: 0.9em;
 }
 
@@ -742,13 +741,10 @@ span.hightlight {
 	align-items: center;
 	gap: 1.5rem;
 	margin: 0.5rem 0;
-	flex-wrap: wrap;
 }
 
 .logo-img {
-	height: 48px;
-	max-width: 120px;
-	object-fit: contain;
+	width: 48px;
 	padding: 0.3em;
 	transition: transform 0.2s;
 }
