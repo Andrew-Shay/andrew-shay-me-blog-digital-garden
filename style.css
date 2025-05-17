@@ -754,6 +754,56 @@ span.hightlight {
 	transform: scale(1.07);
 }
 
+.discord-popup {
+	position: fixed;
+	z-index: 1001;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.75);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.discord-popup-content {
+	background: var(--nc-bg-1);
+	color: var(--nc-tx-2);
+	padding: 1.2em 2em 1.2em 1.5em;
+	box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+	position: relative;
+	min-width: 220px;
+	max-width: 90vw;
+	background: linear-gradient(#000000, #000000) 50% 50%/calc(100% - 5px) calc(100% - 5px) no-repeat,
+		linear-gradient(216deg, var(--neon-pink) 0%, var(--neon-blue) 100%);
+}
+.discord-popup-close {
+	position: absolute;
+	top: 0.5em;
+	right: 0.7em;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: #888;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+.discord-popup-close:hover {
+	color: var(--text-pink);
+}
+#discord-popup-text {
+	margin-top: 0.5em;
+	font-size: 1.1em;
+	text-align: center;
+	padding: 1em;
+}
+#discord-username {
+	font-family: var(--nc-font-mono);
+	background: var(--text-pink);
+	color: #000;
+	padding: 0 0.3em;
+	border-radius: 3px;
+	cursor: pointer;
+}
 @media screen and (max-width: 600px) {
 	.column3 {
 		width: 100%;
@@ -785,13 +835,9 @@ span.hightlight {
 	#blog-more {
 		text-align: left;
 	}
-/* 
-	.logo-row {
-		flex-direction: column;
-		gap: 1rem;
+
+	.discord-popup-content {
+		padding: 1em 0.5em 1em 0.5em;
+		min-width: 0;
 	}
-	.logo-img {
-		height: 40px;
-		max-width: 90vw;
-	} */
 }

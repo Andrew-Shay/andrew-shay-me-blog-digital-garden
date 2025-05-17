@@ -314,9 +314,49 @@ def get_logo_row_block(root="./"):
     html = '<div class="logo-row">\n'
     html += f'  <a href="https://github.com/Andrew-Shay"><img class="logo-img" src="{root}images/logo_github.svg" alt="GitHub Profile" /></a>\n'
     html += f'  <a href="https://techhub.social/deck/@andrewshay"><img class="logo-img" src="{root}images/logo_mastodon.svg" alt="Mastodon Profile" /></a>\n'
-    html += f'  <a href="#"><img class="logo-img" src="{root}images/logo_discord.svg" alt="Discord Profile" /></a>\n'
+    html += f'  <a href="#" id="discord-logo-link"><img class="logo-img" src="{root}images/logo_discord.svg" alt="Discord Profile" /></a>\n'
     html += f'  <a href="https://bsky.app/profile/andrewshay.bsky.social"><img class="logo-img" src="{root}images/logo_bluesky.svg" alt="BlueSky Profile" /></a>\n'
     html += '</div>\n'
+    html += '''
+<div id="discord-popup" class="discord-popup" style="display:none;">
+  <div class="discord-popup-content">
+    <span id="discord-popup-close" class="discord-popup-close" title="Close">&times;</span>
+    <div id="discord-popup-text">
+      <strong>Username:</strong> <span id="discord-username">Andrew_Shay#8923</span><br>
+      <small>Click to copy</small>
+    </div>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var link = document.getElementById("discord-logo-link");
+  var popup = document.getElementById("discord-popup");
+  var close = document.getElementById("discord-popup-close");
+  var text = document.getElementById("discord-popup-text");
+  var username = document.getElementById("discord-username");
+  if(link && popup && close) {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      popup.style.display = "flex";
+    });
+    close.addEventListener("click", function() {
+      popup.style.display = "none";
+    });
+    window.addEventListener("click", function(e) {
+      if(e.target === popup) popup.style.display = "none";
+    });
+    text.style.cursor = "pointer";
+    text.addEventListener("click", function() {
+        navigator.clipboard.writeText(username.textContent);
+        username.textContent = "Copied!";
+        setTimeout(function() {
+          username.textContent = "Andrew_Shay#8923";
+        }, 1000);
+      });
+  }
+});
+</script>
+'''
     return html
 
 
