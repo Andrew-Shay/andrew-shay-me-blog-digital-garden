@@ -8,6 +8,7 @@ from typing import List
 import shutil
 import re
 from functools import lru_cache
+import glob
 
 TIMESTAMP_NOW = datetime.datetime.now().strftime("%Y-%m-%d")
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -309,6 +310,16 @@ def get_blog_block(blog_posts: List[BlogPost], root, limit=None, add_more_link=F
     return blog_block
 
 
+def get_logo_row_block(root="./"):
+    html = '<div class="logo-row">\n'
+    html += f'  <a href="https://github.com/Andrew-Shay"><img class="logo-img" src="{root}images/logo_github.svg" alt="GitHub Profile" /></a>\n'
+    html += f'  <a href="https://techhub.social/deck/@andrewshay"><img class="logo-img" src="{root}images/logo_mastodon.svg" alt="Mastodon Profile" /></a>\n'
+    html += f'  <a href="#"><img class="logo-img" src="{root}images/logo_discord.svg" alt="Discord Profile" /></a>\n'
+    html += f'  <a href="https://bsky.app/profile/andrewshay.bsky.social"><img class="logo-img" src="{root}images/logo_bluesky.svg" alt="BlueSky Profile" /></a>\n'
+    html += '</div>\n'
+    return html
+
+
 def get_garden_block(categories: List[Category], root):
     garden_block = """<section>
     <h1><span class='post-icon'>🌱</span> Digital Garden</h1>
@@ -393,7 +404,7 @@ def get_garden_block(categories: List[Category], root):
             if entry.body_lines_formatted
             else entry.url[0]
         )
-        garden_block += f'<li><a href="{url}" title="{entry.description or entry.title}">{entry.title}</a></li>'
+        garden_block += f'<li><a href="{url}" title="{html.escape(entry.description or entry.title)}">{entry.title}</a></li>'
 
     garden_block += """
         </ol>
@@ -404,7 +415,7 @@ def get_garden_block(categories: List[Category], root):
 """
     garden_block += f'<li><a href="https://transmitic.net/?ref=andrewshay.me"  title="Transmitic">Transmitic</a></li>'
     for entry in starred_entries:
-        garden_block += f'<li><a href="{entry.url[0]}"  title="{entry.description or entry.title}">{entry.title}</a></li>'
+        garden_block += f'<li><a href="{entry.url[0]}"  title="{html.escape(entry.description or entry.title)}">{entry.title}</a></li>'
 
     garden_block += """
     </ol>
@@ -437,9 +448,10 @@ def write_index(blog_posts, categories: List[Category]):
     )
 
     blog_block = get_blog_block(blog_posts, root, limit=10, add_more_link=True)
+    logo_row_block = get_logo_row_block(root)
     garden_block = get_garden_block(categories, root)
 
-    html = f"{header} {blog_block} {garden_block} {webring} {footer_html}"
+    html = f"{header} {blog_block} {logo_row_block} {garden_block} {webring} {footer_html}"
 
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(html)
