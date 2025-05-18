@@ -2,6 +2,13 @@ title: Random
 icon: 🔮
 
 ---##
+title: Internet Artifacts
+url: https://neal.fun/internet-artifacts/
+date: 2025-05-17
+star:
+---!##
+
+---##
 title: Calorie Calculator 
 url: https://www.musclehacking.com/calorie-calculator/
 date: 2025-01-26

@@ -114,6 +114,29 @@ body {
 	font-size: 1.1rem;
 	line-height: 1.6;
 
+	position: relative;
+	z-index: 1;
+}
+
+body::before,
+body::after {
+	content: "";
+	position: fixed;
+	bottom: 0;
+	width: 500px;
+	height: 600px;
+	background: url('./images/tree.png') bottom no-repeat;
+	background-size: contain;
+	z-index: -1;
+	pointer-events: none;
+	opacity: 0.05;
+}
+body::before {
+	left: 0;
+}
+body::after {
+	right: 0;
+	transform: scaleX(-1);
 }
 
 ::selection {
