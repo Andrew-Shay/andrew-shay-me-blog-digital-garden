@@ -139,6 +139,14 @@ body::after {
 	transform: scaleX(-1);
 }
 
+/* Hide tree background on small screens */
+@media screen and (max-width: 1300px) {
+	body::before,
+	body::after {
+		display: none !important;
+	}
+}
+
 ::selection {
 	/* Set background color for selected text */
 	background: var(--text-pink);
