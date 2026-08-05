@@ -2,6 +2,49 @@ title: Random
 icon: 🔮
 
 ---##
+title: Open Street Map
+url: https://www.openstreetmap.org
+date: 2022-08-08
+---!##
+
+---##
+title: OsmAnd
+url: https://osmand.net/
+date: 2022-08-08
+---!##
+
+---##
+title: StreetComplete
+url: https://streetcomplete.app
+date: 2022-08-08
+---!##
+
+---##
+title: deepcut
+description: Live music listening with friendss
+url: https://deepcut.live/
+date: 2026-08-03
+---!##
+
+---##
+title: McMansion Hell
+url: https://mcmansionhell.com/
+date: 2026-08-01
+---!##
+
+---##
+title: Lost Media Archive
+url: https://lostmediaarchive.fandom.com/wiki/Lost_Media_Archive
+date: 2025-09-08
+---!##
+
+---##
+title: Radio.garden
+url: https://radio.garden
+date: 2025-09-08
+---!##
+
+---##
 title: Internet Artifacts
 url: https://neal.fun/internet-artifacts/
 date: 2025-05-17

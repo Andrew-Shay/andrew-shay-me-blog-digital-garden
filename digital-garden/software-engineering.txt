@@ -2,6 +2,38 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: TLS Illustrated
+url: https://tls12.xargs.org/
+date: 2022-08-01
+---!##
+
+---##
+title: How to Secure Anything
+url: https://github.com/veeral-patel/how-to-secure-anything
+date: 2022-02-01
+---!##
+
+---##
+title: Hacker Public Radio
+description: Technology focused podcast with shows produced by the listeners
+url: https://hackerpublicradio.org/
+date: 2026-08-05
+star:
+---!##
+
+---##
+title: Making our own executable packer 
+url: https://fasterthanli.me/series/making-our-own-executable-packer
+date: 2026-08-03
+---!##
+
+---##
+title: JavaScript DRMs are Stupid and Useless
+url: https://www.therantydev.com/javascript-drms-are-stupid
+date: 2026-08-02
+---!##
+
+---##
 title: Full spectrum Event Tracing
 description: Full spectrum Event Tracing for Windows detection in the kernel against rootkits
 url: https://fluxsec.red/full-spectrum-event-tracing-for-windows-detection-in-the-kernel-against-rootkits

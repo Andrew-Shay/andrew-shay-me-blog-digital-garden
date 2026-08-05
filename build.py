@@ -58,8 +58,15 @@ class BlogPost:
             elif line.startswith("url:"):
                 url = line[4:].strip()
                 url = url.split(",")
-                self.url = [u.strip() for u in url if u.strip()]
-                self.url = [u + "?ref=andrewshay.me" for u in self.url]
+                urls = [u.strip() for u in url if u.strip()]
+                self.url = []
+                for url in urls:
+                    last = url.split('/')[-1]
+                    if '?' in last:
+                        url += "&ref=andrewshay.me"
+                    else:
+                        url += "?ref=andrewshay.me"
+                    self.url.append(url)
             elif line.startswith("date:"):
                 self.date = line[5:].strip()
             elif line.startswith("updated:"):
@@ -315,7 +322,6 @@ def get_logo_row_block(root="./"):
     html += f'  <a href="https://github.com/Andrew-Shay"><img class="logo-img" src="{root}images/logo_github.svg" alt="GitHub Profile" /></a>\n'
     html += f'  <a href="https://techhub.social/@andrewshay"><img class="logo-img" src="{root}images/logo_mastodon.svg" alt="Mastodon Profile" /></a>\n'
     html += f'  <a href="#" id="discord-logo-link"><img class="logo-img" src="{root}images/logo_discord.svg" alt="Discord Profile" /></a>\n'
-    html += f'  <a href="https://bsky.app/profile/andrewshay.bsky.social"><img class="logo-img" src="{root}images/logo_bluesky.svg" alt="BlueSky Profile" /></a>\n'
     html += '</div>\n'
     html += '''
 <div id="discord-popup" class="discord-popup" style="display:none;">
@@ -752,14 +758,14 @@ def write_sitemap(blog_posts: List[BlogPost], categories: List[Category], pages:
             updated.append(post.updated)
             sitemap += f"""
         <url>
-            <loc>https://andrewshay.me/blog/{html.escape(post.html_name)}/index.html</loc>
+            <loc>https://andrewshay.me/blog/{html.escape(post.html_name)}/</loc>
             <lastmod>{post.updated}</lastmod>
         </url>
     """
         latest = max(updated)
         sitemap += f"""
         <url>
-            <loc>https://andrewshay.me/blog/index.html</loc>
+            <loc>https://andrewshay.me/blog/</loc>
             <lastmod>{latest}</lastmod>
         </url>
     """
@@ -782,7 +788,7 @@ def write_sitemap(blog_posts: List[BlogPost], categories: List[Category], pages:
             latest = max(cat_updated)
             sitemap += f"""
         <url>
-            <loc>https://andrewshay.me/digital-garden/{html.escape(category.html_name)}/index.html</loc>
+            <loc>https://andrewshay.me/digital-garden/{html.escape(category.html_name)}/</loc>
             <lastmod>{latest}</lastmod>
         </url>
     """
@@ -790,7 +796,7 @@ def write_sitemap(blog_posts: List[BlogPost], categories: List[Category], pages:
         latest = max(updated)
         sitemap += f"""
         <url>
-            <loc>https://andrewshay.me/digital-garden/index.html</loc>
+            <loc>https://andrewshay.me/digital-garden/</loc>
             <lastmod>{latest}</lastmod>
         </url>
     """           
@@ -798,7 +804,7 @@ def write_sitemap(blog_posts: List[BlogPost], categories: List[Category], pages:
         for page in pages:
             sitemap += f"""
         <url>
-            <loc>https://andrewshay.me/{html.escape(page.html_name)}/index.html</loc>
+            <loc>https://andrewshay.me/{html.escape(page.html_name)}/</loc>
             <lastmod>{page.updated}</lastmod>
         </url>
     """

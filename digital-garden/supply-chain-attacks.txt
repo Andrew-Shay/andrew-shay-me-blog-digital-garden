@@ -2,6 +2,18 @@ title: Supply Chain Attacks
 icon: 💣
 
 ---##
+title: DuckDB NPM packages 1.3.3 and 1.29.2 compromised with malware
+url: https://github.com/duckdb/duckdb-node/security/advisories/GHSA-w62p-hx95-gf2c,https://news.ycombinator.com/item?id=45179939
+date: 2025-09-09
+---!##
+
+---##
+title: NPM debug and chalk packages compromised
+url: https://www.aikido.dev/blog/npm-debug-and-chalk-packages-compromised,https://news.ycombinator.com/item?id=45169657
+date: 2025-09-09
+---!##
+
+---##
 title: Go Module Mirror served backdoor to devs for 3+ years
 url: https://arstechnica.com/security/2025/02/backdoored-package-in-go-mirror-site-went-unnoticed-for-3-years/
 date: 2025-02-06

@@ -2,6 +2,13 @@ title: Programming Books
 icon: 📘
 
 ---##
+title: A Philosophy of Software Design 
+url: https://www.amazon.com/dp/1732102201
+date: 2026-08-03
+star:
+---!##
+
+---##
 title: Build Your Own Text Editor
 url: https://viewsourcecode.org/snaptoken/kilo/
 date: 2023-01-30

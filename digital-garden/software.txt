@@ -2,9 +2,15 @@ title: Software
 icon: 💽
 
 ---##
+title: copyparty
+url: https://github.com/9001/copyparty
+description: Portable file server with many features
+date: 2025-09-08
+---!##
+
+---##
 title: Simple Web Server
-url: https://github.com/boxdiff/boxdiff
-description: https://simplewebserver.org
+url: https://simplewebserver.org
 date: 2025-04-14
 ---!##
 
