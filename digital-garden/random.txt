@@ -21,7 +21,7 @@ date: 2022-08-08
 
 ---##
 title: deepcut
-description: Live music listening with friendss
+description: Live music listening with friends
 url: https://deepcut.live/
 date: 2026-08-03
 ---!##
