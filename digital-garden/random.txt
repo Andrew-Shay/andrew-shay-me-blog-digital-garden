@@ -277,8 +277,8 @@ date: 2022-08-26
 
 ---##
 title: Johnny Decimal System
-description: A system to organise projects
-url: https://johnnydecimal.com/
+description: A system to organize projects
+url: https://johnnydecimal.com/documentation/introduction
 date: 2022-08-24
 star:
 ---!##
@@ -299,7 +299,7 @@ date: 2022-08-07
 
 ---##
 title: BookStack
-description: Self-hosted, easy-to-use platform for organising and storing information.
+description: Self-hosted, easy-to-use platform for organizing and storing information.
 url: https://www.bookstackapp.com/
 date: 2022-08-06
 ---!##
@@ -348,14 +348,6 @@ date: 2022-02-01
 title: Unsplash
 description: Free photos for commercial and non commercial use
 url: https://unsplash.com/
-date: 2022-02-01
----!##
-
-
----##
-title: I Miss My Bar
-description: Sound generator for a bar
-url: http://imissmybar.com/
 date: 2022-02-01
 ---!##
 

@@ -87,7 +87,7 @@ date: 2022-02-01
 ---!##
 
 ---##
-title: A Gradudate Course in Applied Cryptography
+title: A Graduate Course in Applied Cryptography
 url: https://toc.cryptobook.us/
 date: 2022-02-01
 ---!##

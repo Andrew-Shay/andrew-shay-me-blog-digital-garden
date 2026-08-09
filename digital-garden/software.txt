@@ -44,13 +44,6 @@ date: 2024-02-17
 ---!##
 
 ---##
-title: Clip Studio Paint
-url: https://www.clipstudio.net
-description: Software for drawing
-date: 2024-02-17
----!##
-
----##
 title: NymphCast
 url: https://github.com/MayaPosch/NymphCast
 description: Like an open source ChromeCast
@@ -94,7 +87,7 @@ date: 2023-10-19
 ---##
 title: TiddlyWiki
 url: https://tiddlywiki.com/
-description: A unique non-linear notebook for capturing, organising and sharing complex information
+description: A unique non-linear notebook for capturing, organizing and sharing complex information
 date: 2023-10-19
 ---!##
 
@@ -102,20 +95,6 @@ date: 2023-10-19
 title: Monitorian
 url: https://github.com/emoacht/Monitorian
 description: A Windows desktop tool to adjust the brightness of multiple monitors with ease
-date: 2023-10-01
----!##
-
----##
-title: lapce
-url: https://github.com/lapce/lapce
-description: Lightning-fast and Powerful Code Editor written in Rust 
-date: 2023-10-01
----!##
-
----##
-title: CodeEdit
-url: https://github.com/CodeEditApp/CodeEdit
-description: CodeEdit App for macOS – Elevate your code editing experience.
 date: 2023-10-01
 ---!##
 
@@ -148,13 +127,6 @@ date: 2023-01-12
 ---!##
 
 ---##
-title: kvass
-url: https://github.com/maxmunzel/kvass
-description: a personal key-value store
-date: 2022-08-13
----!##
-
----##
 title: Transmitic
 url: https://transmitic.net
 description: Encrypted peer-to-peer file transfer and sharing
@@ -165,13 +137,6 @@ date: 2022-08-06
 title: Photopea
 description: Free online photo editor like Photoshop
 url: https://www.photopea.com/
-date: 2022-02-01
----!##
-
----##
-title: Affinity Photo
-description: More affordable alternative to Photoshop
-url: https://affinity.serif.com/en-gb/photo/
 date: 2022-02-01
 ---!##
 
