@@ -351,14 +351,6 @@ url: https://unsplash.com/
 date: 2022-02-01
 ---!##
 
-
----##
-title: I Miss My Bar
-description: Sound generator for a bar
-url: http://imissmybar.com/
-date: 2022-02-01
----!##
-
 ---##
 title: Open Clipart
 description: Public Domain clipart
