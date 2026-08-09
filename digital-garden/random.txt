@@ -21,7 +21,7 @@ date: 2022-08-08
 
 ---##
 title: deepcut
-description: Live music listening with friendss
+description: Live music listening with friends
 url: https://deepcut.live/
 date: 2026-08-03
 ---!##
@@ -277,8 +277,8 @@ date: 2022-08-26
 
 ---##
 title: Johnny Decimal System
-description: A system to organise projects
-url: https://johnnydecimal.com/
+description: A system to organize projects
+url: https://johnnydecimal.com/documentation/introduction
 date: 2022-08-24
 star:
 ---!##
@@ -299,7 +299,7 @@ date: 2022-08-07
 
 ---##
 title: BookStack
-description: Self-hosted, easy-to-use platform for organising and storing information.
+description: Self-hosted, easy-to-use platform for organizing and storing information.
 url: https://www.bookstackapp.com/
 date: 2022-08-06
 ---!##

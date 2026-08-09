@@ -87,7 +87,7 @@ date: 2023-10-19
 ---##
 title: TiddlyWiki
 url: https://tiddlywiki.com/
-description: A unique non-linear notebook for capturing, organising and sharing complex information
+description: A unique non-linear notebook for capturing, organizing and sharing complex information
 date: 2023-10-19
 ---!##
 
