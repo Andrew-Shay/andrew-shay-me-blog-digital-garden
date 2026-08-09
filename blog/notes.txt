@@ -1,0 +1,88 @@
+title: Note Taking
+date: 2026-08-09
+tags: notes, note taking
+body:
+## My Note Taking System
+There are many note taking systems and information organization tools and tips out there. I'm frequently changing my methods for what is most productive for me. I've also come across great ideas from other folks that I've tweaked and integrated into my work flow. Some I keep, and some I've dropped. 
+
+## The Starting Points
+### Johnny Decimal & PARA & Never Ending Txt
+There were a few specific ideas that I have come across over time that I really like and have heavily influenced my work flow. 
+
+1. [Johnny Decimal](https://johnnydecimal.com/documentation/introduction) - Organizing into a max of 10 groups
+2. [PARA](https://fortelabs.com/blog/para/?ref=andrewshay.me) - Project Area Resource Archive 
+3. [Never Ending Txt File](https://jeffhuang.com/productivity_text_file/?ref=andrewshay.me) - One long text file that contains everything you do, each day.
+
+### Obsidian
+The best note taking software that I've come across is [Obsidian](https://obsidian.md/). It seems to be very popular in the software industry. 
+It is extensible with a large number of plug-ins available. 
+
+## My Setup
+### Top Level Organization
+In Obsidian I have 10 folders which are basically the following:
+
+```
+00 Journal/
+01 Claude/
+02 Project A/
+03 Project B/
+04 Team A/
+05 Team B/
+... 
+10 Helpers/
+CLAUDE.md
+```
+
+### The Notes
+Each folder contains notes. Sometimes named with a starting number (e.g. 01 02 03 etc) to force order. 
+Each note has headings like Links, Meetings, Notes. 
+Each meeting gets a sub entry. Notes are for generic information. 
+Following a similar structure for each note makes it easy to find and reference information. 
+
+### 00 Journal
+Journal is a special folder with a unique setup. 
+I have the `!Log` note which starts with daily reminders on things I should check on. 
+Then a TODO section with bullet points that are on my TODO list to get done "soon". Really just things I do not want to forget about. 
+A list for "Sync" which is what I want to mention in the next team sync. 
+
+Then finally a long list of notes for each day. Notes, chat links, important information. 
+This idea has evolved for me over time. At first, I was diligently documenting every day. Every chat convo and every Jira ticket I made. 
+This was kind of helpful, but over time it just felt like busy work and did not add much usefulness. I was not coming back that often to this list to find something I needed. 
+Now I might have some entries for a day, but it's rare. I think my usage with Claude Code has made this even less useful. 
+
+In `00 Journal`, I was also storing notes that I considered "Artifacts". These were snippets of whatever I needed, but did not really want to categorize. I just wanted to capture it so that I could search it later. Like a stacktrace and some info on it. That way if I ever saw it again in the future, I could reference the existing note.
+I use alphabetical ordering to keep the latest on top. So my oldest note is `a9999` and my newest note would be `a9910`. 
+
+This is useful, but I've also stopped collecting these artifacts. I guess it's not useful enough! Now that I think about it, a Claude integration to automatically create these notes with data from my clipboard might be useful. 🤔 
+
+### Claude Code
+My latest integration is with Claude Code and I do find this to be very helpful. 
+
+I have a `CLAUDE.md` file in my root Obsidian directory that tells Claude its only job is to search my notes and not use plugins or external sources. 
+I can open a Claude Code session in this directory and have Claude find notes for me, and even open them in Obsidian! This has been great. 
+
+I did not want another terminal tab open, so I had Claude vibe code an Obsidian extension that opens a new tab that has a terminal window inside the Obsidian page. I execute a bash alias that starts Claude code in that directory. 
+Now I have a really convenient way to keep Claude open in Obsidian. 
+
+In the `CLAUDE.md` I also explained to Claude that when I type "mem: something", that it should store that text in the `!Mem` note with the current date and time. 
+I am really liking this because it's so easy for me to just quickly drop notes and links into a file quickly. And Claude can easily search it back up when I need it. It's like a scratch pad. 
+
+Having Claude integration is really useful because I can easily store data in Obsidian without thinking about how to organize it. Claude can just find it.
+I'm definitely going to keep expanding my Claude usage in Obsidian. 
+
+### Helpers
+The next folder that I'll mention is my `Helpers` folder. Each note in this folder is usually a code snippet or a "problem and solution". Like an error message, and a command that will resolve it. 
+Another great way to store this semi-random stuff that is easy to search up later. 
+
+## Other Note Taking Tools
+There are lots of other note taking tools out there  that are also nice. 
+
+1. [Tiddly Wiki](https://tiddlywiki.com/) - A very cool single file Javascript based "app". 
+2. [Zim](https://zim-wiki.org/) - Desktop wiki
+3. Apple Notes - The default Apple Notes software is also really good. It's pretty close to Obsidian if you just want basic note taking. When I tried it last, it did not have the ability to link to other notes though. 
+
+## Biggest Tips
+1. Just get the data into a note. It can be searched up later
+2. Limit the number of folders to force organization and limit sprawl
+3. A lot of information can go into one note. For instance for small projects, just put it all in one note. 
+4. Use software that you find useful
