@@ -3,7 +3,7 @@ icon: 📘
 
 ---##
 title: A Philosophy of Software Design 
-url: https://www.amazon.com/dp/1732102201
+url: https://www.amazon.com/Philosophy-Software-Design-2nd/dp/173210221X
 date: 2026-08-03
 star:
 ---!##
