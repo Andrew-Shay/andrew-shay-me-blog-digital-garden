@@ -2,6 +2,12 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title: Cool URIs don't change
+url: https://www.w3.org/Provider/Style/URI
+date: 2026-08-10
+---!##
+
+---##
 title: TLS Illustrated
 url: https://tls12.xargs.org/
 date: 2022-08-01
