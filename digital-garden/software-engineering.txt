@@ -2,6 +2,30 @@ title: Software Engineering
 icon: 💾
 
 ---##
+title:CVE-2026-LGTM
+url: https://nesbitt.io/2026/06/26/incident-report-cve-2026-lgtm.html
+date: 2026-08-16
+---!##
+
+---##
+title:CVE-2024-YIKES
+url: https://nesbitt.io/2026/02/03/incident-report-cve-2024-yikes.html
+date: 2026-08-16
+---!##
+
+---##
+title:How Rockstar fit GTA 3 into PS2 Memory
+url: https://www.youtube.com/watch?v=cIbCxbrBCys
+date: 2026-08-15
+---!##
+
+---##
+title:How Obama's BlackBerry got secured
+url: https://www.electrospaces.net/2013/04/how-obamas-blackberry-got-secured.html
+date: 2026-08-13
+---!##
+
+---##
 title: Cool URIs don't change
 url: https://www.w3.org/Provider/Style/URI
 date: 2026-08-10
@@ -92,7 +116,7 @@ date: 2025-02-05
 ---!##
 
 ---##
-title: Bill Gates tries to install Movie Maker
+title: Bill Gates tries to install Movie Maker (2003)
 url: https://www.techemails.com/p/bill-gates-tries-to-install-movie-maker
 date: 2024-10-09
 ---!##
@@ -141,7 +165,6 @@ date: 2024-06-23
 title: The Original Proposal for the World Wide Web (1989) Tim Berners-Lee
 url: https://www.w3.org/History/1989/proposal.html
 date: 2024-02-21
-star:
 ---!##
 
 ---##
@@ -265,14 +288,14 @@ date: 2023-01-31
 ---!##
 
 ---##
-title: Preventing the Collapse of Civilization - Jonathan Blow
+title: Preventing the Collapse of Civilization - Jonathan Blow (2019)
 url: https://www.youtube.com/watch?v=ZSRHeXYDLko&t=0s
 date: 2023-01-21
 star:
 ---!##
 
 ---##
-title: The Birth & Death of JavaScript
+title: The Birth & Death of Javascript (2014)
 url: https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript
 date: 2023-01-13
 ---!##

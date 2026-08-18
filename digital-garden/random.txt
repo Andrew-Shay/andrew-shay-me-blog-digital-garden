@@ -2,6 +2,60 @@ title: Random
 icon: 🔮
 
 ---##
+title: indieblog.page
+url: https://indieblog.page/
+date: 2026-08-16
+---!##
+
+---##
+title: RSS.Social
+url: https://rss.social/
+date: 2026-08-16
+---!##
+
+---##
+title: HyperWood
+url: https://hyperwood.org/
+date: 2026-08-16
+---!##
+
+---##
+title: How Shutdown Bay Area Companies Ditch Their Stuff
+url: https://www.sfgate.com/tech/article/silicon-valley-disposition-auction-company-20039023.php
+date: 2026-08-15
+---!##
+
+---##
+title: Illustrated Survival Guide
+url: https://the4book.com/
+date: 2026-08-15
+---!##
+
+---##
+title: NASA Deep Space Network NOW
+url: https://eyes.nasa.gov/apps/dsn-now/dsn.html
+date: 2026-08-14
+---!##
+
+---##
+title: Most famous Civilization game ever played
+url: https://www.pcgamer.com/games/strategy/a-hellish-nightmare-remembering-the-most-famous-civilization-game-ever-played-civ-2s-eternal-war/
+date: 2026-08-15
+---!##
+
+---##
+title: Runescape Tax and Item Sink
+url: https://secure.runescape.com/m=news/old-school-economy---future-plans?oldschool=1
+date: 2026-08-14
+---!##
+
+---##
+title: Plane Ran Out of Fuel over the Atlantic
+url: https://www.popularmechanics.com/flight/a73413706/air-transat-flight-fuel-glider/
+date: 2026-08-15
+---!##
+
+---##
 title: Open Street Map
 url: https://www.openstreetmap.org
 date: 2022-08-08
